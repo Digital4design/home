@@ -9,9 +9,14 @@ export default function Home() {
         <meta name="description" content="Home Reach Properties" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <main role="main">
-        <h1 className=" text-brand-blue text-5xl">Welcome to Home Reach!</h1>
+        <section className="py-32">
+          <div className="container">
+            <h1 className=" text-4xl text-brand-blue">
+              Welcome to Home Reach!
+            </h1>
+          </div>
+        </section>
       </main>
     </div>
   )

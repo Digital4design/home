@@ -27,12 +27,19 @@ module.exports = {
       lineHeight: {
         paragraph: "1.8",
       },
+      container: {
+        padding: "1rem",
+      },
       zIndex: {
         100: "100",
         200: "200",
         500: "500",
         999: "999",
         max: "2147483647",
+      },
+      transitionTimingFunction: {
+        "in-out-expo": "cubic-bezier(0.87, 0, 0.13, 1)",
+        "in-out-cubic": "ubic-bezier(0.65, 0, 0.35, 1)",
       },
     },
   },

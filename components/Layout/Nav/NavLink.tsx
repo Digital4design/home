@@ -16,14 +16,14 @@ export default function NavLink({
   dropdownItems,
 }: Props) {
   return (
-    <Link href={slug}>
-      <a className="group relative mx-4 inline-block py-6 text-brand-grey-dark after:absolute after:bottom-3 after:left-0 after:right-0 after:h-0.5 hover:text-brand-green hover:after:bg-brand-green hover:after:content-['']">
+    <Link passHref href={slug}>
+      <div className="group relative mx-4 block w-full cursor-pointer py-6 text-center text-brand-grey-dark after:absolute after:bottom-3 after:left-0 after:right-0 after:hidden after:h-0.5 hover:text-brand-green hover:after:bg-brand-green hover:after:content-[''] lg:inline-block lg:w-auto lg:after:block">
         {/* children holds the text to be displayed */}
-        {children}
+        <a>{children}</a>
 
         {/* The dropdown item, will render out any of the dropdown items as links if hasDropdown is true, and dropdownItems exist */}
         <Dropdown hasDropdown={hasDropdown} dropdownItems={dropdownItems} />
-      </a>
+      </div>
     </Link>
   )
 }

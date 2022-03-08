@@ -13,11 +13,12 @@ export default function Nav() {
 
   return (
     <nav
-      className="mx-auto"
+      className="mx-auto hidden lg:block"
       role="navigation"
       aria-roledescription="Main navigation"
       aria-label="Main navigation"
     >
+      <div className="pointer-events-none absolute inset-0 z-10 shadow-lg content-['']" />
       <NavLink slug="/properties">Properties</NavLink>
       <NavLink slug="/properties">How it works</NavLink>
       <NavLink slug="/guides-and-faqs" hasDropdown dropdownItems={guidesLinks}>
