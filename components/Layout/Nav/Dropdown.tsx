@@ -13,7 +13,7 @@ export default function Dropdown({ hasDropdown, dropdownItems }: Props) {
   // if array of name/slug objects have been passed down, map through them and render each as a drop down link
   // index used as key here as items will not be added/removed by the user
   const dropdownLinks = dropdownItems.map((item, index) => (
-    <DropdownLink slug={item.slug} name={item.name} key={index} />
+    <DropdownLink slug={`/${item.slug}`} name={item.name} key={index} />
   ))
 
   // render the dropdown links inside a dropdown container div
