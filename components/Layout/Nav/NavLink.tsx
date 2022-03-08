@@ -20,6 +20,8 @@ export default function NavLink({
       <a className="group relative mx-4 inline-block py-6 text-brand-grey-dark after:absolute after:bottom-3 after:left-0 after:right-0 after:h-0.5 hover:text-brand-green hover:after:bg-brand-green hover:after:content-['']">
         {/* children holds the text to be displayed */}
         {children}
+
+        {/* The dropdown item, will render out any of the dropdown items as links if hasDropdown is true, and dropdownItems exist */}
         <Dropdown hasDropdown={hasDropdown} dropdownItems={dropdownItems} />
       </a>
     </Link>
