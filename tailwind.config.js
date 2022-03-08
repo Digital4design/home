@@ -1,8 +1,8 @@
 module.exports = {
   darkMode: "class",
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     fontFamily: {
@@ -12,12 +12,16 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          grey: 'hsl(0, 0%, 90%)',
-          "blue-light": "hsl(199, 33%, 85%)",
-          blue: 'hsl(199, 100%, 24%)',
-          "green-light": 'hsl(166, 59%, 88%)',
-          green: 'hsl(166, 81%, 43%)',
-          orange: 'hsl(11, 93%, 66%)'
+          "green-light": "hsl(167, 64%, 95%)",
+          green: "hsl(166, 81%, 43%)",
+          "green-dark": "hsl(166, 64%, 33%)",
+          "blue-light": "hsl(200, 32%, 93%)",
+          blue: "hsl(199, 100%, 24%)",
+          "blue-dark": "hsl(199, 100%, 14%)",
+          "grey-dark": "hsl(0, 0%, 18%)",
+          grey: "hsl(0, 0%, 48%)",
+          "grey-light": "hsl(204, 33%, 97%)",
+          alert: "hsl(11, 93%, 66%)",
         },
       },
       lineHeight: {
