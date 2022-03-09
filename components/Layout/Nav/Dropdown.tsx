@@ -1,4 +1,4 @@
-import { LinkProps } from "types/Layout"
+import { LinkProps } from "types"
 import DropdownLink from "./DropdownLink"
 
 interface Props {
@@ -18,7 +18,7 @@ export default function Dropdown({ hasDropdown, dropdownItems }: Props) {
 
   // render the dropdown links inside a dropdown container div
   return (
-    <div className="pointer-events-none absolute top-full left-0 h-auto w-auto translate-y-6 whitespace-nowrap rounded-b-lg bg-white py-4 px-4 opacity-0 shadow-lg transition-all duration-100 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+    <div className="pointer-events-none absolute top-full left-0 h-auto w-auto translate-y-6 whitespace-nowrap rounded-b bg-white py-4 px-5 opacity-0 shadow-lg transition-all duration-100 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
       {dropdownLinks}
     </div>
   )

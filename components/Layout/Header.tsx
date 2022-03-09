@@ -11,7 +11,7 @@ export default function Header() {
       <div className="container mx-auto flex items-center">
         <Logo />
         <Nav />
-        <div className="hidden text-right lg:block">
+        <div className="hidden w-24 text-right lg:block">
           <FavouritesButton />
         </div>
         <MobileMenuContextProvider>

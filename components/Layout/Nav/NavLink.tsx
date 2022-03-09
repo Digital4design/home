@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Dropdown from "components/Layout/Nav/Dropdown"
-import { LinkProps } from "types/Layout"
+import { LinkProps } from "types"
 
 interface Props {
   slug: string
@@ -17,7 +17,12 @@ export default function NavLink({
 }: Props) {
   return (
     <Link passHref href={slug}>
-      <div className="group relative mx-4 block w-full cursor-pointer py-6 text-center text-brand-grey-dark after:absolute after:bottom-3 after:left-0 after:right-0 after:hidden after:h-0.5 hover:text-brand-green hover:after:bg-brand-green hover:after:content-[''] lg:inline-block lg:w-auto lg:after:block">
+      <div
+        className={`group relative mx-4 block w-full cursor-pointer py-6 text-center text-brand-grey-dark ${
+          hasDropdown &&
+          "after:absolute after:bottom-3 after:left-0 after:right-0 after:hidden after:h-0.5 hover:after:bg-brand-green hover:after:content-[''] lg:after:block"
+        } hover:text-brand-green  lg:inline-block lg:w-auto `}
+      >
         {/* children holds the text to be displayed */}
         <a>{children}</a>
 

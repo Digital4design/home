@@ -57,3 +57,7 @@ button {
 .container {
   @apply mx-auto;
 }
+
+.container-sm {
+  @apply mx-auto w-full max-w-6xl px-4;
+}
