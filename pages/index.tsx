@@ -127,6 +127,8 @@ export default function Home() {
                     alt=""
                     width="700"
                     height="400"
+                    placeholder="blur"
+                    blurDataURL="https://via.placeholder.com/350x350"
                   />
                 </figure>
               </div>
@@ -144,6 +146,8 @@ export default function Home() {
                     alt=""
                     layout="fill"
                     objectFit="cover"
+                    placeholder="blur"
+                    blurDataURL="https://via.placeholder.com/350x350"
                   />
                 </figure>
               </div>
@@ -154,6 +158,8 @@ export default function Home() {
                     alt=""
                     layout="fill"
                     objectFit="cover"
+                    placeholder="blur"
+                    blurDataURL="https://via.placeholder.com/350x350"
                   />
                 </figure>
               </div>
@@ -164,6 +170,8 @@ export default function Home() {
                     alt=""
                     layout="fill"
                     objectFit="cover"
+                    placeholder="blur"
+                    blurDataURL="https://via.placeholder.com/350x350"
                   />
                 </figure>
               </div>
@@ -174,6 +182,8 @@ export default function Home() {
                     alt=""
                     layout="fill"
                     objectFit="cover"
+                    placeholder="blur"
+                    blurDataURL="https://via.placeholder.com/350x350"
                   />
                 </figure>
               </div>
@@ -184,6 +194,8 @@ export default function Home() {
                     alt=""
                     layout="fill"
                     objectFit="cover"
+                    placeholder="blur"
+                    blurDataURL="https://via.placeholder.com/350x350"
                   />
                 </figure>
               </div>
@@ -194,6 +206,8 @@ export default function Home() {
                     alt=""
                     layout="fill"
                     objectFit="cover"
+                    placeholder="blur"
+                    blurDataURL="https://via.placeholder.com/350x350"
                   />
                 </figure>
               </div>

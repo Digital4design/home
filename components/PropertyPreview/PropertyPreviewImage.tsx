@@ -8,6 +8,8 @@ export default function PropertyPreviewImage() {
         alt=""
         layout="fill"
         objectFit="cover"
+        placeholder="blur"
+        blurDataURL="https://via.placeholder.com/300x300"
       />
     </figure>
   )
