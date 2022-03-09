@@ -9,6 +9,20 @@ module.exports = {
       primary: ["Arial", "sans-serif"],
       secondary: ["Arial", "sans-serif"],
     },
+    borderRadius: {
+      DEFAULT: "12px",
+    },
+
+    fontSize: {
+      "6xl": ["56px", "64px"],
+      "5xl": ["40px", "56px"],
+      "4xl": ["32px", "40px"],
+      "3xl": ["28px", "32px"],
+      "2xl": ["24px", "36px"],
+      xl: ["24px", "32px"],
+      lg: ["20px", "24px"],
+    },
+
     extend: {
       colors: {
         brand: {
@@ -43,4 +57,4 @@ module.exports = {
       },
     },
   },
-}
+};
