@@ -1,29 +1,28 @@
 @tailwind base;
 
 @layer base {
+  body {
+    @apply text-brand-grey-dark;
+  }
+
+  p {
+    @apply text-brand-grey;
+  }
+
   h1 {
-    @apply text-4xl;
-    @apply lg:text-6xl;
-    @apply font-bold;
+    @apply text-4xl font-bold lg:text-6xl;
   }
   h2 {
-    @apply text-3xl;
-    @apply lg:text-5xl;
-    @apply font-bold;
+    @apply text-3xl font-bold lg:text-5xl;
   }
   h3 {
-    @apply text-xl;
-    @apply lg:text-4xl;
-    @apply font-bold;
+    @apply text-xl font-bold lg:text-4xl;
   }
   h4 {
-    @apply text-lg;
-    @apply lg:text-2xl;
-    @apply font-bold;
+    @apply text-lg font-bold lg:text-2xl;
   }
   h5 {
-    @apply lg:text-lg;
-    @apply font-bold;
+    @apply font-bold lg:text-lg;
   }
 }
 

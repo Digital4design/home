@@ -9,24 +9,28 @@ module.exports = {
       primary: ["Arial", "sans-serif"],
       secondary: ["Arial", "sans-serif"],
     },
-    borderRadius: {
-      DEFAULT: "12px",
-    },
-
-    fontSize: {
-      "6xl": ["56px", "64px"],
-      "5xl": ["40px", "56px"],
-      "4xl": ["32px", "40px"],
-      "3xl": ["28px", "32px"],
-      "2xl": ["24px", "36px"],
-      xl: ["24px", "32px"],
-      lg: ["20px", "24px"],
-    },
 
     extend: {
+      borderRadius: {
+        DEFAULT: "12px",
+        sm: "8px",
+      },
+
+      fontSize: {
+        "6xl": ["56px", "64px"],
+        "5xl": ["40px", "56px"],
+        "4xl": ["32px", "40px"],
+        "3xl": ["28px", "32px"],
+        "2xl": ["24px", "36px"],
+        xl: ["24px", "32px"],
+        lg: ["20px", "24px"],
+        base: ["16px", "24px"],
+        sm: ["14px", "20px"],
+        xs: ["12px", "18px"],
+      },
       colors: {
         brand: {
-          "green-light": "hsl(167, 64%, 95%)",
+          "green-light": "hsl(167, 74%, 88%)",
           green: "hsl(166, 81%, 43%)",
           "green-dark": "hsl(166, 64%, 33%)",
           "blue-light": "hsl(200, 32%, 93%)",
