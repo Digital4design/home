@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { LinkProps } from "types"
+import { NavLinkProps } from "types/layout"
 
-export default function DropdownLink({ slug, name }: LinkProps) {
+export default function DropdownLink({ slug, name }: NavLinkProps) {
   return (
     <Link href={slug}>
       <a className="block py-2 text-brand-grey-dark hover:text-brand-green">

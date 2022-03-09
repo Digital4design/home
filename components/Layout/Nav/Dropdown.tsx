@@ -1,9 +1,9 @@
-import { LinkProps } from "types"
+import { NavLinkProps } from "types/layout"
 import DropdownLink from "./DropdownLink"
 
 interface Props {
   hasDropdown: boolean | undefined
-  dropdownItems: LinkProps[] | undefined // array of { slug: string, name: string } or undefined for cases where it's not required
+  dropdownItems: NavLinkProps[] | undefined // array of { slug: string, name: string } or undefined for cases where it's not required
 }
 
 export default function Dropdown({ hasDropdown, dropdownItems }: Props) {
