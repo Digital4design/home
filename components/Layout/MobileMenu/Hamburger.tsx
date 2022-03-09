@@ -4,7 +4,7 @@ import { useContext } from "react"
 export default function Hamburger() {
   const { isOpen, toggleOpen } = useContext(MobileMenuContext)
 
-  const commonClasses =
+  const commonClasses: string =
     "pointer-events-none h-0.5 bg-brand-blue transition-all duration-200 ease-in-out"
 
   return (

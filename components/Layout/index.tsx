@@ -1,11 +1,7 @@
-import { ReactNode } from "react"
+import { ChildrenProps } from "types"
 import Header from "./Header"
 
-interface Props {
-  children: ReactNode
-}
-
-export default function Layout({ children }: Props) {
+export default function Layout({ children }: ChildrenProps) {
   return (
     <>
       <Header />
