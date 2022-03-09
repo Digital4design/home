@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { LinkProps } from "types/Layout"
+import { LinkProps } from "types"
 
 export default function DropdownLink({ slug, name }: LinkProps) {
   return (

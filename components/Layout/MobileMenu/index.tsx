@@ -15,7 +15,7 @@ export default function MobileMenu() {
       role="menu"
       aria-roledescription="Mobile menu"
       aria-label="Mobile menu"
-      className={` absolute top-full left-0 right-0 flex min-h-full flex-col items-center justify-start bg-white pt-20 transition-all duration-500 ease-in-out-expo lg:hidden ${contextClasses}`}
+      className={`absolute top-full left-0 flex h-screen w-full flex-col items-center justify-start overflow-x-hidden overflow-y-scroll bg-white transition-all duration-500 ease-in-out-expo lg:hidden ${contextClasses}`}
     >
       <NavLink slug="/properties">Properties</NavLink>
       <NavLink slug="/properties">How it works</NavLink>
