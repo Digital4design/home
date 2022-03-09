@@ -98,7 +98,7 @@ export default function Home() {
             <div className="flex flex-wrap">
               <div className="mb-12 w-full lg:mb-0 lg:w-1/2">
                 <h3 className="mb-6 text-xl">
-                  If buying outright isn't an option for you
+                  If buying outright isn&apos;t an option for you
                 </h3>
                 <p className="mb-6 font-light leading-7 text-brand-grey">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
