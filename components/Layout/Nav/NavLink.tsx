@@ -1,12 +1,12 @@
 import Link from "next/link"
 import Dropdown from "components/Layout/Nav/Dropdown"
-import { LinkProps } from "types"
+import { NavLinkProps } from "types/layout"
 
 interface Props {
   slug: string
   children: string
   hasDropdown?: boolean
-  dropdownItems?: LinkProps[] // Array of { slug: string, name: string }
+  dropdownItems?: NavLinkProps[] // Array of { slug: string, name: string }
 }
 
 export default function NavLink({
