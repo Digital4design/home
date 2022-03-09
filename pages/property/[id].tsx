@@ -8,7 +8,7 @@ import RelatedProperties from "components/propertyDetails/RelatedProperties";
 
 function PropertyDetails() {
   return (
-    <div>
+    <div className="container">
       <Announcement />
       <Header />
       <Gallery />
