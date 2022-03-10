@@ -5,6 +5,8 @@ import Link from "next/link"
 import Image from "next/image"
 import PropertyCarousel from "components/PropertyCarousel"
 import BrowseByAreaCard from "components/BrowseByAreaCard"
+import Paragraph from "components/global/Paragraph"
+import ParagraphHeading from "components/global/Paragraph/ParagraphHeading"
 
 export default function Home() {
   return (
@@ -70,28 +72,28 @@ export default function Home() {
             </h2>
             <div className="flex flex-wrap">
               <div className="mb-12 w-full lg:mb-0 lg:w-1/2">
-                <h3 className="mb-6 text-xl">
+                <ParagraphHeading>
                   If buying outright isn&apos;t an option for you
-                </h3>
-                <p className="mb-6 font-light leading-7 text-brand-grey">
+                </ParagraphHeading>
+                <Paragraph>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Necessitatibus fugiat corrupti eos! Excepturi, corrupti
                   dignissimos dolorum cumque repellendus numquam assumenda, est
                   ut ullam nesciunt minus. Et in nisi sed tempora. Excepturi,
                   corrupti dignissimos dolorum cumque repellendus numquam
                   assumenda.
-                </p>
-                <p className="mb-6 font-light leading-7 text-brand-grey">
+                </Paragraph>
+                <Paragraph>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Necessitatibus fugiat corrupti eos! Excepturi, corrupti
                   dignissimos dolorum cumque repellendus numquam assumenda, est
                   ut ullam nesciunt minus. Et in nisi sed tempora.
-                </p>
-                <p>
+                </Paragraph>
+                <Paragraph>
                   <Link href="/">
                     <a>Learn more</a>
                   </Link>
-                </p>
+                </Paragraph>
               </div>
               <div className="relative w-full lg:w-1/2">
                 <figure className="lg:absolute lg:-right-1/2">

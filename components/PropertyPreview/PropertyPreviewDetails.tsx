@@ -23,7 +23,7 @@ export default function PropertyPreviewDetails({
       </span>
       <span className="flex items-center  text-sm">
         <LibraryIcon className="mr-4 h-4 w-4 text-brand-green" />
-        {address}
+        {beds}
       </span>
     </div>
   )

@@ -39,7 +39,7 @@ export default function PropertyCarousel({ children }: ChildrenProps) {
 
   // children of this component should be PropertyPreview components.
   return (
-    <div className="swiper h-[350px] w-full">
+    <div className="swiper h-[350px] w-full px-3">
       <div className="swiper-wrapper h-full w-full">{children}</div>
     </div>
   )
