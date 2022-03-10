@@ -1,7 +1,11 @@
-import React from "react";
+import SectionHeading from "components/global/sectionHeading";
 
 function KeyFeatures() {
-  return <div>KeyFeatures</div>;
+  return (
+    <section>
+      <SectionHeading heading="Key Features" />
+    </section>
+  );
 }
 
 export default KeyFeatures;

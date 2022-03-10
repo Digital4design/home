@@ -1,6 +1,14 @@
 @tailwind base;
 
 @layer base {
+  body {
+    @apply text-brand-grey-dark;
+  }
+
+  p {
+    @apply text-brand-grey;
+  }
+
   h1 {
     @apply text-4xl font-bold lg:text-6xl;
   }
