@@ -3,7 +3,7 @@ import {
   LocationMarkerIcon,
   MapIcon,
 } from "@heroicons/react/outline"
-import { PropertyPreviewProps } from "."
+import { PropertyPreviewProps } from "types/property"
 
 export default function PropertyPreviewDetails({
   title,

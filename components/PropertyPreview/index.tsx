@@ -1,18 +1,13 @@
+import { PropertyPreviewProps } from "types/property"
 import PropertyPreviewDetails from "./PropertyPreviewDetails"
 import PropertyPreviewImage from "./PropertyPreviewImage"
-
-export interface PropertyPreviewProps {
-  title: string
-  address: string
-  beds: string
-  shares: number
-}
 
 export default function PropertyPreview({
   title,
   address,
   beds,
   shares,
+  isSlide,
 }: PropertyPreviewProps) {
   return (
     <div className="swiper-slide h-auto w-1/3">
