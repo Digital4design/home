@@ -8,6 +8,7 @@ import HowItWorks from "components/propertyDetails/howItWorks";
 import KeyFeatures from "components/propertyDetails/keyFeatures";
 import Pricing from "components/propertyDetails/pricing";
 import RelatedProperties from "components/propertyDetails/RelatedProperties";
+import mainAccordionData from "../../components/propertyDetails/accordion/mainAccordionData";
 
 function PropertyDetails() {
   return (
@@ -20,7 +21,7 @@ function PropertyDetails() {
           <Pricing classes="lg:hidden" />
           <About />
           <KeyFeatures />
-          <Accordion />
+          <Accordion data={mainAccordionData} />
           <RelatedProperties heading="Other homes available at this development" />
           <RelatedProperties heading="Homes you may also like in the area" />
         </main>

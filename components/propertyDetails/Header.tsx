@@ -5,7 +5,7 @@ import { LocationMarkerIcon } from "@heroicons/react/outline";
 function Header() {
   return (
     <header className="py-3">
-      <Link href="/">
+      <Link passHref href="/">
         <p className="mb-2 cursor-pointer text-sm text-brand-blue-dark hover:text-brand-blue">
           {"<"} Back to search
         </p>
@@ -18,7 +18,7 @@ function Header() {
             <p className="text-brand-green">Golborne, Wigan, WA3 3EG</p>
           </div>
         </div>
-        <div className="relative h-20 w-20 ">
+        <div className="relative hidden h-20 w-20 lg:block">
           <Image
             alt="Taylor Wimpey"
             src="/assets/image/tw.png"
