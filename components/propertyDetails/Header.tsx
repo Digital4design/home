@@ -18,7 +18,7 @@ function Header() {
             <p className="text-brand-green">Golborne, Wigan, WA3 3EG</p>
           </div>
         </div>
-        <div className="relative h-20 w-20 ">
+        <div className="relative hidden h-20 w-20 lg:block">
           <Image
             alt="Taylor Wimpey"
             src="/assets/image/tw.png"
