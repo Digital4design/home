@@ -1,6 +1,5 @@
 import Accordion from "../accordion";
 import PriceItem from "./PriceItem";
-import pricingAccordionData from "../accordion/pricingAccordionData";
 
 interface PropTypes {
   classes?: string;
