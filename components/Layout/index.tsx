@@ -1,11 +1,13 @@
 import { ChildrenProps } from "types"
-import Header from "./Header"
+import Footer from "components/Layout/Footer"
+import Header from "components/Layout/Header"
 
 export default function Layout({ children }: ChildrenProps) {
   return (
     <>
       <Header />
       {children}
+      <Footer />
     </>
   )
 }

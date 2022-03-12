@@ -20,11 +20,11 @@ interface Props {
  * @prop blurDataURL - a lower res image URL for lazy load placeholder
  * @prop padding - a number corresponding to a tailwind class i.e. 3 for p-3
  * @prop height - a tailwindcss height class, default h-[350px] if not provided
- * @prop width - a tailwindcss width class, default w-1/3 if not provided
+ * @prop width - a tailwindcss width class, default w-full md:w-1/3 if not provided.
  * @prop area - the name of the area
  * @prop numOfProperties - the number of properties in the area
  * @prop url - the url the card should link to
- * @returns
+ * @returns a card component with an image, and an area name
  */
 
 export default function BrowseByAreaCard({
@@ -33,7 +33,7 @@ export default function BrowseByAreaCard({
   blurDataURL,
   padding = 3,
   height = "h-[350px]",
-  width = "w-1/3",
+  width = "w-full md:w-1/3",
   area,
   numOfProperties,
   url,

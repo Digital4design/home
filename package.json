@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "focus-trap-react": "^8.9.2",
     "framer-motion": "^6.2.8",
     "next": "12.1.0",
     "prettier-plugin-tailwindcss": "^0.1.8",
@@ -21,7 +23,9 @@
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.13",
     "autoprefixer": "^10.4.2",
+    "better-docs": "^2.7.2",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
     "postcss": "^8.4.8",
