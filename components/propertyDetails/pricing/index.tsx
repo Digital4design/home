@@ -54,6 +54,7 @@ function Pricing({ classes }: PropTypes) {
           value={item.value}
           tooltip={item.tooltip}
           featured={item.featured}
+          key={index}
         />
       ))}
       <Accordion heading="Est. household income required">

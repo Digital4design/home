@@ -5,7 +5,7 @@ import { LocationMarkerIcon } from "@heroicons/react/outline";
 function Header() {
   return (
     <header className="py-3">
-      <Link href="/">
+      <Link passHref href="/">
         <p className="mb-2 cursor-pointer text-sm text-brand-blue-dark hover:text-brand-blue">
           {"<"} Back to search
         </p>
