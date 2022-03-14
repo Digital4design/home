@@ -8,8 +8,17 @@ interface ModalProps {
   overlayClick?: () => void
   children: ReactNode
   isOpen: boolean
-  handleClose?: () => void
+  handleClose: () => void
 }
+
+/**
+ *
+ * @param props.overlayClick - this can be used if you need to pass a specific function to the overlay click event. If not provided, handleClose will be used
+ * @param props.children - any content you need to place within the modal
+ * @param props.isOpen - the state of the modal which comes from the useModal hook
+ * @param props.handleClose - the function used to close the modal/set isOpen to false, comes from the useModal hook
+ * @returns a modal portal with trapped focus
+ */
 
 export default function Modal({
   overlayClick,
@@ -41,7 +50,7 @@ export default function Modal({
           )
           <div
             className="overlay absolute inset-0 bg-brand-blue bg-opacity-40"
-            onClick={handleClose}
+            onClick={overlayClick || handleClose}
           ></div>
         </div>
       </FocusTrap>

@@ -12,6 +12,7 @@ import useModal from "hooks/useModal"
 
 export default function Home() {
   const { modalIsOpen, closeModal, openModal } = useModal()
+
   return (
     <div className="bg-white">
       <Head>
@@ -194,6 +195,8 @@ export default function Home() {
                 alt="Video placeholder"
                 layout="fill"
                 objectFit="cover"
+                placeholder="blur"
+                blurDataURL="https://via.placeholder.com/300x300"
               />
             </figure>
           </div>
