@@ -7,8 +7,12 @@ import PropertyCarousel from "components/PropertyCarousel"
 import BrowseByAreaCard from "components/BrowseByAreaCard"
 import Paragraph from "components/global/Paragraph"
 import ParagraphHeading from "components/global/Paragraph/ParagraphHeading"
+import Modal from "components/Modal"
+import useModal from "hooks/useModal"
 
 export default function Home() {
+  const { modalIsOpen, closeModal, openModal } = useModal()
+
   return (
     <div className="bg-white">
       <Head>
@@ -112,7 +116,7 @@ export default function Home() {
         </section>
         <section className="pt-32">
           <div className="container-sm">
-            <h2 className="mb-24 text-center">Browse properties by area</h2>
+            <h2 className="mb-32 text-center">Browse properties by area</h2>
             <div className="flex flex-wrap">
               <BrowseByAreaCard
                 src="https://via.placeholder.com/350x350"
@@ -165,19 +169,73 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="pt-32">
-          <div className="container-sm">
+        <section className="mt-36 bg-brand-grey-light pt-24">
+          <Modal
+            isOpen={modalIsOpen}
+            handleClose={closeModal}
+            overlayClick={closeModal}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/ScMzIvxBSi4"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="h-[450px] w-full rounded"
+            ></iframe>
+          </Modal>
+          <div className="container-sm h-[350px]">
             <h2 className="text-center">Learn more about Home Reach</h2>
+            <figure
+              className="mx-auto h-[400px] w-2/3 translate-y-[100px] overflow-hidden rounded shadow-xl"
+              onClick={openModal}
+            >
+              <Image
+                src="https://via.placeholder.com/800x800"
+                alt="Video placeholder"
+                layout="fill"
+                objectFit="cover"
+                placeholder="blur"
+                blurDataURL="https://via.placeholder.com/300x300"
+              />
+            </figure>
           </div>
         </section>
-        <section className="pt32">
+        <section className="pt-64">
           <div className="container-sm">
             <h2 className="text-center">What our customers say</h2>
           </div>
         </section>
-        <section className="pt-32">
-          <div className="container-sm">
-            <h2 className="text-center">First time buyer and need help?</h2>
+        <section className="bg-brand-grey-light py-32">
+          <div className="container">
+            <h2 className="mb-24 text-center">
+              First time buyer and need help?
+            </h2>
+            <div className="flex flex-wrap">
+              <div className="w-1/2">
+                <figure className="relative h-[300px] w-full">
+                  <Image
+                    src="https://via.placeholder.com/600x600"
+                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </figure>
+              </div>
+              <div className="w-1/2">
+                <Paragraph>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Eveniet molestias, cumque nihil saepe dolor impedit,
+                  laboriosam repudiandae nulla vel suscipit quas enim atque
+                  placeat dicta veniam aspernatur autem consectetur nobis!
+                </Paragraph>
+                <Paragraph>
+                  <Link href="/">
+                    <a>Learn more</a>
+                  </Link>
+                </Paragraph>
+              </div>
+            </div>
           </div>
         </section>
       </main>
