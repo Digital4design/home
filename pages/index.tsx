@@ -34,30 +34,36 @@ export default function Home() {
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
                 shares={35}
+                price={"30,964"}
+                tooltip="Some information here"
               />
               <PropertyPreview
                 title="Rothwells Farm - Gosford"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
                 shares={35}
+                price={"30,964"}
               />
               <PropertyPreview
                 title="Whittingham Palace - Firefly"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
                 shares={35}
+                price={"30,964"}
               />
               <PropertyPreview
                 title="Example One"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
                 shares={35}
+                price={"30,964"}
               />
               <PropertyPreview
                 title="Example Two"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
                 shares={35}
+                price={"30,964"}
               />
             </PropertyCarousel>
             <div className="swiper-button-prev translate-y-10 translate-x-5 xl:-translate-x-14"></div>

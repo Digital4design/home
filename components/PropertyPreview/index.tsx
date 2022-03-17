@@ -8,6 +8,8 @@ export default function PropertyPreview({
   beds,
   shares,
   isSlide,
+  price,
+  tooltip,
 }: PropertyPreviewProps) {
   return (
     <div className="swiper-slide h-auto w-1/3">
@@ -18,6 +20,8 @@ export default function PropertyPreview({
           address={address}
           beds={beds}
           shares={shares}
+          price={price}
+          tooltip={tooltip}
         />
       </div>
     </div>
