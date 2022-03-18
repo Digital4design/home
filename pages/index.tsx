@@ -32,6 +32,9 @@ export default function Home() {
             <h2 className="mb-16 text-center">Featured developments</h2>
             <PropertyCarousel>
               <PropertyPreview
+                image="/assets/placeholder/house-1.jpg"
+                alt=""
+                placeholder="/assets/placeholder/house-1.jpg"
                 title="Whittingham Park - The Fircroft"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
@@ -40,6 +43,9 @@ export default function Home() {
                 tooltip="Some information here"
               />
               <PropertyPreview
+                image="/assets/placeholder/house-2.jpg"
+                alt=""
+                placeholder="/assets/placeholder/house-2.jpg"
                 title="Rothwells Farm - Gosford"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
@@ -48,6 +54,9 @@ export default function Home() {
                 tooltip="Some information here"
               />
               <PropertyPreview
+                image="/assets/placeholder/house-3.jpg"
+                alt=""
+                placeholder="/assets/placeholder/house-3.jpg"
                 title="Whittingham Palace - Firefly"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
@@ -56,6 +65,9 @@ export default function Home() {
                 tooltip="Some information here"
               />
               <PropertyPreview
+                image="/assets/placeholder/house-1.jpg"
+                alt=""
+                placeholder="/assets/placeholder/house-1.jpg"
                 title="Example One"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
@@ -64,6 +76,9 @@ export default function Home() {
                 tooltip="Some information here"
               />
               <PropertyPreview
+                image="/assets/placeholder/house-2.jpg"
+                alt=""
+                placeholder="/assets/placeholder/house-2.jpg"
                 title="Example Two"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"

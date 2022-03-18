@@ -1,15 +1,25 @@
 import Image from "next/image"
 
-export default function PropertyPreviewImage() {
+interface Props {
+  image: string
+  alt: string
+  placeholder: string
+}
+
+export default function PropertyPreviewImage({
+  image,
+  alt,
+  placeholder,
+}: Props) {
   return (
     <figure className="relative h-[220px] w-full">
       <Image
-        src="https://via.placeholder.com/400x300"
-        alt=""
+        src={image}
+        alt={alt}
         layout="fill"
         objectFit="cover"
         placeholder="blur"
-        blurDataURL="https://via.placeholder.com/300x300"
+        blurDataURL={placeholder}
       />
     </figure>
   )
