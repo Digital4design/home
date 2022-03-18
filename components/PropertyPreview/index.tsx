@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 import { PropertyPreviewProps } from "types/property"
 import PropertyPreviewDetails from "./PropertyPreviewDetails"
 import PropertyPreviewImage from "./PropertyPreviewImage"
@@ -11,9 +12,13 @@ export default function PropertyPreview({
   price,
   tooltip,
 }: PropertyPreviewProps) {
+  const router = useRouter()
   return (
     <div className="swiper-slide h-auto w-1/3">
-      <div className=" min-h-[300px] overflow-hidden rounded bg-white shadow-lg">
+      <div
+        className=" min-h-[300px] overflow-hidden rounded bg-white shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
+        onClick={() => router.push("/property/test")}
+      >
         <PropertyPreviewImage />
         <PropertyPreviewDetails
           title={title}

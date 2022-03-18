@@ -12,7 +12,7 @@ interface Screen {
     screens?: Screens
   }
 
-  export interface Props {
+  export interface CarouselProps {
     children: ReactNode
     options?: Options
   }
