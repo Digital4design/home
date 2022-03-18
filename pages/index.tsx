@@ -10,6 +10,7 @@ import ParagraphHeading from "components/global/Paragraph/ParagraphHeading"
 import Modal from "components/Modal"
 import useModal from "hooks/useModal"
 import Explore from "components/Explore"
+import SearchAndFilters from "components/SearchAndFilters"
 
 export default function Home() {
   const { modalIsOpen, closeModal, openModal } = useModal()
@@ -23,7 +24,7 @@ export default function Home() {
       </Head>
       <MainBanner>
         <h1 className="mb-12">Find your perfect home!</h1>
-        <div className="mx-auto h-20 w-full rounded bg-brand-blue"></div>
+        <SearchAndFilters />
       </MainBanner>
       <main role="main">
         <section className="pt-32">
@@ -111,9 +112,9 @@ export default function Home() {
                 </Paragraph>
               </div>
               <div className="relative w-full lg:w-1/2">
-                <figure className="lg:absolute lg:-right-1/2">
+                <figure className="lg:absolute lg:-right-1/4">
                   <Image
-                    src="https://via.placeholder.com/600x400"
+                    src="/assets/hr-part-buy-part-rent.jpg"
                     alt=""
                     width="700"
                     height="400"
@@ -130,7 +131,7 @@ export default function Home() {
             <h2 className="mb-32 text-center">Browse properties by area</h2>
             <div className="flex flex-wrap">
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/north-england.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="North England"
@@ -138,7 +139,7 @@ export default function Home() {
                 url="/area/north-england"
               />
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/south-england.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="South England"
@@ -146,7 +147,7 @@ export default function Home() {
                 url="/area/south-england"
               />
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/west-england.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="West England"
@@ -154,7 +155,7 @@ export default function Home() {
                 url="/area/west-england"
               />
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/east-england.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="East England"
@@ -162,7 +163,7 @@ export default function Home() {
                 url="/area/east-england"
               />
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/north-wales.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="North Wales"
@@ -170,7 +171,7 @@ export default function Home() {
                 url="/area/north-wales"
               />
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/south-wales.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="South Wales"
@@ -222,12 +223,12 @@ export default function Home() {
             <h2 className="mb-24 text-center">
               First time buyer and need help?
             </h2>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap items-center">
               <div className="w-1/2">
                 <figure className="relative h-[300px] w-full">
                   <Image
-                    src="https://via.placeholder.com/600x600"
-                    alt=""
+                    src="/assets/hr-first-time-buyer.png"
+                    alt="First time buyer and need help?"
                     layout="fill"
                     objectFit="cover"
                   />

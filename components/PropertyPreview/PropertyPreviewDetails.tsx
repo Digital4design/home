@@ -1,8 +1,4 @@
-import {
-  LibraryIcon,
-  LocationMarkerIcon,
-  MapIcon,
-} from "@heroicons/react/outline"
+import { LibraryIcon, LocationMarkerIcon } from "@heroicons/react/outline"
 import Tooltip from "components/propertyDetails/tooltip"
 import { PropertyPreviewProps } from "types/property"
 

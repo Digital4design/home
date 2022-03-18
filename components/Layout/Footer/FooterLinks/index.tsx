@@ -8,7 +8,7 @@ export default function FooterLinks() {
     <div className="flex flex-wrap py-16 pt-20">
       <div className="flex w-2/12 flex-col">
         <FooterHeading value="Explore" />
-        <FooterLink href="/" value="Properties" />
+        <FooterLink href="/properties" value="Properties" />
         <FooterLink href="/" value="About us" />
         <FooterLink href="/" value="Blog" />
         <FooterLink href="/" value="Contact" />
