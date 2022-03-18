@@ -1,9 +1,14 @@
-import Explore from "components/Layout/Footer/Explore"
+import FooterBottom from "./FooterBottom"
+import FooterLinks from "./FooterLinks"
 
 export default function Footer() {
   return (
-    <>
-      <Explore />
-    </>
+    <footer className="bg-brand-grey-light">
+      <div className="container-sm">
+        <FooterLinks />
+        <hr />
+        <FooterBottom />
+      </div>
+    </footer>
   )
 }

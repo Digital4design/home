@@ -1,8 +1,8 @@
-import ReactTooltip from "react-tooltip";
+import ReactTooltip from "react-tooltip"
 
 interface PropTypes {
-  children: any;
-  body: string;
+  children: any
+  body: string
 }
 
 /**
@@ -20,13 +20,13 @@ function Tooltip({ children, body }: PropTypes) {
       <ReactTooltip
         id={body}
         effect="solid"
-        place="bottom"
+        place="left"
         backgroundColor="hsl(199, 100%, 24%)"
       >
         <p className="max-w-xs bg-brand-blue text-white">{body}</p>
       </ReactTooltip>
     </>
-  );
+  )
 }
 
-export default Tooltip;
+export default Tooltip

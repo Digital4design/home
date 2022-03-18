@@ -9,6 +9,7 @@ import Paragraph from "components/global/Paragraph"
 import ParagraphHeading from "components/global/Paragraph/ParagraphHeading"
 import Modal from "components/Modal"
 import useModal from "hooks/useModal"
+import Explore from "components/Explore"
 
 export default function Home() {
   const { modalIsOpen, closeModal, openModal } = useModal()
@@ -34,30 +35,40 @@ export default function Home() {
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
                 shares={35}
+                price={"30,964"}
+                tooltip="Some information here"
               />
               <PropertyPreview
                 title="Rothwells Farm - Gosford"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
                 shares={35}
+                price={"30,964"}
+                tooltip="Some information here"
               />
               <PropertyPreview
                 title="Whittingham Palace - Firefly"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
                 shares={35}
+                price={"30,964"}
+                tooltip="Some information here"
               />
               <PropertyPreview
                 title="Example One"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
                 shares={35}
+                price={"30,964"}
+                tooltip="Some information here"
               />
               <PropertyPreview
                 title="Example Two"
                 address="24 Home Street, Lancashire, LC24 5ST"
                 beds="4 bedroom house"
                 shares={35}
+                price={"30,964"}
+                tooltip="Some information here"
               />
             </PropertyCarousel>
             <div className="swiper-button-prev translate-y-10 translate-x-5 xl:-translate-x-14"></div>
@@ -239,6 +250,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Explore />
     </div>
   )
 }
