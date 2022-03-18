@@ -12,8 +12,12 @@ import useModal from "hooks/useModal"
 import Explore from "components/Explore"
 import SearchAndFilters from "components/SearchAndFilters"
 
+// mock data
+import mockData from "../mockProperties.json"
+
 export default function Home() {
   const { modalIsOpen, closeModal, openModal } = useModal()
+  const { properties } = mockData
 
   return (
     <div className="bg-white">
@@ -31,61 +35,21 @@ export default function Home() {
           <div className="container-sm relative flex flex-col items-center">
             <h2 className="mb-16 text-center">Featured developments</h2>
             <PropertyCarousel>
-              <PropertyPreview
-                image="/assets/placeholder/house-1.jpg"
-                alt=""
-                placeholder="/assets/placeholder/house-1.jpg"
-                title="Whittingham Park - The Fircroft"
-                address="24 Home Street, Lancashire, LC24 5ST"
-                beds="4 bedroom house"
-                shares={35}
-                price={"30,964"}
-                tooltip="Some information here"
-              />
-              <PropertyPreview
-                image="/assets/placeholder/house-2.jpg"
-                alt=""
-                placeholder="/assets/placeholder/house-2.jpg"
-                title="Rothwells Farm - Gosford"
-                address="24 Home Street, Lancashire, LC24 5ST"
-                beds="4 bedroom house"
-                shares={35}
-                price={"30,964"}
-                tooltip="Some information here"
-              />
-              <PropertyPreview
-                image="/assets/placeholder/house-3.jpg"
-                alt=""
-                placeholder="/assets/placeholder/house-3.jpg"
-                title="Whittingham Palace - Firefly"
-                address="24 Home Street, Lancashire, LC24 5ST"
-                beds="4 bedroom house"
-                shares={35}
-                price={"30,964"}
-                tooltip="Some information here"
-              />
-              <PropertyPreview
-                image="/assets/placeholder/house-1.jpg"
-                alt=""
-                placeholder="/assets/placeholder/house-1.jpg"
-                title="Example One"
-                address="24 Home Street, Lancashire, LC24 5ST"
-                beds="4 bedroom house"
-                shares={35}
-                price={"30,964"}
-                tooltip="Some information here"
-              />
-              <PropertyPreview
-                image="/assets/placeholder/house-2.jpg"
-                alt=""
-                placeholder="/assets/placeholder/house-2.jpg"
-                title="Example Two"
-                address="24 Home Street, Lancashire, LC24 5ST"
-                beds="4 bedroom house"
-                shares={35}
-                price={"30,964"}
-                tooltip="Some information here"
-              />
+              {properties.map((property) => (
+                <PropertyPreview
+                  isSlide
+                  image={property.image}
+                  alt={property.alt}
+                  placeholder={property.placeholder}
+                  title={property.title}
+                  address={property.address}
+                  beds={property.beds}
+                  shares={property.shares}
+                  price={property.price}
+                  tooltip={property.tooltip}
+                  key={property.title}
+                />
+              ))}
             </PropertyCarousel>
             <div className="swiper-button-prev translate-y-10 translate-x-5 xl:-translate-x-14"></div>
             <div className="swiper-button-next translate-y-10 -translate-x-5 xl:translate-x-14"></div>

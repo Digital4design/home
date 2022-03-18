@@ -20,7 +20,7 @@ function Tooltip({ children, body }: PropTypes) {
       <ReactTooltip
         id={body}
         effect="solid"
-        place="left"
+        place="bottom"
         backgroundColor="hsl(199, 100%, 24%)"
       >
         <p className="max-w-xs bg-brand-blue text-white">{body}</p>

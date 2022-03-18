@@ -12,7 +12,7 @@ export default function PropertyPreviewImage({
   placeholder,
 }: Props) {
   return (
-    <figure className="relative h-[220px] w-full">
+    <figure className="relative h-[220px] w-full overflow-hidden rounded-t">
       <Image
         src={image}
         alt={alt}
