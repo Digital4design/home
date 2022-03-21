@@ -54,7 +54,7 @@ export default function Modal({
               <motion.div
                 animate={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
-                transition={{ duration: 0.5, type: "tween" }}
+                transition={{ duration: 0.3, type: "tween" }}
                 exit={{ opacity: 0 }}
                 className="overlay absolute inset-0 bg-brand-blue bg-opacity-50 filter backdrop-blur-md backdrop-filter"
                 onClick={overlayClick || handleClose}
