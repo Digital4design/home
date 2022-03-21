@@ -107,7 +107,7 @@ export default function Home() {
         </section>
         <section className="pt-32">
           <div className="container-sm">
-            <h2 className="mb-32 text-center">Browse properties by area</h2>
+            <h2 className="mb-16 text-center">Browse properties by area</h2>
             <div className="flex flex-wrap">
               <BrowseByAreaCard
                 src="/assets/placeholder/north-england.jpg"
@@ -178,7 +178,7 @@ export default function Home() {
           <div className="container-sm h-[350px]">
             <h2 className="text-center">Learn more about Home Reach</h2>
             <figure
-              className="mx-auto h-[400px] w-2/3 translate-y-[100px] overflow-hidden rounded shadow-xl"
+              className="mx-auto h-[400px] w-2/3 translate-y-[100px] cursor-pointer overflow-hidden rounded shadow-xl"
               onClick={openModal}
             >
               <Image
@@ -192,9 +192,10 @@ export default function Home() {
             </figure>
           </div>
         </section>
-        <section className="pt-64">
+        <section className="mt-[100px] pt-64">
           <div className="container-sm">
             <h2 className="text-center">What our customers say</h2>
+            <div className="h-[400px]"></div>
           </div>
         </section>
         <section className="bg-brand-grey-light py-32">

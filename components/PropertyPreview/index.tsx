@@ -23,7 +23,7 @@ export default function PropertyPreview({
 }: Props) {
   const router = useRouter()
   return (
-    <div className={`${isSlide && "swiper-slide"} h-auto w-1/3`}>
+    <div className={`${isSlide && "swiper-slide"} h-auto w-1/3 cursor-pointer`}>
       <div
         className="min-h-[300px] rounded bg-white shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
         onClick={() => router.push("/property/test")}
