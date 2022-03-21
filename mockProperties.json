@@ -1,0 +1,59 @@
+{
+  "properties": [
+    {
+      "image": "/assets/placeholder/house-1.jpg",
+      "alt": "",
+      "placeholder": "/assets/placeholder/house-1.jpg",
+      "title": "Whittingham Park - The Fircroft",
+      "address": "24 Home Street, Lancashire, LC24 5ST",
+      "beds": "4 bedroom house",
+      "shares": 35,
+      "price": "30,964",
+      "tooltip": "Some information"
+    },
+    {
+      "image": "/assets/placeholder/house-2.jpg",
+      "alt": "",
+      "placeholder": "/assets/placeholder/house-2.jpg",
+      "title": "Rothwells Farm - Gosford",
+      "address": "24 Home Street, Lancashire, LC24 5ST",
+      "beds": "4 bedroom house",
+      "shares": 35,
+      "price": "30,964",
+      "tooltip": "Lovely property"
+    },
+    {
+      "image": "/assets/placeholder/house-3.jpg",
+      "alt": "",
+      "placeholder": "/assets/placeholder/house-3.jpg",
+      "title": "Whittingham Palace - Firefly",
+      "address": "24 Home Street, Lancashire, LC24 5ST",
+      "beds": "4 bedroom house",
+      "shares": 35,
+      "price": "30,964",
+      "tooltip": "Yes this info should be unique"
+    },
+    {
+      "image": "/assets/placeholder/house-1.jpg",
+      "alt": "",
+      "placeholder": "/assets/placeholder/house-1.jpg",
+      "title": "Whittingham Park - The Fircroft",
+      "address": "24 Home Street, Lancashire, LC24 5ST",
+      "beds": "4 bedroom house",
+      "shares": 35,
+      "price": "30,964",
+      "tooltip": "But what if it isn't?"
+    },
+    {
+      "image": "/assets/placeholder/house-2.jpg",
+      "alt": "",
+      "placeholder": "/assets/placeholder/house-2.jpg",
+      "title": "Rothwells Farm - Gosford",
+      "address": "24 Home Street, Lancashire, LC24 5ST",
+      "beds": "4 bedroom house",
+      "shares": 35,
+      "price": "30,964",
+      "tooltip": "Unique tooltip text"
+    }
+  ]
+}

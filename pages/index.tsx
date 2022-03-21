@@ -10,9 +10,14 @@ import ParagraphHeading from "components/global/Paragraph/ParagraphHeading"
 import Modal from "components/Modal"
 import useModal from "hooks/useModal"
 import Explore from "components/Explore"
+import SearchAndFilters from "components/SearchAndFilters"
+
+// mock data
+import mockData from "../mockProperties.json"
 
 export default function Home() {
   const { modalIsOpen, closeModal, openModal } = useModal()
+  const { properties } = mockData
 
   return (
     <div className="bg-white">
@@ -23,53 +28,28 @@ export default function Home() {
       </Head>
       <MainBanner>
         <h1 className="mb-12">Find your perfect home!</h1>
-        <div className="mx-auto h-20 w-full rounded bg-brand-blue"></div>
+        <SearchAndFilters />
       </MainBanner>
       <main role="main">
         <section className="pt-32">
           <div className="container-sm relative flex flex-col items-center">
             <h2 className="mb-16 text-center">Featured developments</h2>
             <PropertyCarousel>
-              <PropertyPreview
-                title="Whittingham Park - The Fircroft"
-                address="24 Home Street, Lancashire, LC24 5ST"
-                beds="4 bedroom house"
-                shares={35}
-                price={"30,964"}
-                tooltip="Some information here"
-              />
-              <PropertyPreview
-                title="Rothwells Farm - Gosford"
-                address="24 Home Street, Lancashire, LC24 5ST"
-                beds="4 bedroom house"
-                shares={35}
-                price={"30,964"}
-                tooltip="Some information here"
-              />
-              <PropertyPreview
-                title="Whittingham Palace - Firefly"
-                address="24 Home Street, Lancashire, LC24 5ST"
-                beds="4 bedroom house"
-                shares={35}
-                price={"30,964"}
-                tooltip="Some information here"
-              />
-              <PropertyPreview
-                title="Example One"
-                address="24 Home Street, Lancashire, LC24 5ST"
-                beds="4 bedroom house"
-                shares={35}
-                price={"30,964"}
-                tooltip="Some information here"
-              />
-              <PropertyPreview
-                title="Example Two"
-                address="24 Home Street, Lancashire, LC24 5ST"
-                beds="4 bedroom house"
-                shares={35}
-                price={"30,964"}
-                tooltip="Some information here"
-              />
+              {properties.map((property) => (
+                <PropertyPreview
+                  isSlide
+                  image={property.image}
+                  alt={property.alt}
+                  placeholder={property.placeholder}
+                  title={property.title}
+                  address={property.address}
+                  beds={property.beds}
+                  shares={property.shares}
+                  price={property.price}
+                  tooltip={property.tooltip}
+                  key={property.title}
+                />
+              ))}
             </PropertyCarousel>
             <div className="swiper-button-prev translate-y-10 translate-x-5 xl:-translate-x-14"></div>
             <div className="swiper-button-next translate-y-10 -translate-x-5 xl:translate-x-14"></div>
@@ -111,9 +91,9 @@ export default function Home() {
                 </Paragraph>
               </div>
               <div className="relative w-full lg:w-1/2">
-                <figure className="lg:absolute lg:-right-1/2">
+                <figure className="lg:absolute lg:-right-1/4">
                   <Image
-                    src="https://via.placeholder.com/600x400"
+                    src="/assets/hr-part-buy-part-rent.jpg"
                     alt=""
                     width="700"
                     height="400"
@@ -127,10 +107,10 @@ export default function Home() {
         </section>
         <section className="pt-32">
           <div className="container-sm">
-            <h2 className="mb-32 text-center">Browse properties by area</h2>
+            <h2 className="mb-16 text-center">Browse properties by area</h2>
             <div className="flex flex-wrap">
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/north-england.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="North England"
@@ -138,7 +118,7 @@ export default function Home() {
                 url="/area/north-england"
               />
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/south-england.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="South England"
@@ -146,7 +126,7 @@ export default function Home() {
                 url="/area/south-england"
               />
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/west-england.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="West England"
@@ -154,7 +134,7 @@ export default function Home() {
                 url="/area/west-england"
               />
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/east-england.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="East England"
@@ -162,7 +142,7 @@ export default function Home() {
                 url="/area/east-england"
               />
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/north-wales.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="North Wales"
@@ -170,7 +150,7 @@ export default function Home() {
                 url="/area/north-wales"
               />
               <BrowseByAreaCard
-                src="https://via.placeholder.com/350x350"
+                src="/assets/placeholder/south-wales.jpg"
                 alt=""
                 blurDataURL="https://via.placeholder.com/350x350"
                 area="South Wales"
@@ -198,7 +178,7 @@ export default function Home() {
           <div className="container-sm h-[350px]">
             <h2 className="text-center">Learn more about Home Reach</h2>
             <figure
-              className="mx-auto h-[400px] w-2/3 translate-y-[100px] overflow-hidden rounded shadow-xl"
+              className="mx-auto h-[400px] w-2/3 translate-y-[100px] cursor-pointer overflow-hidden rounded shadow-xl"
               onClick={openModal}
             >
               <Image
@@ -212,9 +192,10 @@ export default function Home() {
             </figure>
           </div>
         </section>
-        <section className="pt-64">
+        <section className="mt-[100px] pt-64">
           <div className="container-sm">
             <h2 className="text-center">What our customers say</h2>
+            <div className="h-[400px]"></div>
           </div>
         </section>
         <section className="bg-brand-grey-light py-32">
@@ -222,12 +203,12 @@ export default function Home() {
             <h2 className="mb-24 text-center">
               First time buyer and need help?
             </h2>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap items-center">
               <div className="w-1/2">
                 <figure className="relative h-[300px] w-full">
                   <Image
-                    src="https://via.placeholder.com/600x600"
-                    alt=""
+                    src="/assets/hr-first-time-buyer.png"
+                    alt="First time buyer and need help?"
                     layout="fill"
                     objectFit="cover"
                   />
