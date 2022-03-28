@@ -1,4 +1,3 @@
-import ReactTooltip from "react-tooltip";
 import Tooltip from "../tooltip";
 
 interface PropTypes {
