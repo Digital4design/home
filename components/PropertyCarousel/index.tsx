@@ -12,7 +12,7 @@ import { CarouselProps } from "types/carousel"
  * @property options.screens.mobile | tablet | desktop - an object of properties to declare slides per view and spacing for mobile/tablet/desktop
  * @property options.screens.mobile | tablet | desktop.slidesPerView - the number of slides you'd like to show on mobile
  * @property options.screens.mobile | tablet | desktop.spaceBetween - the pixel amount of spacing you'd like to show on mobile i.e. 20
- * @returns a swipable carousel of elements
+ * @returns a swipable carousel of property preview elements
  */
 
 export const defaultOptions = {

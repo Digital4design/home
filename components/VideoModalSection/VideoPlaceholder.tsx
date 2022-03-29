@@ -6,6 +6,12 @@ interface Props {
   openModal: () => void
 }
 
+/**
+ *
+ * @property openModal is from the useModal hook and should be passed down from the VideoModalSection
+ * @returns a placeholder image with a trigger to open a video modal
+ */
+
 export default function VideoPlaceholder({ children, openModal }: Props) {
   return (
     <figure

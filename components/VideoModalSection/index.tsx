@@ -11,6 +11,16 @@ interface Props {
   imageBlurPlaceholderURL: string
 }
 
+/**
+ *
+ * @property videoURL will be the URL to the youtube video, assuming it is on YouTube for now
+ * @property title is the title you are going to give the video modal section, it will also be used as the iFrame title
+ * @property imagePlaceholderURL is the URL of the image you would like to display in place of the video before the modal is opened
+ * @property alt is the text you'd like to use for the image alt text
+ * @property imageBlurPlaceholderURL is the URL of the lower resolution image you would like to use for lazy loading, it is required
+ * @returns an image with a video aspect that, when clicked, will open a modal which holds a video from youtube
+ */
+
 export default function VideoModalSection({
   videoURL,
   title,
