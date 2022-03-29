@@ -1,68 +1,102 @@
-import React, { useEffect } from "react"
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid"
+import { useEffect } from "react"
 import Swiper, { Navigation, Pagination } from "swiper"
-import "swiper/css"
-import "swiper/css/pagination"
-import "swiper/css/navigation"
-import { CarouselProps } from "types/carousel"
+import Rating from "./Rating"
 
-/**
- * @property children - any JSX components with a .swiper-slide class as the main container. Ideally use the PropertyCarouselSlide component
- * @property options - an object with carousel options for screen breakpoints
- * @property options.screens - an object of breakpoints for mobile, tablet and desktop which give spacing and slides per view
- * @property options.screens.mobile | tablet | desktop - an object of properties to declare slides per view and spacing for mobile/tablet/desktop
- * @property options.screens.mobile | tablet | desktop.slidesPerView - the number of slides you'd like to show on mobile
- * @property options.screens.mobile | tablet | desktop.spaceBetween - the pixel amount of spacing you'd like to show on mobile i.e. 20
- * @returns a swipable carousel of elements
- */
-
-export const defaultOptions = {
-  screens: {
-    mobile: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    tablet: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    desktop: {
-      slidesPerView: 3,
-      spaceBetween: 20,
-    },
-  },
-}
-
-// types are defined in their own file within this same PropertyCarousel folder ./propTypes.d.ts
-export default function PropertyCarousel({
-  children,
-  options = defaultOptions,
-}: CarouselProps) {
+export default function Testimonials() {
   useEffect(() => {
     // initialise swiper js
-    const swiper = new Swiper(".swiper", {
-      // install modules
+    const swiper = new Swiper(".testimonials", {
       modules: [Navigation, Pagination],
-      observer: true,
-      observeParents: true,
-      loop: false,
       speed: 500,
+      loop: true,
+      spaceBetween: 10,
+      watchSlidesProgress: true,
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".testimonials-next",
+        prevEl: ".testimonials-prev",
       },
-      pagination: { el: ".swiper-pagination" },
-      breakpoints: {
-        240: { ...options.screens?.mobile },
-        670: { ...options.screens?.tablet },
-        1024: { ...options.screens?.desktop },
+      pagination: {
+        el: ".testimonials-pagination",
+        type: "bullets",
+        clickable: true,
       },
     })
-  }, [options])
+  })
 
-  // children of this component should be PropertyPreview components.
   return (
-    <div className="swiper flex h-[400px] w-full items-center px-3">
-      <div className="swiper-wrapper h-[350px] w-full">{children}</div>
-    </div>
+    <section className="mt-[100px] py-64">
+      <h2 className="mb-16 text-center">What our customers say</h2>
+      <div className="testimonials relative h-[300px] w-full">
+        <div className="swiper-wrapper h-full w-full">
+          {placeholders.map((testimonial) => (
+            <div className="swiper-slide testimonial" key={testimonial.id}>
+              <div className="mx-auto w-[600px] max-w-full px-4 lg:px-0">
+                <div className="flex justify-center">
+                  <Rating rating={testimonial.rating} />
+                </div>
+                <p className=" mt-6 mb-14 text-center leading-7 text-stone-400 lg:text-lg lg:leading-[1.8]">
+                  {testimonial.review}
+                </p>
+                <span className="mb-2 block text-center font-bold md:mb-8">
+                  {testimonial.name}
+                </span>
+                <span className="block text-center text-sm">
+                  {testimonial.company}, {testimonial.date.toDateString()}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="testimonials-pagination mt-8 text-center lg:mt-28"></div>
+
+        <div className="testimonials-prev absolute top-1/2 left-4 z-999 hidden h-10 w-10 cursor-pointer md:left-1/4 md:-ml-32 md:block lg:-ml-32 xl:-ml-16 2xl:-ml-10">
+          <ChevronLeftIcon />
+        </div>
+        <div className="testimonials-next absolute top-1/2 right-4 z-999 hidden h-10 w-10 cursor-pointer md:right-1/4 md:-mr-32 md:block lg:-mr-32 xl:-mr-16 2xl:-mr-10">
+          <ChevronRightIcon />
+        </div>
+      </div>
+    </section>
   )
 }
+
+export const placeholders = [
+  {
+    id: 1,
+    rating: 4,
+    name: "Example Name",
+    company: "Company Name",
+    date: new Date(),
+    review:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae laborum architecto ratione sit quae nostrum quod repellendus, recusandae fuga harum, quo rerum, odio ipsa aliquid vel ex debitis molestias exercitationem.",
+  },
+  {
+    id: 2,
+    rating: 3,
+    name: "Example Name",
+    company: "Company Name",
+    date: new Date(),
+    review:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae laborum architecto ratione sit quae nostrum quod repellendus.",
+  },
+  {
+    id: 3,
+    rating: 5,
+    name: "Example Name",
+    company: "Company Name",
+    date: new Date(),
+    review:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae laborum architecto ratione sit quae nostrum quod repellendus.",
+  },
+  {
+    id: 4,
+    rating: 3,
+    name: "Example Name",
+    company: "Company Name",
+    date: new Date(),
+    review:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae laborum architecto ratione sit quae nostrum quod repellendus.",
+  },
+]

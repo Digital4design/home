@@ -62,5 +62,34 @@ button {
 }
 
 .container-sm {
-  @apply mx-auto w-full max-w-6xl px-4;
+  @apply mx-auto w-full max-w-6xl;
+}
+
+.container,
+.container-sm {
+  @apply px-8;
+}
+
+.testimonials
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 8px !important;
+}
+
+.testimonials .swiper-pagination-bullet {
+  @apply bg-brand-green;
+}
+
+.testimonials .swiper-pagination-bullet-active {
+  @apply scale-150 bg-brand-green;
+}
+
+.product-images-slider .swiper-pagination-bullet {
+  @apply bg-white;
+}
+
+.product-images-slider
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 3px !important;
 }

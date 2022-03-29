@@ -7,16 +7,18 @@ import PropertyCarousel from "components/PropertyCarousel"
 import BrowseByAreaCard from "components/BrowseByAreaCard"
 import Paragraph from "components/global/Paragraph"
 import ParagraphHeading from "components/global/Paragraph/ParagraphHeading"
-import Modal from "components/Modal"
 import useModal from "hooks/useModal"
 import Explore from "components/Explore"
 import SearchAndFilters from "components/SearchAndFilters"
 
 // mock data
 import mockData from "../mockProperties.json"
+import OurPartners from "components/OurPartners"
+import Testimonials from "components/Testimonials"
+import VideoModalSection from "components/VideoModalSection"
+import HomeSection from "components/HomeSection"
 
 export default function Home() {
-  const { modalIsOpen, closeModal, openModal } = useModal()
   const { properties } = mockData
 
   return (
@@ -31,7 +33,7 @@ export default function Home() {
         <SearchAndFilters />
       </MainBanner>
       <main role="main">
-        <section className="pt-32">
+        <HomeSection>
           <div className="container-sm relative flex flex-col items-center">
             <h2 className="mb-16 text-center">Featured developments</h2>
             <PropertyCarousel>
@@ -51,16 +53,14 @@ export default function Home() {
                 />
               ))}
             </PropertyCarousel>
-            <div className="swiper-button-prev translate-y-10 translate-x-5 xl:-translate-x-14"></div>
-            <div className="swiper-button-next translate-y-10 -translate-x-5 xl:translate-x-14"></div>
             <Link href="/properties">
               <a className="text-green mt-6 rounded border border-brand-green bg-white py-3 px-8 font-bold">
                 Browse all properties
               </a>
             </Link>
           </div>
-        </section>
-        <section className="pt-32">
+        </HomeSection>
+        <HomeSection>
           <div className="container-sm">
             <h2 className="mb-16 text-center">
               How part buy - part rent works
@@ -104,8 +104,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-        <section className="pt-32">
+        </HomeSection>
+        <HomeSection>
           <div className="container-sm">
             <h2 className="mb-16 text-center">Browse properties by area</h2>
             <div className="flex flex-wrap">
@@ -159,53 +159,23 @@ export default function Home() {
               />
             </div>
           </div>
-        </section>
-        <section className="mt-36 bg-brand-grey-light pt-24">
-          <Modal
-            isOpen={modalIsOpen}
-            handleClose={closeModal}
-            overlayClick={closeModal}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/ScMzIvxBSi4"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="h-[450px] w-full rounded"
-            ></iframe>
-          </Modal>
-          <div className="container-sm h-[350px]">
-            <h2 className="text-center">Learn more about Home Reach</h2>
-            <figure
-              className="mx-auto h-[400px] w-2/3 translate-y-[100px] cursor-pointer overflow-hidden rounded shadow-xl"
-              onClick={openModal}
-            >
-              <Image
-                src="https://via.placeholder.com/800x800"
-                alt="Video placeholder"
-                layout="fill"
-                objectFit="cover"
-                placeholder="blur"
-                blurDataURL="https://via.placeholder.com/300x300"
-              />
-            </figure>
-          </div>
-        </section>
-        <section className="mt-[100px] pt-64">
+        </HomeSection>
+        <VideoModalSection
+          videoURL="https://www.youtube.com/embed/ScMzIvxBSi4"
+          title="Learn more about Home Reach"
+          imagePlaceholderURL="https://via.placeholder.com/800x800"
+          alt="Learn more about properties from Home Reach"
+          imageBlurPlaceholderURL="https://via.placeholder.com/300x300"
+        />
+        <Testimonials />
+        <section className="bg-brand-grey-light pt-32 pb-6">
           <div className="container-sm">
-            <h2 className="text-center">What our customers say</h2>
-            <div className="h-[400px]"></div>
-          </div>
-        </section>
-        <section className="bg-brand-grey-light py-32">
-          <div className="container">
-            <h2 className="mb-24 text-center">
+            <h2 className="mb-8 text-left md:text-center">
               First time buyer and need help?
             </h2>
             <div className="flex flex-wrap items-center">
-              <div className="w-1/2">
-                <figure className="relative h-[300px] w-full">
+              <div className="order-2 w-full md:order-1 md:w-1/2">
+                <figure className="relative h-[250px] w-full xl:h-[350px] xl:-translate-x-24">
                   <Image
                     src="/assets/hr-first-time-buyer.png"
                     alt="First time buyer and need help?"
@@ -214,7 +184,7 @@ export default function Home() {
                   />
                 </figure>
               </div>
-              <div className="w-1/2">
+              <div className="order-1 w-full md:order-2 md:w-1/2">
                 <Paragraph>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Eveniet molestias, cumque nihil saepe dolor impedit,
@@ -230,8 +200,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <OurPartners />
+        <Explore />
       </main>
-      <Explore />
     </div>
   )
 }
