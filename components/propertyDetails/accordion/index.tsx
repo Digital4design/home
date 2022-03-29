@@ -21,9 +21,9 @@ interface PropTypes {
 /**
  * A single or multiple accordion components. Pass an array of 'data' to return multiple accordions or 'children' and a 'heading' to return a single accordion.
  * Although all properties are optional, DATA must be passed for multiple accordions and a HEADING and CHILDREN must be passed for a single accordion.
- * @param {Array} props.data OPTIONAL An array of data objects - Must contain a 'Heading' 'body' to construct a list of accordions
- * @param {any} props.children OPTIONAL Children to be rendered in the body of the single accordion.
- * @param {string} props.heading OPTIONAL A heading to be rendered as the heading of the single accordion.
+ * @param {Array} props.data OPTIONAL An array of data objects - Must contain a 'Heading' 'body' to construct a list of accordions - use without children & heading
+ * @param {any} props.children OPTIONAL Children to be rendered in the body of the single accordion - use with heading
+ * @param {string} props.heading OPTIONAL A heading to be rendered as the heading of the single accordion - use with children
  * @returns A single or multiple accordion components.
  */
 function AccordionItems({ data, children, heading }: PropTypes) {
