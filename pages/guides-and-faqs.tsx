@@ -1,5 +1,5 @@
-import FaqBanner from "components/Faq/FaqBanner";
-import Guides from "components/Faq/FAQGuides";
+import FaqBanner from "components/Faq/Banner";
+import Guides from "components/Faq/Guides";
 import FaqSearchBox from "components/Faq/FaqSearchBox";
 
 function FaqPage() {
