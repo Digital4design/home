@@ -12,7 +12,7 @@ import { useEffect, useState } from "react"
  * @param props.shares the number of percentage shares available
  * @param props.price the property price
  * @param props.tooltip the property information tooltip text
- * @returns
+ * @returns the details area of the property preview element
  */
 
 export default function PropertyPreviewDetails({
