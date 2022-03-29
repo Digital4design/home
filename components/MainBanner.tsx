@@ -1,4 +1,4 @@
-import { ChildrenProps } from "types"
+import { ChildrenProps } from "types";
 
 export default function MainBanner({ children }: ChildrenProps) {
   return (
@@ -7,5 +7,5 @@ export default function MainBanner({ children }: ChildrenProps) {
         {children}
       </div>
     </section>
-  )
+  );
 }
