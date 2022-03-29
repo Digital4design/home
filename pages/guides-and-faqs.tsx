@@ -1,6 +1,7 @@
 import FaqBanner from "components/Faq/Banner";
 import Guides from "components/Faq/Guides";
 import FaqSearchBox from "components/Faq/FaqSearchBox";
+import Accordion from "components/Faq/Accordion";
 
 function FaqPage() {
   return (
@@ -10,6 +11,7 @@ function FaqPage() {
         <FaqSearchBox />
       </FaqBanner>
       <Guides />
+      <Accordion />
     </div>
   );
 }
