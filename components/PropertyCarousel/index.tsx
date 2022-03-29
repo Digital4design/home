@@ -61,8 +61,13 @@ export default function PropertyCarousel({
 
   // children of this component should be PropertyPreview components.
   return (
-    <div className="swiper flex h-[400px] w-full items-center px-3">
-      <div className="swiper-wrapper h-[350px] w-full">{children}</div>
-    </div>
+    <>
+      <div className="swiper flex h-[400px] w-full items-center px-3">
+        <div className="swiper-wrapper h-[350px] w-full">{children}</div>
+      </div>
+
+      <div className="swiper-button-prev translate-y-10 translate-x-5 xl:-translate-x-14"></div>
+      <div className="swiper-button-next translate-y-10 -translate-x-5 xl:translate-x-14"></div>
+    </>
   )
 }
