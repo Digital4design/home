@@ -3,6 +3,17 @@ import { v4 as uuidv4 } from "uuid"
 import ReactTooltip from "react-tooltip"
 import { PropertyPreviewProps } from "types/property"
 
+/**
+ *
+ * @param props.title the property title
+ * @param props.address the property address
+ * @param props.beds the number of beds the property has
+ * @param props.shares the number of percentage shares available
+ * @param props.price the property price
+ * @param props.tooltip the property information tooltip text
+ * @returns
+ */
+
 export default function PropertyPreviewDetails({
   title,
   address,

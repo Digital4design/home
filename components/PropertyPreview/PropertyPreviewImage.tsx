@@ -6,6 +6,14 @@ interface Props {
   placeholder: string
 }
 
+/**
+ *
+ * @param props.image the property image url
+ * @param props.alt the property image alt text
+ * @param props.placeholder the property image placeholder, should be a lower res version of the original for lazy loading
+ * @returns
+ */
+
 export default function PropertyPreviewImage({
   image,
   alt,

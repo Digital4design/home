@@ -2,12 +2,12 @@ import Image from "next/image"
 import { useEffect } from "react"
 import Swiper from "swiper"
 
+// Our partners section for the home page, a carousel using swiperjs, should show partner logos tight to edge of screen with some overhang
+
 export default function OurPartners() {
   useEffect(() => {
     // initialise swiper js
     const swiper = new Swiper(".partners", {
-      // centeredSlides: true,
-      // centeredSlidesBounds: true,
       loop: true,
       speed: 500,
       spaceBetween: 50,
