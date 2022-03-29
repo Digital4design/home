@@ -9,7 +9,7 @@ function Guides() {
       </h2>
       <GuideCards />
       <Link href="">
-        <p className="w-fit cursor-pointer rounded border border-brand-green px-8 py-3 text-brand-green transition-all hover:bg-brand-green hover:text-white">
+        <p className="w-full cursor-pointer rounded border border-brand-green px-8 py-3 text-center text-brand-green transition-all hover:bg-brand-green hover:text-white lg:w-fit">
           Browse all guides
         </p>
       </Link>

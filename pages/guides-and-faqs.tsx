@@ -5,7 +5,7 @@ import Accordion from "components/Faq/Accordion";
 
 function FaqPage() {
   return (
-    <div>
+    <div className="pb-20">
       <FaqBanner>
         <h1 className="tracking-wider text-white">How can we help you?</h1>
         <FaqSearchBox />
