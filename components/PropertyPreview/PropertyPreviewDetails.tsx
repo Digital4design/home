@@ -2,6 +2,7 @@ import { LibraryIcon, LocationMarkerIcon } from "@heroicons/react/outline"
 import { v4 as uuidv4 } from "uuid"
 import ReactTooltip from "react-tooltip"
 import { PropertyPreviewProps } from "types/property"
+import { useEffect, useState } from "react"
 
 /**
  *
@@ -24,6 +25,16 @@ export default function PropertyPreviewDetails({
 }: PropertyPreviewProps) {
   const id = uuidv4()
 
+  const [isMounted, setIsMounted] = useState(false) // Need this for the react-tooltip
+
+  useEffect(() => {
+    if (!isMounted) {
+      return setIsMounted(true)
+    }
+
+    ReactTooltip.rebuild()
+  }, [isMounted])
+
   return (
     <div className="relative py-4 px-6">
       <div className="absolute right-5 bottom-full rounded-t bg-white px-1 pt-2 text-sm text-brand-grey">
@@ -41,7 +52,7 @@ export default function PropertyPreviewDetails({
       <div className="text-md absolute bottom-3 right-5 flex items-center text-brand-blue">
         <strong>£{price}</strong>{" "}
         <div data-tip data-for={id}>
-          <div className="text-brand-dark-blue ml-2 flex rounded-[4px] bg-brand-blue-light px-[7px] text-xs font-bold ">
+          <div className="text-brand-dark-blue ml-2 flex rounded-[4px] bg-brand-blue-light px-[7px] text-xs font-bold">
             i
           </div>
         </div>

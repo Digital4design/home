@@ -23,7 +23,9 @@ export default function Rating({ rating = 0 }: Props) {
 
   return (
     <div className="flex">
-      {stars.map((number) => (number <= rating ? <Star active /> : <Star />))}
+      {stars.map((number) =>
+        number <= rating ? <Star active key={number} /> : <Star key={number} />
+      )}
     </div>
   )
 }
