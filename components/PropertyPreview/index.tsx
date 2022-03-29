@@ -7,7 +7,7 @@ interface Props extends PropertyPreviewProps {
   image: string
   alt: string
   placeholder: string
-  slug: string
+  slug?: string
 }
 
 /**
