@@ -36,6 +36,7 @@ export default function VideoModalSection({
         isOpen={modalIsOpen}
         handleClose={closeModal}
         overlayClick={closeModal}
+        isVideo
       >
         <iframe
           src={videoURL}
@@ -43,7 +44,7 @@ export default function VideoModalSection({
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          className="h-[450px] w-full rounded"
+          className="aspect-video w-full rounded"
         ></iframe>
       </Modal>
       <div className="container-sm h-[350px]">
@@ -55,6 +56,7 @@ export default function VideoModalSection({
             layout="fill"
             objectFit="cover"
             placeholder="blur"
+            className="scale-105 transition-transform duration-1000 ease-in-out group-hover:scale-100"
             blurDataURL={imageBlurPlaceholderURL}
           />
         </VideoPlaceholder>

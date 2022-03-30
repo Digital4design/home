@@ -62,7 +62,7 @@ button {
 }
 
 .container-sm {
-  @apply mx-auto w-full max-w-6xl;
+  @apply mx-auto w-full max-w-7xl;
 }
 
 .container,

@@ -37,7 +37,7 @@ export default function Home() {
           <div className="container-sm relative flex flex-col items-center">
             <h2 className="mb-16 text-center">Featured developments</h2>
             <PropertyCarousel>
-              {properties.map((property) => (
+              {properties.map((property, index) => (
                 <PropertyPreview
                   isSlide
                   image={property.image}
@@ -49,7 +49,7 @@ export default function Home() {
                   shares={property.shares}
                   price={property.price}
                   tooltip={property.tooltip}
-                  key={property.title}
+                  key={index}
                 />
               ))}
             </PropertyCarousel>
@@ -163,9 +163,9 @@ export default function Home() {
         <VideoModalSection
           videoURL="https://www.youtube.com/embed/ScMzIvxBSi4"
           title="Learn more about Home Reach"
-          imagePlaceholderURL="https://via.placeholder.com/800x800"
+          imagePlaceholderURL="/assets/placeholder/room-large.jpg"
           alt="Learn more about properties from Home Reach"
-          imageBlurPlaceholderURL="https://via.placeholder.com/300x300"
+          imageBlurPlaceholderURL="/assets/placeholder/room-small.jpg"
         />
         <Testimonials />
         <section className="bg-brand-grey-light pt-32 pb-6">
