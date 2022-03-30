@@ -6,4 +6,4 @@ export interface PropertyPreviewProps {
     isSlide?: boolean
     price: string
     tooltip?: string
-  }
+}

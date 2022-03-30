@@ -1,11 +1,25 @@
-import React, { ChangeEvent, FormEvent, useState } from "react"
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react"
 import { MapLocationMarker } from "components/Icons"
 import SearchDistance from "components/SearchAndFilters/SearchBar/SearchDistance"
 import { useSearchFilters } from "context/SearchAndFilterContext"
 
 export default function SearchBar() {
-  const { updateFilters } = useSearchFilters()
+  const { updateFilters, searchProperties } = useSearchFilters()
   const [value, setValue] = useState("")
+
+  useEffect(() => {
+    const enterKeyListener = (e: KeyboardEvent) => {
+      if (e.code !== "Enter") return false
+
+      searchProperties()
+    }
+
+    document.addEventListener("keydown", enterKeyListener)
+
+    return () => {
+      document.removeEventListener("keydown", enterKeyListener)
+    }
+  }, [searchProperties, value])
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value.toLowerCase()
