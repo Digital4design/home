@@ -2,13 +2,16 @@ import useToggle from "hooks/useToggle"
 import { useState } from "react"
 import Dropdown from "components/SearchAndFilters/Dropdown"
 import SearchDistanceOption from "components/SearchAndFilters/SearchBar/SearchDistanceOption"
+import { useSearchFilters } from "context/SearchAndFilterContext"
 
 export default function SearchDistance() {
+  const { updateFilters } = useSearchFilters()
   const { isActive, toggleActive } = useToggle()
   const [value, setValue] = useState<number>(0)
 
   const handleClick = (distance: number) => {
     setValue(distance)
+    updateFilters("radius", distance)
   }
 
   // using the state value to show the main radius search value in filter i.e. + 0 miles

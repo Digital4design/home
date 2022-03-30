@@ -5,13 +5,16 @@ import FilterSection from "components/SearchAndFilters/FilterSection"
 import BedroomsOption from "components/SearchAndFilters/Bedrooms/BedroomsOption"
 import FilterLabel from "components/SearchAndFilters/FilterSection/FilterLabel"
 import FilterDisplay from "components/SearchAndFilters/FilterSection/FilterDisplay"
+import { useSearchFilters } from "context/SearchAndFilterContext"
 
 export default function Bedrooms() {
+  const { updateFilters } = useSearchFilters()
   const { isActive, toggleActive } = useToggle()
-  const [value, setValue] = useState<number>(1)
+  const [value, setValue] = useState<number>(0)
 
   const handleClick = (rooms: number) => {
     setValue(rooms)
+    updateFilters("rooms", rooms)
   }
 
   return (

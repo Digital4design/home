@@ -5,13 +5,16 @@ import PropertyTypeOption from "components/SearchAndFilters/PropertyType/Propert
 import FilterSection from "components/SearchAndFilters/FilterSection"
 import FilterLabel from "components/SearchAndFilters/FilterSection/FilterLabel"
 import FilterDisplay from "components/SearchAndFilters/FilterSection/FilterDisplay"
+import { useSearchFilters } from "context/SearchAndFilterContext"
 
 export default function PropertyType() {
+  const { updateFilters } = useSearchFilters()
   const { isActive, toggleActive } = useToggle()
   const [value, setValue] = useState<string>("Development")
 
   const handleClick = (propertyType: string) => {
     setValue(propertyType)
+    updateFilters("type", propertyType.toLowerCase())
   }
 
   return (

@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react"
+import { MutableRefObject, ReactNode, useEffect, useRef } from "react"
 
 interface Props {
   children: ReactNode
@@ -13,17 +13,21 @@ export default function Dropdown({
   toggleActive,
   margin,
 }: Props) {
+  const dropdownRef = useRef() as MutableRefObject<HTMLDivElement>
+
   useEffect(() => {
     if (!isActive) return
 
-    const handleClickOutside = () => {
-      toggleActive()
+    const handleClickOutside = (e: any) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        toggleActive()
+      }
     }
 
-    document.addEventListener("click", handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside)
 
     return () => {
-      document.removeEventListener("click", handleClickOutside)
+      document.removeEventListener("mousedown", handleClickOutside)
     }
   }, [isActive, toggleActive])
 
@@ -33,6 +37,7 @@ export default function Dropdown({
 
   return (
     <div
+      ref={dropdownRef}
       className={`${
         margin ? margin : "-mt-2"
       } absolute top-full left-0 z-100 max-h-[400px] min-w-full cursor-default overflow-y-scroll rounded-sm bg-white py-4 shadow-md transition-all duration-150 ease-in-out ${classes}`}
