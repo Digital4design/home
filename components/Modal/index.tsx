@@ -9,6 +9,7 @@ interface ModalProps {
   children: ReactNode
   isOpen: boolean
   handleClose: () => void
+  isVideo?: boolean
 }
 
 /**
@@ -25,6 +26,7 @@ export default function Modal({
   children,
   isOpen,
   handleClose,
+  isVideo,
 }: ModalProps) {
   if (typeof window === "undefined") return null
   return (
@@ -38,7 +40,11 @@ export default function Modal({
                 initial={{ opacity: 0, y: 10 }}
                 exit={{ opacity: 0, y: 10 }}
                 transition={{ duration: 0.4, type: "tween" }}
-                className="relative z-50 w-full rounded bg-white shadow sm:w-2/3 lg:w-2/5"
+                className={`relative z-50 mx-4 rounded bg-white shadow lg:mx-0 ${
+                  isVideo
+                    ? "aspect-video w-full md:w-[600px] xl:w-[850px]"
+                    : "sm:w-2/3 lg:w-2/5"
+                }`}
                 key="modal"
               >
                 <button

@@ -1,3 +1,5 @@
+import AddToFavourites from "components/AddToFavourites"
+import FavouritesButton from "components/Layout/FavouritesButton"
 import { useRouter } from "next/router"
 import { PropertyPreviewProps } from "types/property"
 import PropertyPreviewDetails from "./PropertyPreviewDetails"
@@ -45,7 +47,7 @@ export default function PropertyPreview({
   return (
     <div className={`${isSlide && "swiper-slide"} h-auto w-1/3 cursor-pointer`}>
       <div
-        className="min-h-[300px] rounded bg-white shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
+        className="relative min-h-[300px] rounded bg-white shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
         onClick={() => router.push(`/property/${slug}`)}
       >
         <PropertyPreviewImage
@@ -61,6 +63,9 @@ export default function PropertyPreview({
           price={price}
           tooltip={tooltip}
         />
+        <div className="absolute top-4 right-4">
+          <AddToFavourites />
+        </div>
       </div>
     </div>
   )

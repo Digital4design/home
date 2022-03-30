@@ -14,7 +14,7 @@ export default function OurPartners() {
       loopAdditionalSlides: 100,
       slidesOffsetBefore: -110,
       breakpoints: {
-        480: {
+        280: {
           slidesPerView: 3,
         },
         860: {

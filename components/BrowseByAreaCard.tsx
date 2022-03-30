@@ -57,7 +57,7 @@ export default function BrowseByAreaCard({
           blurDataURL={blurDataURL}
         />
       </figure>
-      <div className="absolute inset-3 flex items-center justify-center rounded bg-gradient-to-b from-transparent via-transparent to-brand-grey-dark transition-all duration-200 ease-in-out group-hover:bg-brand-green group-hover:bg-opacity-80 group-hover:from-transparent group-hover:to-brand-blue group-hover:opacity-80">
+      <div className="absolute inset-3 flex items-center justify-center rounded bg-gradient-to-b from-transparent via-transparent to-brand-grey-dark transition-all duration-500 ease-in-out group-hover:bg-brand-green group-hover:bg-opacity-80 group-hover:from-transparent group-hover:to-brand-blue group-hover:opacity-80">
         <span className="-translate-y-4 text-9xl font-bold text-white opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100">
           {numOfProperties}
         </span>

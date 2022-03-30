@@ -4,6 +4,7 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 import { CarouselProps } from "types/carousel"
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid"
 
 /**
  * @property children - any JSX components with a .swiper-slide class as the main container. Ideally use the PropertyCarouselSlide component
@@ -47,8 +48,8 @@ export default function PropertyCarousel({
       loop: false,
       speed: 500,
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".property-button-next",
+        prevEl: ".property-button-prev",
       },
       pagination: { el: ".swiper-pagination" },
       breakpoints: {
@@ -66,8 +67,12 @@ export default function PropertyCarousel({
         <div className="swiper-wrapper h-[350px] w-full">{children}</div>
       </div>
 
-      <div className="swiper-button-prev translate-y-10 translate-x-5 xl:-translate-x-14"></div>
-      <div className="swiper-button-next translate-y-10 -translate-x-5 xl:translate-x-14"></div>
+      <div className="property-button-prev group absolute top-1/2 -left-2 cursor-pointer lg:-left-5">
+        <ChevronLeftIcon className="h-14 w-14 text-brand-blue group-hover:text-brand-blue-dark" />
+      </div>
+      <div className="property-button-next group group absolute top-1/2 -right-2 cursor-pointer lg:-right-5">
+        <ChevronRightIcon className="h-14 w-14 text-brand-blue group-hover:text-brand-blue-dark" />
+      </div>
     </>
   )
 }

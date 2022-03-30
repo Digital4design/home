@@ -23,9 +23,8 @@ export default function PropertyPreviewDetails({
   price,
   tooltip,
 }: PropertyPreviewProps) {
-  const id = uuidv4()
-
   const [isMounted, setIsMounted] = useState(false) // Need this for the react-tooltip
+  const id = uuidv4()
 
   useEffect(() => {
     if (!isMounted) {

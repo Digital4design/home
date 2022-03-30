@@ -1,0 +1,19 @@
+import React from "react"
+import { MapLocationMarker } from "components/Icons"
+import SearchDistance from "components/SearchAndFilters/SearchBar/SearchDistance"
+
+export default function SearchBar() {
+  return (
+    <div className="relative flex h-full w-full items-center rounded bg-white pl-12">
+      <div className="absolute top-3 left-3 z-20">
+        <MapLocationMarker classes="h-6 w-6 text-brand-green" />
+      </div>
+      <input
+        type="text"
+        className="w-8/12 border-r border-gray-300 pr-2 outline-none"
+        placeholder="e.g. city, postcode..."
+      />
+      <SearchDistance />
+    </div>
+  )
+}
