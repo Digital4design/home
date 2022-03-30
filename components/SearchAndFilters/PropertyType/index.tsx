@@ -2,10 +2,9 @@ import useToggle from "hooks/useToggle"
 import { useState } from "react"
 import Dropdown from "components/SearchAndFilters/Dropdown"
 import PropertyTypeOption from "components/SearchAndFilters/PropertyType/PropertyTypeOption"
-import { ChevronDownIcon } from "@heroicons/react/solid"
-import FilterSection from "../FilterSection"
-import FilterLabel from "../FilterSection/FilterLabel"
-import FilterDisplay from "../FilterSection/FilterDisplay"
+import FilterSection from "components/SearchAndFilters/FilterSection"
+import FilterLabel from "components/SearchAndFilters/FilterSection/FilterLabel"
+import FilterDisplay from "components/SearchAndFilters/FilterSection/FilterDisplay"
 
 export default function PropertyType() {
   const { isActive, toggleActive } = useToggle()

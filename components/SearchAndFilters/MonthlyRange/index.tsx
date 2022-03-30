@@ -1,11 +1,10 @@
 import useToggle from "hooks/useToggle"
 import { useState } from "react"
 import Dropdown from "components/SearchAndFilters/Dropdown"
-import { ChevronDownIcon } from "@heroicons/react/solid"
 import MonthlyRangeOption from "components/SearchAndFilters/MonthlyRange/MonthlyRangeOption"
-import FilterSection from "../FilterSection"
-import FilterLabel from "../FilterSection/FilterLabel"
-import FilterDisplay from "../FilterSection/FilterDisplay"
+import FilterSection from "components/SearchAndFilters/FilterSection"
+import FilterLabel from "components/SearchAndFilters/FilterSection/FilterLabel"
+import FilterDisplay from "components/SearchAndFilters/FilterSection/FilterDisplay"
 
 export default function MonthlyRange() {
   const { isActive, toggleActive } = useToggle()
