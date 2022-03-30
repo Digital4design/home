@@ -20,13 +20,13 @@ export default function Nav() {
     >
       <div className="pointer-events-none absolute inset-0 z-10 shadow-lg content-['']" />
       <NavLink slug="/properties">Properties</NavLink>
-      <NavLink slug="/properties">How it works</NavLink>
+      <NavLink slug="/how-it-works">How it works</NavLink>
       <NavLink slug="/guides-and-faqs" hasDropdown dropdownItems={guidesLinks}>
         Guides & FAQs
       </NavLink>
-      <NavLink slug="/properties">About us</NavLink>
-      <NavLink slug="/properties">Blog</NavLink>
-      <NavLink slug="/properties">Contact</NavLink>
+      <NavLink slug="/about-us">About us</NavLink>
+      <NavLink slug="/blog">Blog</NavLink>
+      <NavLink slug="/contact">Contact</NavLink>
     </nav>
   )
 }

@@ -15,7 +15,8 @@ export default function MainBanner({ children }: ChildrenProps) {
             layout="fill"
             objectFit="cover"
             objectPosition="bottom"
-            priority
+            placeholder="blur"
+            blurDataURL="/assets/placeholder/header.jpg"
           />
         </figure>
       </div>
