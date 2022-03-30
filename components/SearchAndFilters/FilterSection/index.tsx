@@ -6,11 +6,19 @@ interface Props {
   width?: string
 }
 
+/**
+ *
+ * @param props.children the filter label and display components
+ * @param props.onClick the on click function used to handle the trigger of the filter dropdown options
+ * @param props.width a tailwindcss width property i.e. w-[200px] or w-10
+ * @returns a filter section of the main filter bar intended as a parent of FilterDisplay and FilterLabel components
+ */
+
 export default function FilterSection({ children, onClick, width }: Props) {
   return (
     <div
       className={`group relative flex h-full cursor-pointer flex-col justify-center border-r border-white px-8 text-left text-white ${
-        width ? `w-[${String(width)}px]` : "w-auto"
+        width ? width : "w-auto"
       }`}
       onClick={onClick}
     >

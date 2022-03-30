@@ -15,7 +15,7 @@ export default function PropertyType() {
   }
 
   return (
-    <FilterSection onClick={toggleActive} width="200">
+    <FilterSection onClick={toggleActive} width="w-[200px]">
       <FilterLabel>Type of property</FilterLabel>
 
       <FilterDisplay>{value}</FilterDisplay>
