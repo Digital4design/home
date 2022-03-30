@@ -15,7 +15,7 @@ interface Props extends ChildrenProps {
 
 export default function FilterDisplay({ children, chevron = true }: Props) {
   return (
-    <span className="flex items-center justify-between group-hover:text-brand-blue-light">
+    <span className="flex items-center justify-between font-medium group-hover:text-brand-blue-light">
       {children}
       {chevron && (
         <ChevronDownIcon className="ml-2 h-5 w-5 text-white group-hover:text-brand-blue-light" />

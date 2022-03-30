@@ -32,6 +32,7 @@ module.exports = {
         brand: {
           "green-light": "hsl(167, 74%, 88%)",
           green: "hsl(166, 81%, 43%)",
+          "green-medium": "hsl(166, 72%, 38%)",
           "green-dark": "hsl(166, 64%, 33%)",
           "blue-light": "hsl(200, 32%, 93%)",
           blue: "hsl(199, 100%, 24%)",
