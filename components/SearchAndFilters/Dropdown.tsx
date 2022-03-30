@@ -4,9 +4,15 @@ interface Props {
   children: ReactNode
   isActive: boolean
   toggleActive: () => void
+  margin?: string
 }
 
-export default function Dropdown({ children, isActive, toggleActive }: Props) {
+export default function Dropdown({
+  children,
+  isActive,
+  toggleActive,
+  margin,
+}: Props) {
   useEffect(() => {
     if (!isActive) return
 
@@ -27,7 +33,9 @@ export default function Dropdown({ children, isActive, toggleActive }: Props) {
 
   return (
     <div
-      className={`absolute top-full left-0 z-100 mt-3 min-w-full cursor-default rounded bg-white py-4 shadow-md transition-all duration-150 ease-in-out ${classes}`}
+      className={`${
+        margin ? margin : "-mt-2"
+      } absolute top-full left-0 z-100 max-h-[400px] min-w-full cursor-default overflow-y-scroll rounded bg-white py-4 shadow-md transition-all duration-150 ease-in-out ${classes}`}
     >
       {children}
     </div>
