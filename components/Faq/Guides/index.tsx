@@ -1,5 +1,5 @@
-import Link from "next/link";
-import GuideCards from "../GuideCards";
+import Link from "next/link"
+import GuideCards from "../GuideCards"
 
 function Guides() {
   return (
@@ -9,12 +9,12 @@ function Guides() {
       </h2>
       <GuideCards />
       <Link href="">
-        <p className="w-full cursor-pointer rounded border border-brand-green px-8 py-3 text-center text-brand-green transition-all hover:bg-brand-green hover:text-white lg:w-fit">
+        <a className="block w-full cursor-pointer rounded border border-brand-green px-8 py-3 text-center text-brand-green transition-all hover:bg-brand-green hover:text-white lg:w-fit">
           Browse all guides
-        </p>
+        </a>
       </Link>
     </section>
-  );
+  )
 }
 
-export default Guides;
+export default Guides

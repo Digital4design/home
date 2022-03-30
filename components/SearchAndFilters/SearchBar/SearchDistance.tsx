@@ -30,7 +30,7 @@ export default function SearchDistance() {
       onClick={toggleActive}
     >
       {displayValue}
-      <Dropdown isActive={isActive} toggleActive={toggleActive}>
+      <Dropdown isActive={isActive} toggleActive={toggleActive} margin="mt-3">
         {DistanceOptions}
       </Dropdown>
     </div>
