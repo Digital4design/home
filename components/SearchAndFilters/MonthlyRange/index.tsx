@@ -15,7 +15,7 @@ export default function MonthlyRange() {
   }
 
   return (
-    <FilterSection onClick={toggleActive}>
+    <FilterSection onClick={toggleActive} width="w-[200px]">
       <FilterLabel>Monthly cost range</FilterLabel>
 
       <FilterDisplay>{value === 0 ? "Any" : `£${value}`}</FilterDisplay>

@@ -18,7 +18,9 @@ export default function Bedrooms() {
     <FilterSection onClick={toggleActive}>
       <FilterLabel>Bedrooms</FilterLabel>
 
-      <FilterDisplay>{value === 6 ? `${value}+` : value}</FilterDisplay>
+      <FilterDisplay>
+        {value === 6 ? `${value}+` : value === 0 ? "Any" : value}
+      </FilterDisplay>
 
       <Dropdown isActive={isActive} toggleActive={toggleActive}>
         {rooms.map((room) => (
@@ -30,4 +32,4 @@ export default function Bedrooms() {
 }
 
 // mock
-export const rooms = [1, 2, 3, 4, 5, 6]
+export const rooms = [0, 1, 2, 3, 4, 5, 6]
