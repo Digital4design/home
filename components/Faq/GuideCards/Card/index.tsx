@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 interface PropTypes {
-  img: string;
-  title: string;
-  link: string;
+  img: string
+  title: string
+  link: string
 }
 
 function GuideCard({ img, title, link }: PropTypes) {
@@ -15,12 +15,12 @@ function GuideCard({ img, title, link }: PropTypes) {
       </div>
       <p className="text-lg font-semibold text-brand-blue-dark">{title}</p>
       <Link href={link}>
-        <p className="cursor-pointer text-brand-green hover:underline">
+        <a className="cursor-pointer text-brand-green hover:underline">
           Discover
-        </p>
+        </a>
       </Link>
     </div>
-  );
+  )
 }
 
-export default GuideCard;
+export default GuideCard

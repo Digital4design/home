@@ -7,7 +7,6 @@ import PropertyCarousel from "components/PropertyCarousel"
 import BrowseByAreaCard from "components/BrowseByAreaCard"
 import Paragraph from "components/global/Paragraph"
 import ParagraphHeading from "components/global/Paragraph/ParagraphHeading"
-import useModal from "hooks/useModal"
 import Explore from "components/Explore"
 import SearchAndFilters from "components/SearchAndFilters"
 
