@@ -5,13 +5,16 @@ import MonthlyRangeOption from "components/SearchAndFilters/MonthlyRange/Monthly
 import FilterSection from "components/SearchAndFilters/FilterSection"
 import FilterLabel from "components/SearchAndFilters/FilterSection/FilterLabel"
 import FilterDisplay from "components/SearchAndFilters/FilterSection/FilterDisplay"
+import { useSearchFilters } from "context/SearchAndFilterContext"
 
 export default function MonthlyRange() {
+  const { updateFilters } = useSearchFilters()
   const { isActive, toggleActive } = useToggle()
   const [value, setValue] = useState<number>(0)
 
   const handleClick = (price: number) => {
     setValue(price)
+    updateFilters("price", price)
   }
 
   return (
@@ -21,6 +24,13 @@ export default function MonthlyRange() {
       <FilterDisplay>{value === 0 ? "Any" : `£${value}`}</FilterDisplay>
 
       <Dropdown isActive={isActive} toggleActive={toggleActive}>
+        <div className="mb-2 flex items-center justify-between px-4 text-black">
+          Amount{" "}
+          <input
+            type="text"
+            className="h-12 max-w-[80px] grow rounded-sm border"
+          />
+        </div>
         {prices.map((price) => (
           <MonthlyRangeOption
             key={price}

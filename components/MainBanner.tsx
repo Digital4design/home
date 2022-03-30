@@ -8,13 +8,16 @@ export default function MainBanner({ children }: ChildrenProps) {
         {children}
       </div>
       <div className="absolute inset-0 -z-[1]">
-        <Image
-          src="/assets/placeholder/header.jpg"
-          alt=""
-          layout="fill"
-          objectFit="cover"
-          objectPosition="bottom"
-        />
+        <figure className="relative h-full w-full">
+          <Image
+            src="/assets/placeholder/header.jpg"
+            alt=""
+            layout="fill"
+            objectFit="cover"
+            objectPosition="bottom"
+            priority
+          />
+        </figure>
       </div>
     </section>
   )

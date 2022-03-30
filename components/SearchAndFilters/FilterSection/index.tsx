@@ -1,9 +1,10 @@
-import { ReactNode } from "react"
+import { MutableRefObject, ReactNode } from "react"
 
 interface Props {
   children: ReactNode
   onClick: () => void
   width?: string
+  ref?: MutableRefObject<HTMLDivElement>
 }
 
 /**
@@ -14,9 +15,15 @@ interface Props {
  * @returns a filter section of the main filter bar intended as a parent of FilterDisplay and FilterLabel components
  */
 
-export default function FilterSection({ children, onClick, width }: Props) {
+export default function FilterSection({
+  children,
+  onClick,
+  width,
+  ref,
+}: Props) {
   return (
     <div
+      ref={ref}
       className={`group relative flex h-full cursor-pointer flex-col justify-center border-r border-white px-8 text-left text-white ${
         width ? width : "w-auto"
       }`}
