@@ -3,6 +3,7 @@ import { AppProps } from "next/app"
 import "swiper/css"
 import "styles/globals.css"
 import Head from "next/head"
+import SearchAndFilterContextProvider from "context/SearchAndFilterContext"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

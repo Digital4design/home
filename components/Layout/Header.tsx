@@ -7,8 +7,8 @@ import MobileMenuContextProvider from "context/MobileMenuContext"
 
 export default function Header() {
   return (
-    <section className="sticky top-0 z-999 bg-white py-4 lg:py-0">
-      <div className="container mx-auto flex items-center">
+    <section className="sticky top-0 z-999 h-20 bg-white lg:py-0">
+      <div className="container mx-auto flex h-full items-center">
         <Logo />
         <Nav />
         <div className="hidden w-24 text-right lg:flex lg:justify-end">
