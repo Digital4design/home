@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       primary: ["proxima-nova", "sans-serif"],
-      secondary: ["Arial", "sans-serif"],
+      secondary: ["proxima-soft", "sans-serif"],
     },
 
     extend: {
