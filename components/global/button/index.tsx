@@ -9,8 +9,8 @@ interface PropTypes {
 
 function Button({ onClick, children, disabled, outline }: PropTypes) {
   const classes = outline
-    ? "text-brand-green border border-brand-green"
-    : "bg-brand-green ";
+    ? "text-brand-green border border-brand-green hover:bg-brand-green hover:text-white"
+    : "bg-brand-green "; //TODO: Add hover state
 
   return (
     <button
@@ -18,7 +18,7 @@ function Button({ onClick, children, disabled, outline }: PropTypes) {
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className={` rounded-sm  py-3 px-8 text-white ${classes}`} //TODO - Add hover state
+      className={` rounded-sm  py-3 px-8 text-white ${classes}`}
     >
       {children}
     </button>

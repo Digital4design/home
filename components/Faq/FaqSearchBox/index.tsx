@@ -9,7 +9,7 @@ function FaqSearchBox() {
         className=" h-full w-full px-2 focus:outline-none lg:pl-5"
         placeholder="Type your question here, or browse topic below"
       />
-      <div className="flex items-center rounded bg-brand-green p-2 lg:p-5">
+      <div className="flex items-center rounded-sm bg-brand-green p-2 lg:p-5">
         <SearchIcon className=" h-6 text-white" />
       </div>
     </div>
