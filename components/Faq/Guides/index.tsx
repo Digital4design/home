@@ -1,5 +1,6 @@
-import Link from "next/link"
-import GuideCards from "../GuideCards"
+import Button from "components/global/button";
+import Link from "next/link";
+import GuideCards from "../GuideCards";
 
 function Guides() {
   return (
@@ -9,12 +10,10 @@ function Guides() {
       </h2>
       <GuideCards />
       <Link href="">
-        <a className="block w-full cursor-pointer rounded border border-brand-green px-8 py-3 text-center text-brand-green transition-all hover:bg-brand-green hover:text-white lg:w-fit">
-          Browse all guides
-        </a>
+        <Button outline> Browse all guides</Button>
       </Link>
     </section>
-  )
+  );
 }
 
-export default Guides
+export default Guides;
