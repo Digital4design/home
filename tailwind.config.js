@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      primary: ["Arial", "sans-serif"],
+      primary: ["proxima-nova", "sans-serif"],
       secondary: ["Arial", "sans-serif"],
     },
 
@@ -36,6 +36,7 @@ module.exports = {
           "green-dark": "hsl(166, 64%, 33%)",
           "blue-light": "hsl(200, 32%, 93%)",
           blue: "hsl(199, 100%, 24%)",
+          "blue-transparent": "hsla(199, 100%, 24%, 0.3)",
           "blue-dark": "hsl(199, 100%, 14%)",
           "grey-dark": "hsl(0, 0%, 18%)",
           grey: "hsl(0, 0%, 48%)",
@@ -62,4 +63,4 @@ module.exports = {
       },
     },
   },
-}
+};
