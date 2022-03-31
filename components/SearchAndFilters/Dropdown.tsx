@@ -40,7 +40,7 @@ export default function Dropdown({
       ref={dropdownRef}
       className={`${
         margin ? margin : "-mt-2"
-      } absolute top-full left-0 z-100 max-h-[400px] min-w-full cursor-default overflow-y-scroll rounded-sm bg-white py-4 shadow-md transition-all duration-150 ease-in-out ${classes}`}
+      } absolute top-full -left-[5%] z-100 max-h-[400px] w-[110%] min-w-full cursor-default overflow-y-scroll rounded-sm border border-gray-100 bg-white py-4 shadow-md transition-all duration-150 ease-in-out ${classes}`}
     >
       {children}
     </div>

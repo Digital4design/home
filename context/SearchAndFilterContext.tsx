@@ -17,6 +17,7 @@ interface FiltersContext {
   filters: Filters
   updateFilters: (key: string, filter: string | number) => void
   searchProperties: () => void
+  setFiltersFromQueries: (filters: Filters) => void
 }
 
 const initialState = {
@@ -31,6 +32,7 @@ export const SearchAndFilterContext = createContext<FiltersContext>({
   filters: initialState,
   updateFilters: () => {},
   searchProperties: () => {},
+  setFiltersFromQueries: () => {},
 })
 
 export default function SearchAndFilterContextProvider({ children }: Props) {
@@ -39,6 +41,10 @@ export default function SearchAndFilterContextProvider({ children }: Props) {
 
   const updateFilters = (key: string, filter: string | number) => {
     setFilters({ ...filters, [key]: filter })
+  }
+
+  const setFiltersFromQueries = (queries: Filters) => {
+    setFilters(queries)
   }
 
   const searchProperties = () => {
@@ -52,6 +58,7 @@ export default function SearchAndFilterContextProvider({ children }: Props) {
     filters,
     updateFilters,
     searchProperties,
+    setFiltersFromQueries,
   }
   return (
     <SearchAndFilterContext.Provider value={value}>
@@ -61,9 +68,17 @@ export default function SearchAndFilterContextProvider({ children }: Props) {
 }
 
 export const useSearchFilters = () => {
-  const { filters, updateFilters, searchProperties } = useContext(
-    SearchAndFilterContext
-  )
+  const router = useRouter()
+  const { filters, updateFilters, searchProperties, setFiltersFromQueries } =
+    useContext(SearchAndFilterContext)
 
-  return { filters, updateFilters, searchProperties }
+  const isHomePage = router.asPath === "/" ? true : false
+
+  return {
+    filters,
+    updateFilters,
+    searchProperties,
+    isHomePage,
+    setFiltersFromQueries,
+  }
 }

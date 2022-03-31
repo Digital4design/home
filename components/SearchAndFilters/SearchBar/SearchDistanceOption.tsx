@@ -11,7 +11,7 @@ export default function SearchDistanceOption({
 }: Props) {
   return (
     <span
-      className={`block w-40 cursor-pointer py-2 pl-8 text-left text-sm hover:bg-brand-green-light ${
+      className={`block cursor-pointer py-2 text-center text-sm hover:bg-brand-green-light ${
         distance === value && "font-bold"
       }`}
       key={distance}

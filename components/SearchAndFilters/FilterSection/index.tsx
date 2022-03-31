@@ -1,3 +1,4 @@
+import { useSearchFilters } from "context/SearchAndFilterContext"
 import { MutableRefObject, ReactNode } from "react"
 
 interface Props {
@@ -21,10 +22,15 @@ export default function FilterSection({
   width,
   ref,
 }: Props) {
+  const { isHomePage } = useSearchFilters()
+
+  const classes = isHomePage
+    ? "border-white text-white"
+    : "text-brand-grey-dark"
   return (
     <div
       ref={ref}
-      className={`group relative flex h-full cursor-pointer flex-col justify-center border-r border-white px-8 text-left text-white ${
+      className={`group relative flex h-full cursor-pointer flex-col justify-center border-r px-8 text-left ${classes} ${
         width ? width : "w-auto"
       }`}
       onClick={onClick}

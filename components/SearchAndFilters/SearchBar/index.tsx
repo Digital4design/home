@@ -1,10 +1,10 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react"
+import React, { ChangeEvent, useEffect, useState } from "react"
 import { MapLocationMarker } from "components/Icons"
 import SearchDistance from "components/SearchAndFilters/SearchBar/SearchDistance"
 import { useSearchFilters } from "context/SearchAndFilterContext"
 
 export default function SearchBar() {
-  const { updateFilters, searchProperties } = useSearchFilters()
+  const { updateFilters, searchProperties, isHomePage } = useSearchFilters()
   const [value, setValue] = useState("")
 
   useEffect(() => {
@@ -29,7 +29,11 @@ export default function SearchBar() {
   }
 
   return (
-    <div className="relative flex h-[50px] w-4/12 max-w-[330px] items-center rounded-sm bg-white pl-12">
+    <div
+      className={`relative flex h-[50px] w-4/12 max-w-[330px] items-center rounded-sm bg-white pl-12 ${
+        !isHomePage && "border"
+      }`}
+    >
       <div className="absolute top-3 left-3 z-20">
         <MapLocationMarker classes="h-6 w-6 text-brand-green" />
       </div>
