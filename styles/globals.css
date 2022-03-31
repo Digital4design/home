@@ -2,27 +2,27 @@
 
 @layer base {
   body {
-    @apply text-brand-grey-dark;
+    @apply font-primary text-brand-grey-dark;
   }
 
   p {
-    @apply font-primary text-brand-grey;
+    @apply text-brand-grey;
   }
 
   h1 {
-    @apply font-primary text-4xl font-bold lg:text-6xl;
+    @apply text-4xl font-bold lg:text-6xl;
   }
   h2 {
-    @apply font-primary text-3xl font-bold lg:text-5xl;
+    @apply text-3xl font-bold lg:text-5xl;
   }
   h3 {
-    @apply font-primary text-xl font-bold lg:text-4xl;
+    @apply text-xl font-bold lg:text-4xl;
   }
   h4 {
-    @apply font-primary text-lg font-bold lg:text-2xl;
+    @apply text-lg font-bold lg:text-2xl;
   }
   h5 {
-    @apply font-primary font-bold lg:text-lg;
+    @apply font-bold lg:text-lg;
   }
 }
 
@@ -37,8 +37,6 @@
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   height: 100%;
   overflow-x: hidden !important;
 }
