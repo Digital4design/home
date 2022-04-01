@@ -5,7 +5,7 @@ import { useSearchFilters } from "context/SearchAndFilterContext"
 import { replaceSpacesWithHyphens } from "utils"
 
 export default function SearchBar() {
-  const { updateFilters, searchProperties, isHomePage } = useSearchFilters()
+  const { updateFilters, searchProperties, isSearchPage } = useSearchFilters()
   const [value, setValue] = useState("")
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function SearchBar() {
   return (
     <div
       className={`relative flex h-[50px] w-4/12 max-w-[330px] items-center rounded-sm bg-white pl-12 ${
-        !isHomePage && "border"
+        isSearchPage && "border"
       }`}
     >
       <div className="absolute top-3 left-3 z-20">

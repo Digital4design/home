@@ -10,7 +10,7 @@ import SearchButton from "./SearchButton"
 
 // The search and filters bar which shows on home page and above property search or properties
 export default function SearchAndFilters() {
-  // The filters are displayed differently if it isn't the home page so we use this isHomePage variable from the hook to change classes
+  // The filters are displayed differently if they are on the /properties or /property routes so we use this isSearchPage variable from the hook to change classes
   // this hook is used within the individual pieces to the filters too
   const { isSearchPage } = useSearchFilters()
 
