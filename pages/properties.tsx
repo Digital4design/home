@@ -9,6 +9,8 @@ import SearchSidebar from "components/SearchSidebar"
 import Image from "next/image"
 import PropertyPreview from "components/PropertyPreview"
 import useMatchMedia from "hooks/useMatchMedia"
+import NoResults from "components/NoResults"
+import Sidebar from "components/Layout/Sidebar"
 
 interface Props {
   queries: SearchFilters
@@ -33,35 +35,7 @@ export default function Properties({ queries }: Props) {
           <title>No results | Home Reach</title>
         </Head>
         <SearchAndFilters />
-        <main role="main">
-          <section className="my-6">
-            <div className="container-sm rounded bg-brand-blue-light py-20 pb-10 text-center">
-              <h2 className="mb-6 text-xl font-medium tracking-wide">
-                We couldn&apos;t find properties fitting your needs
-              </h2>
-              <p className="font-light leading-[1.7]">
-                Try again by changing your search criteria or{" "}
-                <a
-                  href="http://localhost:3000"
-                  className="font-medium text-brand-green"
-                >
-                  subscribe to our notifications
-                </a>
-                .<br />
-                As soon as there is a new offer that meets your requirements, we
-                will inform you about it.
-              </p>
-              <figure className="relative mt-10 h-[200px]">
-                <Image
-                  src="/assets/search-not-found.jpg"
-                  alt=""
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </figure>
-            </div>
-          </section>
-        </main>
+        <NoResults />
       </>
     )
   }
@@ -106,7 +80,9 @@ export default function Properties({ queries }: Props) {
               ))}
             </div>
             {/* Right Column */}
-            <SearchSidebar />
+            <Sidebar>
+              <SearchSidebar />
+            </Sidebar>
           </div>
         </section>
         <section className="bg-brand-blue py-24 text-brand-blue-light">

@@ -2,7 +2,7 @@ import NavLink from "components/Layout/Nav/NavLink"
 import { useSearchFilters } from "context/SearchAndFilterContext"
 
 export default function Nav() {
-  const { isHomePage } = useSearchFilters()
+  const { isSearchPage } = useSearchFilters()
   // when we pull in data, we will need the slug for each nav link and the text/name to use as children to <NavLink />
   // then for any dropdown navigation, we will need them in an array of objects with { slug, name } keys
   // the example below shows an array of objects which we feed in to <NavLink /> under the 'dropdownItems' prop
@@ -18,7 +18,7 @@ export default function Nav() {
        * if it is not the home page, we want to remove the shadow and use a border bottom instead */}
       <div
         className={`pointer-events-none absolute inset-0 z-10 content-[''] ${
-          isHomePage ? "shadow-lg" : "border-b"
+          !isSearchPage ? "shadow-lg" : "border-b"
         }`}
       />
       <NavLink slug="/properties">Property Search</NavLink>
