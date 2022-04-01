@@ -1,6 +1,7 @@
 import Modal from "components/Modal"
 import useModal from "hooks/useModal"
 import React from "react"
+import RegisterInterest from "components/RegisterInterest"
 
 interface Props {
   full?: boolean
@@ -15,11 +16,7 @@ export default function RegisterInterestButton({ full = false }: Props) {
       </button>
       <Modal isOpen={modalIsOpen} handleClose={closeModal}>
         <div className="p-8">
-          <p>
-            Register Interest Form but will need to be taylored for each
-            property or development. So we can pass some subject or information
-            through to the email trigger
-          </p>
+          <RegisterInterest />
         </div>
       </Modal>
     </>

@@ -1,7 +1,7 @@
 import { HeartIcon, ReplyIcon, ShareIcon } from "@heroicons/react/outline"
 import Link from "next/link"
 import React from "react"
-import RegisterInterestButton from "./RegisterInterestButton"
+import RegisterInterestButton from "../../RegisterInterest/RegisterInterestButton"
 
 export default function AreYouInterested() {
   return (

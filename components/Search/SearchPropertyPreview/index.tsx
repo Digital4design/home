@@ -4,7 +4,7 @@ import SearchPreviewColumn from "components/Search/SearchPropertyPreview/SearchP
 import { ReplyIcon } from "@heroicons/react/solid"
 import { HeartIcon } from "@heroicons/react/outline"
 import { Property } from "types/property"
-import RegisterInterestButton from "components/Sidebar/AreYouInterested/RegisterInterestButton"
+import RegisterInterestButton from "components/RegisterInterest/RegisterInterestButton"
 
 // this is all likely to change once we have the actual data from Dato
 
