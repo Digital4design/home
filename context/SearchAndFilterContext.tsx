@@ -72,13 +72,16 @@ export const useSearchFilters = () => {
   const { filters, updateFilters, searchProperties, setFiltersFromQueries } =
     useContext(SearchAndFilterContext)
 
-  const isHomePage = router.asPath === "/" ? true : false
+  const isSearchPage =
+    router.pathname === "/properties" || router.pathname === "/property"
+      ? true
+      : false
 
   return {
     filters,
     updateFilters,
     searchProperties,
-    isHomePage,
+    isSearchPage,
     setFiltersFromQueries,
   }
 }

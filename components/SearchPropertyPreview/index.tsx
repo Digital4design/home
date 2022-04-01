@@ -3,14 +3,11 @@ import SearchPropertyPreviewHeader from "components/SearchPropertyPreview/Search
 import SearchPreviewColumn from "components/SearchPropertyPreview/SearchPreviewColumn"
 import { ReplyIcon } from "@heroicons/react/solid"
 import { HeartIcon } from "@heroicons/react/outline"
-import { PropertyPreviewProps } from "types/property"
+import { Property } from "types/property"
 
 // this is all likely to change once we have the actual data from Dato
 
-interface SearchPreview extends PropertyPreviewProps {
-  image: string
-  alt: string
-  placeholder: string
+interface SearchPreview extends Property {
   companyLogo: string
   placeholderLogo: string
   logoAltText: string
@@ -38,7 +35,9 @@ export default function SearchPropertyPreview({ property }: Props) {
           alt={property.logoAltText}
         />
 
-        <strong>{property.beds}</strong>
+        <strong>
+          {property.beds} bedroom {property.type}
+        </strong>
 
         <aside className="flex">
           <SearchPreviewColumn

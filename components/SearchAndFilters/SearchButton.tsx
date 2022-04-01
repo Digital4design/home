@@ -3,9 +3,9 @@ import { useSearchFilters } from "context/SearchAndFilterContext"
 import React from "react"
 
 export default function SearchButton() {
-  const { searchProperties, isHomePage } = useSearchFilters()
+  const { searchProperties, isSearchPage } = useSearchFilters()
 
-  const classes = isHomePage ? "pl-4" : "pl-6"
+  const classes = !isSearchPage ? "pl-4" : "pl-6"
 
   return (
     <div className={classes}>

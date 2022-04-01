@@ -15,8 +15,8 @@ interface Props extends ChildrenProps {
  */
 
 export default function FilterDisplay({ children, chevron = true }: Props) {
-  const { isHomePage } = useSearchFilters()
-  const classes = isHomePage
+  const { isSearchPage } = useSearchFilters()
+  const classes = !isSearchPage
     ? "text-white group-hover:text-brand-blue-light"
     : "text-brand-grey-dark group-hover:text-brand-blue"
   return (

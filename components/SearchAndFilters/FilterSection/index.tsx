@@ -22,9 +22,9 @@ export default function FilterSection({
   width,
   ref,
 }: Props) {
-  const { isHomePage } = useSearchFilters()
+  const { isSearchPage } = useSearchFilters()
 
-  const classes = isHomePage
+  const classes = !isSearchPage
     ? "border-white text-white"
     : "text-brand-grey-dark"
   return (
