@@ -7,6 +7,8 @@ import { capitaliseWord, replaceHyphensWithSpaces } from "utils"
 import mockData from "../mockProperties.json"
 import SearchSidebar from "components/SearchSidebar"
 import Image from "next/image"
+import PropertyPreview from "components/PropertyPreview"
+import useMatchMedia from "hooks/useMatchMedia"
 
 interface Props {
   queries: SearchFilters
@@ -17,6 +19,8 @@ interface ServerProps {
 }
 
 export default function Properties({ queries }: Props) {
+  // check if size of screen is mobile so we can render large search preview
+  const isTabletResolution = useMatchMedia("(max-width:760px)", true)
   const { properties } = mockData
   const { location, rooms, price, radius, type } = queries
 
@@ -86,9 +90,19 @@ export default function Properties({ queries }: Props) {
         <section className="pb-12">
           <div className="container-sm flex">
             {/* Left Column */}
-            <div className="w-2/3" id="left-column">
+            <div className="w-full lg:w-2/3" id="left-column">
               {properties.map((property, index) => (
-                <SearchPropertyPreview property={property} key={index} />
+                <>
+                  {!isTabletResolution ? (
+                    <SearchPropertyPreview property={property} key={index} />
+                  ) : (
+                    <PropertyPreview
+                      property={property}
+                      tooltip={property.tooltip}
+                      key={index}
+                    />
+                  )}
+                </>
               ))}
             </div>
             {/* Right Column */}

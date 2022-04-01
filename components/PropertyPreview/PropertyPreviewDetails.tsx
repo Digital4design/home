@@ -1,7 +1,7 @@
 import { LibraryIcon, LocationMarkerIcon } from "@heroicons/react/outline"
 import { v4 as uuidv4 } from "uuid"
 import ReactTooltip from "react-tooltip"
-import { PropertyPreviewProps } from "types/property"
+import { PropertyPreviewProps, PropertyPreviewPropsNew } from "types/property"
 import { useEffect, useState } from "react"
 
 /**
@@ -22,6 +22,7 @@ export default function PropertyPreviewDetails({
   shares,
   price,
   tooltip,
+  type,
 }: PropertyPreviewProps) {
   const [isMounted, setIsMounted] = useState(false) // Need this for the react-tooltip
   const id = uuidv4()
@@ -46,7 +47,7 @@ export default function PropertyPreviewDetails({
       </span>
       <span className="flex items-center  text-sm">
         <LibraryIcon className="mr-4 h-4 w-4 text-brand-green" />
-        {beds}
+        {beds} bedroom {type}
       </span>
       <div className="text-md absolute bottom-3 right-5 flex items-center text-brand-blue">
         <strong>£{price.toLocaleString()}</strong>{" "}

@@ -39,14 +39,7 @@ export default function Home() {
               {properties.map((property, index) => (
                 <PropertyPreview
                   isSlide
-                  image={property.image}
-                  alt={property.alt}
-                  placeholder={property.placeholder}
-                  title={property.title}
-                  address={property.address}
-                  beds={property.beds}
-                  shares={property.shares}
-                  price={property.price}
+                  property={property}
                   tooltip={property.tooltip}
                   key={index}
                 />
