@@ -2,6 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from "react"
 import { MapLocationMarker } from "components/Icons"
 import SearchDistance from "components/SearchAndFilters/SearchBar/SearchDistance"
 import { useSearchFilters } from "context/SearchAndFilterContext"
+import { replaceSpacesWithHyphens } from "utils"
 
 export default function SearchBar() {
   const { updateFilters, searchProperties, isHomePage } = useSearchFilters()
@@ -22,10 +23,9 @@ export default function SearchBar() {
   }, [searchProperties, value])
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const inputValue = e.target.value.toLowerCase()
-    const hyphenatedValue = inputValue.replace(" ", "-")
+    const slug = replaceSpacesWithHyphens(e.target.value)
     setValue(e.target.value)
-    updateFilters("location", hyphenatedValue)
+    updateFilters("location", slug)
   }
 
   return (

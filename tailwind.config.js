@@ -15,7 +15,10 @@ module.exports = {
         DEFAULT: "12px",
         sm: "8px",
       },
-
+      boxShadow: {
+        full: "0 1px 35px -10px rgba(0, 0, 0, 0.3)",
+        "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
+      },
       fontSize: {
         "6xl": ["56px", "64px"],
         "5xl": ["40px", "56px"],

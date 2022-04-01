@@ -55,18 +55,18 @@ button {
   cursor: pointer;
 }
 
+.button {
+  @apply rounded-sm bg-brand-green px-8 h-12 flex items-center justify-center text-white hover:bg-brand-green-medium;
+}
+
 .container {
-  @apply mx-auto;
+  @apply mx-auto max-w-[1440px] px-6;
 }
 
 .container-sm {
-  @apply mx-auto w-full max-w-[1200px];
+  @apply mx-auto w-full max-w-[1200px] px-8;
 }
 
-.container,
-.container-sm {
-  @apply px-8;
-}
 
 .testimonials
   .swiper-pagination-horizontal.swiper-pagination-bullets

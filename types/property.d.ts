@@ -4,6 +4,6 @@ export interface PropertyPreviewProps {
     beds: string
     shares: number
     isSlide?: boolean
-    price: string
+    price: number
     tooltip?: string
 }

@@ -49,7 +49,7 @@ export default function PropertyPreviewDetails({
         {beds}
       </span>
       <div className="text-md absolute bottom-3 right-5 flex items-center text-brand-blue">
-        <strong>£{price}</strong>{" "}
+        <strong>£{price.toLocaleString()}</strong>{" "}
         <div data-tip data-for={id}>
           <div className="text-brand-dark-blue ml-2 flex rounded-[4px] bg-brand-blue-light px-[7px] text-xs font-bold">
             i
