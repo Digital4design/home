@@ -1,13 +1,14 @@
 import { ChevronLeftIcon } from "@heroicons/react/solid"
 import { MapLocationMarker } from "components/Icons"
-import Sidebar from "components/Layout/Sidebar"
+import Sidebar from "components/Sidebar"
 import PropertyPreview from "components/PropertyPreview"
-import SearchPropertyPreview from "components/SearchPropertyPreview"
-import SearchSidebar from "components/SearchSidebar"
+import SearchPropertyPreview from "components/Search/SearchPropertyPreview"
+import SearchSidebar from "components/Search/SearchSidebar"
 import useMatchMedia from "hooks/useMatchMedia"
 import Image from "next/image"
 import React from "react"
 import mockData from "../../mockProperties.json"
+import AreYouInterested from "components/Sidebar/AreYouInterested"
 
 // Specific List of properties in a development category
 export default function Development() {
@@ -60,7 +61,7 @@ export default function Development() {
             ))}
           </div>
           <Sidebar>
-            <SearchSidebar />
+            <AreYouInterested />
           </Sidebar>
         </div>
       </section>

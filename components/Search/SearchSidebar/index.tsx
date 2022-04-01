@@ -1,4 +1,3 @@
-import Sidebar from "components/Layout/Sidebar"
 import React from "react"
 
 export default function SearchSidebar() {

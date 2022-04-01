@@ -1,10 +1,10 @@
 import useToggle from "hooks/useToggle"
 import { useState } from "react"
-import Dropdown from "components/SearchAndFilters/Dropdown"
-import FilterSection from "components/SearchAndFilters/FilterSection"
-import BedroomsOption from "components/SearchAndFilters/Bedrooms/BedroomsOption"
-import FilterLabel from "components/SearchAndFilters/FilterSection/FilterLabel"
-import FilterDisplay from "components/SearchAndFilters/FilterSection/FilterDisplay"
+import Dropdown from "components/Search/SearchAndFilters/Dropdown"
+import FilterSection from "components/Search/SearchAndFilters/FilterSection"
+import BedroomsOption from "components/Search/SearchAndFilters/Bedrooms/BedroomsOption"
+import FilterLabel from "components/Search/SearchAndFilters/FilterSection/FilterLabel"
+import FilterDisplay from "components/Search/SearchAndFilters/FilterSection/FilterDisplay"
 import { useSearchFilters } from "context/SearchAndFilterContext"
 
 export default function Bedrooms() {

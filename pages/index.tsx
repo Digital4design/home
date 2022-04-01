@@ -8,7 +8,7 @@ import BrowseByAreaCard from "components/BrowseByAreaCard"
 import Paragraph from "components/global/Paragraph"
 import ParagraphHeading from "components/global/Paragraph/ParagraphHeading"
 import Explore from "components/Explore"
-import SearchAndFilters from "components/SearchAndFilters"
+import SearchAndFilters from "components/Search/SearchAndFilters"
 
 // mock data
 import mockData from "../mockProperties.json"

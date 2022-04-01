@@ -1,4 +1,4 @@
-import SearchBar from "components/SearchAndFilters/SearchBar"
+import SearchBar from "components/Search/SearchAndFilters/SearchBar"
 import SearchAndFilterContextProvider, {
   useSearchFilters,
 } from "context/SearchAndFilterContext"
