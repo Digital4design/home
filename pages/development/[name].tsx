@@ -3,7 +3,6 @@ import { MapLocationMarker } from "components/Icons"
 import Sidebar from "components/Sidebar"
 import PropertyPreview from "components/PropertyPreview"
 import SearchPropertyPreview from "components/Search/SearchPropertyPreview"
-import useMatchMedia from "hooks/useMatchMedia"
 import Image from "next/image"
 import React from "react"
 import mockData from "../../mockProperties.json"
@@ -11,7 +10,6 @@ import AreYouInterested from "components/Sidebar/AreYouInterested"
 
 // Specific List of properties in a development category
 export default function Development() {
-  // const isTabletResolution = useMatchMedia("(max-width:760px)", true)
   const { properties } = mockData
 
   return (
