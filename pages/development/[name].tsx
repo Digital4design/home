@@ -3,7 +3,6 @@ import { MapLocationMarker } from "components/Icons"
 import Sidebar from "components/Sidebar"
 import PropertyPreview from "components/PropertyPreview"
 import SearchPropertyPreview from "components/Search/SearchPropertyPreview"
-import SearchSidebar from "components/Search/SearchSidebar"
 import useMatchMedia from "hooks/useMatchMedia"
 import Image from "next/image"
 import React from "react"
@@ -12,7 +11,7 @@ import AreYouInterested from "components/Sidebar/AreYouInterested"
 
 // Specific List of properties in a development category
 export default function Development() {
-  const isTabletResolution = useMatchMedia("(max-width:760px)", true)
+  // const isTabletResolution = useMatchMedia("(max-width:760px)", true)
   const { properties } = mockData
 
   return (
@@ -47,17 +46,17 @@ export default function Development() {
         <div className="container-sm flex">
           <div className="w-full lg:w-2/3" id="left-column">
             {properties.map((property, index) => (
-              <>
-                {!isTabletResolution ? (
-                  <SearchPropertyPreview property={property} key={index} />
-                ) : (
+              <article key={index}>
+                <div className="hidden md:inline">
+                  <SearchPropertyPreview property={property} />
+                </div>
+                <div className="inline md:hidden">
                   <PropertyPreview
                     property={property}
                     tooltip={property.tooltip}
-                    key={index}
                   />
-                )}
-              </>
+                </div>
+              </article>
             ))}
           </div>
           <Sidebar>

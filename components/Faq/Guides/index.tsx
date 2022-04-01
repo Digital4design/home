@@ -1,6 +1,6 @@
-import Button from "components/global/button";
-import Link from "next/link";
-import GuideCards from "../GuideCards";
+import Button from "components/global/button"
+import Link from "next/link"
+import GuideCards from "../GuideCards"
 
 function Guides() {
   return (
@@ -9,11 +9,11 @@ function Guides() {
         All you need to know about shared ownership
       </h2>
       <GuideCards />
-      <Link href="">
+      <Link passHref href="/development/test">
         <Button outline> Browse all guides</Button>
       </Link>
     </section>
-  );
+  )
 }
 
-export default Guides;
+export default Guides
