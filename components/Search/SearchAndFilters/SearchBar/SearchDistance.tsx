@@ -1,7 +1,7 @@
 import useToggle from "hooks/useToggle"
 import { useState } from "react"
-import Dropdown from "components/SearchAndFilters/Dropdown"
-import SearchDistanceOption from "components/SearchAndFilters/SearchBar/SearchDistanceOption"
+import Dropdown from "components/Search/SearchAndFilters/Dropdown"
+import SearchDistanceOption from "components/Search/SearchAndFilters/SearchBar/SearchDistanceOption"
 import { useSearchFilters } from "context/SearchAndFilterContext"
 
 export default function SearchDistance() {

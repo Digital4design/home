@@ -61,6 +61,14 @@ button {
   @apply rounded-sm bg-brand-green px-8 h-12 flex items-center justify-center text-white hover:bg-brand-green-medium;
 }
 
+.button-outline {
+  @apply rounded-sm border font-medium border-brand-green bg-white px-8 h-12 flex items-center justify-center text-brand-green hover:text-brand-green-dark hover:border-brand-green-dark;
+}
+
+.button-white {
+  @apply rounded-sm font-medium px-8 h-12 flex items-center justify-center text-brand-green hover:text-brand-green-dark;
+}
+
 .container {
   @apply mx-auto max-w-[1440px] px-6;
 }

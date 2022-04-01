@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react"
 import { MapLocationMarker } from "components/Icons"
-import SearchDistance from "components/SearchAndFilters/SearchBar/SearchDistance"
+import SearchDistance from "components/Search/SearchAndFilters/SearchBar/SearchDistance"
 import { useSearchFilters } from "context/SearchAndFilterContext"
 import { replaceSpacesWithHyphens } from "utils"
 

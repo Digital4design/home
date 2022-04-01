@@ -1,16 +1,15 @@
 import { MapIcon } from "@heroicons/react/outline"
-import SearchAndFilters from "components/SearchAndFilters"
+import SearchAndFilters from "components/Search/SearchAndFilters"
 import { SearchFilters } from "types/search"
-import SearchPropertyPreview from "components/SearchPropertyPreview"
+import SearchPropertyPreview from "components/Search/SearchPropertyPreview"
 import Head from "next/head"
 import { capitaliseWord, replaceHyphensWithSpaces } from "utils"
 import mockData from "../mockProperties.json"
-import SearchSidebar from "components/SearchSidebar"
-import Image from "next/image"
+import SearchSidebar from "components/Search/SearchSidebar"
 import PropertyPreview from "components/PropertyPreview"
 import useMatchMedia from "hooks/useMatchMedia"
 import NoResults from "components/NoResults"
-import Sidebar from "components/Layout/Sidebar"
+import Sidebar from "components/Sidebar"
 
 interface Props {
   queries: SearchFilters

@@ -1,9 +1,10 @@
 import PropertyPreviewImage from "components/PropertyPreview/PropertyPreviewImage"
-import SearchPropertyPreviewHeader from "components/SearchPropertyPreview/SearchPropertyPreviewHeader"
-import SearchPreviewColumn from "components/SearchPropertyPreview/SearchPreviewColumn"
+import SearchPropertyPreviewHeader from "components/Search/SearchPropertyPreview/SearchPropertyPreviewHeader"
+import SearchPreviewColumn from "components/Search/SearchPropertyPreview/SearchPreviewColumn"
 import { ReplyIcon } from "@heroicons/react/solid"
 import { HeartIcon } from "@heroicons/react/outline"
 import { Property } from "types/property"
+import RegisterInterestButton from "components/Sidebar/AreYouInterested/RegisterInterestButton"
 
 // this is all likely to change once we have the actual data from Dato
 
@@ -48,7 +49,7 @@ export default function SearchPropertyPreview({ property }: Props) {
           <SearchPreviewColumn label="Est monthly cost" price={2030} />
         </aside>
         <footer className="mt-6 flex items-center">
-          <button className="button">Register Interest</button>
+          <RegisterInterestButton />
           <button className="ml-4 flex h-12 w-12 items-center justify-center rounded-sm border border-brand-green bg-white">
             <ReplyIcon className="h-5 w-5 text-brand-green" />
           </button>
