@@ -6,10 +6,13 @@
       "placeholder": "/assets/placeholder/house-1.jpg",
       "title": "Whittingham Park - The Fircroft",
       "address": "24 Home Street, Lancashire, LC24 5ST",
-      "beds": "4 bedroom house",
-      "shares": 35,
-      "price": "30,964",
-      "tooltip": "Some information"
+      "beds": "2 bedroom house",
+      "shares": 31,
+      "price": 30964,
+      "tooltip": "Some information",
+      "companyLogo": "/assets/placeholder/partners/taylor.png",
+      "placeholderLogo": "https://via.placeholder.com/150x80",
+      "logoAltText": "Agency Name"
     },
     {
       "image": "/assets/placeholder/house-2.jpg",
@@ -18,9 +21,12 @@
       "title": "Rothwells Farm - Gosford",
       "address": "24 Home Street, Lancashire, LC24 5ST",
       "beds": "4 bedroom house",
-      "shares": 35,
-      "price": "30,964",
-      "tooltip": "Lovely property"
+      "shares": 11,
+      "price": 30964,
+      "tooltip": "Lovely property",
+      "companyLogo": "/assets/placeholder/partners/taylor.png",
+      "placeholderLogo": "https://via.placeholder.com/150x80",
+      "logoAltText": "Agency Name"
     },
     {
       "image": "/assets/placeholder/house-3.jpg",
@@ -28,10 +34,13 @@
       "placeholder": "/assets/placeholder/house-3.jpg",
       "title": "Whittingham Palace - Firefly",
       "address": "24 Home Street, Lancashire, LC24 5ST",
-      "beds": "4 bedroom house",
-      "shares": 35,
-      "price": "30,964",
-      "tooltip": "Yes this info should be unique"
+      "beds": "7 bedroom house",
+      "shares": 28,
+      "price": 30964,
+      "tooltip": "Yes this info should be unique",
+      "companyLogo": "/assets/placeholder/partners/taylor.png",
+      "placeholderLogo": "https://via.placeholder.com/150x80",
+      "logoAltText": "Agency Name"
     },
     {
       "image": "/assets/placeholder/house-1.jpg",
@@ -39,10 +48,13 @@
       "placeholder": "/assets/placeholder/house-1.jpg",
       "title": "Whittingham Park - The Fircroft",
       "address": "24 Home Street, Lancashire, LC24 5ST",
-      "beds": "4 bedroom house",
-      "shares": 35,
-      "price": "30,964",
-      "tooltip": "But what if it isn't?"
+      "beds": "3 bedroom house",
+      "shares": 40,
+      "price": 30964,
+      "tooltip": "But what if it isn't?",
+      "companyLogo": "/assets/placeholder/partners/taylor.png",
+      "placeholderLogo": "https://via.placeholder.com/150x80",
+      "logoAltText": "Agency Name"
     },
     {
       "image": "/assets/placeholder/house-2.jpg",
@@ -52,8 +64,11 @@
       "address": "24 Home Street, Lancashire, LC24 5ST",
       "beds": "4 bedroom house",
       "shares": 35,
-      "price": "30,964",
-      "tooltip": "Unique tooltip text"
+      "price": 30964,
+      "tooltip": "Unique tooltip text",
+      "companyLogo": "/assets/placeholder/partners/taylor.png",
+      "placeholderLogo": "https://via.placeholder.com/150x80",
+      "logoAltText": "Agency Name"
     }
   ]
 }
