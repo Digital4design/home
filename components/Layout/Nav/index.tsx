@@ -6,12 +6,6 @@ export default function Nav() {
   // when we pull in data, we will need the slug for each nav link and the text/name to use as children to <NavLink />
   // then for any dropdown navigation, we will need them in an array of objects with { slug, name } keys
   // the example below shows an array of objects which we feed in to <NavLink /> under the 'dropdownItems' prop
-  const guidesLinks = [
-    {
-      slug: "what-is-shared-ownership",
-      name: "What is shared ownership?",
-    },
-  ]
 
   return (
     <nav
@@ -27,14 +21,81 @@ export default function Nav() {
           isHomePage ? "shadow-lg" : "border-b"
         }`}
       />
-      <NavLink slug="/properties">Properties</NavLink>
-      <NavLink slug="/how-it-works">How it works</NavLink>
-      <NavLink slug="/guides-and-faqs" hasDropdown dropdownItems={guidesLinks}>
-        Guides & FAQs
+      <NavLink slug="/properties">Property Search</NavLink>
+      <NavLink
+        slug="/what-is-home-reach"
+        hasDropdown
+        dropdownItems={whatIsHomeReachLinks}
+      >
+        What is Home Reach?
       </NavLink>
-      <NavLink slug="/about-us">About us</NavLink>
-      <NavLink slug="/blog">Blog</NavLink>
-      <NavLink slug="/contact">Contact</NavLink>
+      <NavLink
+        slug="/useful-information"
+        hasDropdown
+        dropdownItems={usefulInformationLinks}
+      >
+        Useful Information
+      </NavLink>
+      <NavLink slug="/step-by-step-purchasing">Step by step purchasing</NavLink>
+      <NavLink slug="/guides-and-faqs">FAQs</NavLink>
+      <NavLink slug="/our-customer-stories">Our Customer Stories</NavLink>
     </nav>
   )
 }
+
+export const guidesLinks = [
+  {
+    slug: "what-is-shared-ownership",
+    name: "What is shared ownership?",
+  },
+]
+
+export const whatIsHomeReachLinks = [
+  {
+    slug: "how-does-it-work",
+    name: "How does it work?",
+  },
+  {
+    slug: "steps-to-purchasing",
+    name: "Steps to purchasing",
+  },
+  {
+    slug: "am-i-eligible",
+    name: "Am I eligible?",
+  },
+  {
+    slug: "what-are-the-benefits",
+    name: "What are the benefits?",
+  },
+]
+
+export const usefulInformationLinks = [
+  {
+    slug: "what-are-the-benefits",
+    name: "What are the costs involved?",
+  },
+  {
+    slug: "what-are-the-benefits",
+    name: "What is included in the lease?",
+  },
+  {
+    slug: "what-are-the-benefits",
+    name: "Who are Heylo?",
+  },
+  {
+    slug: "what-are-the-benefits",
+    name: "My rights and responsibilities",
+  },
+  {
+    slug: "what-are-the-benefits",
+    name: "Myth busting and jargon",
+  },
+  {
+    slug: "what-are-the-benefits",
+    name: "Help to buy agents",
+  },
+  {
+    slug: "what-are-the-benefits",
+    name: "Credit policy",
+  },
+]
