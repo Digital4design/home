@@ -21,7 +21,11 @@ export default function PropertyPreview({
       } h-auto cursor-pointer ${sidebarItem ? "w-full" : "md:w-1/3"}`}
     >
       <div
-        className="relative min-h-[300px] rounded bg-white shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
+        className={`relative min-h-[300px] rounded bg-white ${
+          sidebarItem
+            ? ""
+            : "shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
+        }`}
         onClick={() => router.push(`/property/${property.slug}`)}
       >
         <PropertyPreviewImage

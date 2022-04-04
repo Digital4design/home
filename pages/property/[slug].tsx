@@ -4,12 +4,12 @@ import Announcement from "components/propertyDetails/announcement/Large"
 import AnnouncementSmall from "components/propertyDetails/announcement/Small"
 import Gallery from "components/propertyDetails/gallery"
 import Header from "components/propertyDetails/Header"
-import HowItWorks from "components/propertyDetails/howItWorks"
+import HowItWorks from "components/Sidebar/HowItWorks"
 import KeyFeatures from "components/propertyDetails/keyFeatures"
 import Pricing from "components/propertyDetails/pricing"
 import RelatedProperties from "components/propertyDetails/RelatedProperties"
 import AreYouInterested from "components/Sidebar/AreYouInterested"
-import mainAccordionData from "../../components/propertyDetails/accordion/mainAccordionData"
+import mainAccordionData from "components/propertyDetails/accordion/mainAccordionData"
 
 function PropertyDetails() {
   return (

@@ -7,7 +7,7 @@ import Image from "next/image"
 import React from "react"
 import mockData from "../../mockProperties.json"
 import AreYouInterested from "components/Sidebar/AreYouInterested"
-import HowItWorks from "components/propertyDetails/howItWorks"
+import HowItWorks from "components/Sidebar/HowItWorks"
 
 // Specific List of properties in a development category
 export default function Development() {
