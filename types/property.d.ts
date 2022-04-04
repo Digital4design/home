@@ -28,4 +28,5 @@ export interface PropertyPreviewPropsNew {
     property: Property
     tooltip?: string
     isSlide?: boolean
+    sidebarItem?: boolean
 }

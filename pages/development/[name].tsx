@@ -7,6 +7,7 @@ import Image from "next/image"
 import React from "react"
 import mockData from "../../mockProperties.json"
 import AreYouInterested from "components/Sidebar/AreYouInterested"
+import HowItWorks from "components/propertyDetails/howItWorks"
 
 // Specific List of properties in a development category
 export default function Development() {
@@ -22,7 +23,7 @@ export default function Development() {
       <section className="py-4">
         <div className="container-sm flex items-center justify-between">
           <div className="">
-            <h1 className="mb-2 text-2xl font-medium">
+            <h1 className="mb-1 font-secondary text-2xl font-normal">
               Whittingham Park Development
             </h1>
             <p className="flex items-center text-sm text-brand-green">
@@ -59,6 +60,7 @@ export default function Development() {
           </div>
           <Sidebar>
             <AreYouInterested />
+            <HowItWorks />
           </Sidebar>
         </div>
       </section>

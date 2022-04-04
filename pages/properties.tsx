@@ -9,6 +9,8 @@ import SearchSidebar from "components/Search/SearchSidebar"
 import PropertyPreview from "components/PropertyPreview"
 import NoResults from "components/NoResults"
 import Sidebar from "components/Sidebar"
+import HowItWorks from "components/propertyDetails/howItWorks"
+import CashBackAnnounce from "components/CashBackAnnounce"
 
 interface Props {
   queries: SearchFilters
@@ -80,6 +82,17 @@ export default function Properties({ queries }: Props) {
             {/* Right Column */}
             <Sidebar>
               <SearchSidebar />
+              <div className="rounded bg-brand-alert">
+                <span className="block py-1 text-center text-xs uppercase text-white">
+                  Last available property in this development
+                </span>
+                <PropertyPreview property={properties[0]} sidebarItem />
+              </div>
+              <CashBackAnnounce
+                title="Get up to 5% cashback on selected properties!"
+                showBrowseButton
+              />
+              <HowItWorks />
             </Sidebar>
           </div>
         </section>
