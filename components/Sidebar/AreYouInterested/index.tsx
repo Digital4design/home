@@ -7,7 +7,7 @@ export default function AreYouInterested() {
   return (
     <div className="mb-6 w-full rounded bg-white px-6 py-5 shadow-lg">
       <header className="flex justify-between">
-        <h5 className="mb-4 text-[13px] font-medium text-brand-grey-dark">
+        <h5 className="mb-4 text-[14px] font-semibold text-brand-grey-dark">
           Are you interested?
         </h5>
         <div className="share-links flex">
