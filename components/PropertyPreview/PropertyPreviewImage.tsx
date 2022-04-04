@@ -36,6 +36,7 @@ export default function PropertyPreviewImage({
         placeholder="blur"
         blurDataURL={placeholder}
       />
+      <div className="absolute inset-0 bg-gradient-to-bl from-[rgba(0,0,0,0.1)] via-transparent"></div>
     </figure>
   )
 }

@@ -11,13 +11,14 @@ export default function PropertyPreview({
   property,
   isSlide,
   tooltip,
+  sidebarItem,
 }: PropertyPreviewPropsNew) {
   const router = useRouter()
   return (
     <div
       className={`${
         isSlide ? "swiper-slide" : "mx-auto mb-6 w-full max-w-md"
-      } h-auto cursor-pointer md:w-1/3`}
+      } h-auto cursor-pointer ${sidebarItem ? "w-full" : "md:w-1/3"}`}
     >
       <div
         className="relative min-h-[300px] rounded bg-white shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
@@ -37,7 +38,7 @@ export default function PropertyPreview({
           tooltip={tooltip}
           type={property.type}
         />
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4 z-20">
           <AddToFavourites />
         </div>
       </div>
