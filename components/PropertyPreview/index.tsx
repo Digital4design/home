@@ -1,7 +1,7 @@
 import AddToFavourites from "components/AddToFavourites"
 import FavouritesButton from "components/Layout/FavouritesButton"
 import { useRouter } from "next/router"
-import { PropertyPreviewProps, PropertyPreviewPropsNew } from "types/property"
+import { PropertyPreviewPropsNew } from "types/property"
 import PropertyPreviewDetails from "./PropertyPreviewDetails"
 import PropertyPreviewImage from "./PropertyPreviewImage"
 
@@ -17,14 +17,13 @@ export default function PropertyPreview({
   return (
     <div
       className={`${
-        isSlide ? "swiper-slide" : "mx-auto mb-6 w-full max-w-md"
+        isSlide ? "swiper-slide" : "mx-auto mb-6 w-full max-w-lg"
       } h-auto cursor-pointer ${sidebarItem ? "w-full" : "md:w-1/3"}`}
     >
       <div
-        className={`relative min-h-[300px] rounded bg-white ${
-          sidebarItem
-            ? ""
-            : "shadow-lg transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
+        className={`relative min-h-[300px] rounded bg-white shadow-lg ${
+          sidebarItem &&
+          "transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
         }`}
         onClick={() => router.push(`/property/${property.slug}`)}
       >

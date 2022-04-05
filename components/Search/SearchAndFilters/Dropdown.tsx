@@ -1,3 +1,4 @@
+import { useSearchFilters } from "context/SearchAndFilterContext"
 import { MutableRefObject, ReactNode, useEffect, useRef } from "react"
 
 interface Props {
@@ -14,6 +15,7 @@ export default function Dropdown({
   margin,
 }: Props) {
   const dropdownRef = useRef() as MutableRefObject<HTMLDivElement>
+  const { isSearchPage } = useSearchFilters()
 
   useEffect(() => {
     if (!isActive) return
@@ -39,7 +41,7 @@ export default function Dropdown({
     <div
       ref={dropdownRef}
       className={`${
-        margin ? margin : "-mt-2"
+        isSearchPage ? "mt-2" : margin ? margin : "-mt-2"
       } absolute top-full -left-[5%] z-100 max-h-[400px] w-[110%] min-w-full cursor-default overflow-y-scroll rounded-sm border border-gray-100 bg-white py-4 shadow-md transition-all duration-150 ease-in-out ${classes}`}
     >
       {children}
