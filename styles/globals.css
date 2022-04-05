@@ -103,3 +103,11 @@ button {
   .swiper-pagination-bullet {
   margin: 0 3px !important;
 }
+
+.search-view-button {
+  @apply flex cursor-pointer items-center rounded-sm px-2 py-1 hover:bg-brand-blue-light;
+}
+
+.search-view-button-icon {
+  @apply mr-2 h-5 w-5 text-brand-blue
+}

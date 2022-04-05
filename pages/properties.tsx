@@ -1,32 +1,34 @@
-import { MapIcon } from "@heroicons/react/outline"
 import SearchAndFilters from "components/Search/SearchAndFilters"
 import { SearchFilters } from "types/search"
-import SearchPropertyPreview from "components/Search/SearchPropertyPreview"
 import Head from "next/head"
 import { capitaliseWord, replaceHyphensWithSpaces } from "utils"
 import mockData from "../mockProperties.json"
-import SearchSidebar from "components/Search/SearchSidebar"
-import PropertyPreview from "components/PropertyPreview"
 import NoResults from "components/NoResults"
-import Sidebar from "components/Sidebar"
-import HowItWorks from "components/Sidebar/HowItWorks"
-import CashBackAnnounce from "components/Sidebar/CashbackAnnounce"
-import LastAvailableProperty from "components/Sidebar/LastAvailableProperty"
+import SearchHeader from "components/Search/SearchHeader"
+import { ReactElement, useState } from "react"
+import ListView from "components/Search/ListView"
+import MapView from "components/Search/MapView"
+import PropertiesLayout from "components/Layout/PageLayouts/PropertiesLayout"
+import Footer from "components/Layout/Footer"
 
 interface Props {
   queries: SearchFilters
 }
-
 interface ServerProps {
   query: SearchFilters
 }
 
 export default function Properties({ queries }: Props) {
+  const [isMapView, setIsMapView] = useState<boolean>(false)
   // check if size of screen is mobile so we can render large search preview
   const { properties } = mockData
   const { location, rooms, price, radius, type } = queries
 
   const queriesLength = Object.keys(queries).length
+
+  const toggleView = () => {
+    setIsMapView(!isMapView)
+  }
 
   if (queriesLength === 0) {
     return (
@@ -36,6 +38,7 @@ export default function Properties({ queries }: Props) {
         </Head>
         <SearchAndFilters />
         <NoResults />
+        <Footer />
       </>
     )
   }
@@ -50,57 +53,24 @@ export default function Properties({ queries }: Props) {
       </Head>
       <SearchAndFilters />
       <main role="main">
-        {/* sort and map/list view button section, make this a component this */}
-        <section className="py-6">
-          <div className="container-sm flex h-full items-center justify-end">
-            <span className="mr-8 inline-block font-light">
-              Sort by: <b className="font-bold">newest</b>
-            </span>
-            <span className="flex items-center">
-              <MapIcon className="mr-2 h-5 w-5 text-brand-blue" /> Map view
-            </span>
-          </div>
-        </section>
-        <section className="pb-12">
-          <div className="container-sm flex">
-            {/* Left Column */}
-            <div className="w-full lg:w-2/3" id="left-column">
-              {properties.map((property, index) => (
-                <article key={index}>
-                  <div className="hidden md:inline">
-                    <SearchPropertyPreview property={property} />
-                  </div>
-                  <div className="inline md:hidden">
-                    <PropertyPreview
-                      property={property}
-                      tooltip={property.tooltip}
-                      key={index}
-                    />
-                  </div>
-                </article>
-              ))}
-            </div>
-            {/* Right Column */}
-            <Sidebar>
-              <SearchSidebar />
-              <LastAvailableProperty property={properties[0]} />
-              <CashBackAnnounce
-                title="Get up to 5% cashback on selected properties!"
-                showBrowseButton
-              />
-              <HowItWorks />
-            </Sidebar>
-          </div>
-        </section>
-        <section className="bg-brand-blue py-24 text-brand-blue-light">
-          <div className="container-sm">
-            <pre>queries: {JSON.stringify(queries, undefined, 2)}</pre>
-          </div>
-        </section>
+        {isMapView ? (
+          // inside map view there is a search header component to match that layout there
+          <MapView properties={properties} toggleView={toggleView} />
+        ) : (
+          <>
+            {/* Map view layout is different so we need to include the search header with sort and map view button here */}
+            <SearchHeader isMapView={isMapView} toggleView={toggleView} />
+            <ListView properties={properties} />
+          </>
+        )}
       </main>
+      {!isMapView && <Footer />}
     </>
   )
 }
+
+// different layout for this page, have no footer. Then, in the map view on sidebar left display the mobile footer
+// if isMapView is not on then display footer as usual under the closing main tag
 
 export function getServerSideProps({ query }: ServerProps) {
   return {
@@ -108,4 +78,8 @@ export function getServerSideProps({ query }: ServerProps) {
       queries: query,
     },
   }
+}
+
+Properties.getLayout = function getLayout(page: ReactElement) {
+  return <PropertiesLayout>{page}</PropertiesLayout>
 }
