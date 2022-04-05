@@ -79,6 +79,14 @@ button {
   @apply mx-auto w-full max-w-[1200px] px-8;
 }
 
+.container-fluid {
+  @apply mx-auto max-w-[1440px];
+}
+
+.active-step {
+  @apply bg-brand-blue text-white;
+}
+
 
 .testimonials
   .swiper-pagination-horizontal.swiper-pagination-bullets

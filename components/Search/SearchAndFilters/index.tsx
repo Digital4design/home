@@ -16,7 +16,7 @@ export default function SearchAndFilters() {
 
   // if not the home page, we want the filter and search to be white bg, full width in a container and stick beneath the navigation
   const stickyClasses = isSearchPage
-    ? "sticky top-[73px] h-24 bg-white"
+    ? "sticky top-[73px] h-24 bg-white border-t"
     : "rounded-sm bg-brand-blue h-20"
   return (
     <SearchAndFilterContextProvider>

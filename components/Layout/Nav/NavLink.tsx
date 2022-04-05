@@ -35,7 +35,11 @@ export default function NavLink({
         <a>{children}</a>
 
         {/* The dropdown item, will render out any of the dropdown items as links if hasDropdown is true, and dropdownItems exist */}
-        <Dropdown hasDropdown={hasDropdown} dropdownItems={dropdownItems} />
+        <Dropdown
+          hasDropdown={hasDropdown}
+          dropdownItems={dropdownItems}
+          parentSlug={slug}
+        />
       </div>
     </Link>
   )
