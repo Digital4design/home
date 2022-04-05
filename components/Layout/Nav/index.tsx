@@ -1,7 +1,10 @@
 import NavLink from "components/Layout/Nav/NavLink"
 import { useSearchFilters } from "context/SearchAndFilterContext"
+import { useRouter } from "next/router"
 
 export default function Nav() {
+  const router = useRouter()
+  const isStepsPage = router.pathname === "/what-is-home-reach/how-does-it-work"
   const { isSearchPage } = useSearchFilters()
   // when we pull in data, we will need the slug for each nav link and the text/name to use as children to <NavLink />
   // then for any dropdown navigation, we will need them in an array of objects with { slug, name } keys
@@ -18,7 +21,7 @@ export default function Nav() {
        * if it is not the home page, we want to remove the shadow and use a border bottom instead */}
       <div
         className={`pointer-events-none absolute inset-0 z-10 content-[''] ${
-          !isSearchPage ? "shadow-lg" : "border-b"
+          !(isSearchPage || isStepsPage) && "shadow-lg"
         }`}
       />
       <NavLink slug="/properties">Property Search</NavLink>
