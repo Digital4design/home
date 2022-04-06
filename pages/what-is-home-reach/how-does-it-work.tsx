@@ -1,4 +1,5 @@
-import StepImage from "components/Steps/StepImage"
+import Step from "components/Steps/Step"
+import StepImage from "components/Steps/Step"
 import React, { ReactEventHandler, SyntheticEvent, useState } from "react"
 import ScrollIntoView from "react-scroll-into-view"
 
@@ -61,7 +62,7 @@ export default function HowDoesItWork() {
           </div>
         </section>
         {stepsContent.map((step, index) => (
-          <StepImage
+          <Step
             title={step.title}
             id={step.id}
             index={index}
@@ -77,7 +78,7 @@ export default function HowDoesItWork() {
               ratione non nobis eveniet, fugiat, suscipit sequi, repellat magnam
               quos distinctio ad est similique!
             </p>
-          </StepImage>
+          </Step>
         ))}
       </main>
     </>
