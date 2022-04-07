@@ -79,6 +79,10 @@ button {
   @apply mx-auto w-full max-w-[1200px] px-8;
 }
 
+.container-xs {
+  @apply mx-auto w-full max-w-[820px] px-8;
+}
+
 .container-fluid {
   @apply mx-auto max-w-[1440px];
 }
