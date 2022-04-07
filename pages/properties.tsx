@@ -8,7 +8,6 @@ import SearchHeader from "components/Search/SearchHeader"
 import { ReactElement, useState } from "react"
 import ListView from "components/Search/ListView"
 import MapView from "components/Search/MapView"
-import PropertiesLayout from "components/Layout/PageLayouts/NoFooterLayout"
 import Footer from "components/Layout/Footer"
 import NoFooterLayout from "components/Layout/PageLayouts/NoFooterLayout"
 
@@ -21,9 +20,9 @@ interface ServerProps {
 
 export default function Properties({ queries }: Props) {
   const [isMapView, setIsMapView] = useState<boolean>(false)
-  // check if size of screen is mobile so we can render large search preview
-  const { properties } = mockData
   const { location, rooms, price, radius, type } = queries
+
+  const { properties } = mockData
 
   const queriesLength = Object.keys(queries).length
 
@@ -31,7 +30,7 @@ export default function Properties({ queries }: Props) {
     setIsMapView(!isMapView)
   }
 
-  if (queriesLength === 0) {
+  if (queriesLength <= 0) {
     return (
       <>
         <Head>
@@ -70,14 +69,14 @@ export default function Properties({ queries }: Props) {
   )
 }
 
+// different layout for this page, have no footer. Then, in the map view on sidebar left display the mobile footer
+// if isMapView is not on then display footer as usual under the closing main tag
+
 Properties.getLayout = function getLayout(page: ReactElement) {
   return <NoFooterLayout>{page}</NoFooterLayout>
 }
 
-// different layout for this page, have no footer. Then, in the map view on sidebar left display the mobile footer
-// if isMapView is not on then display footer as usual under the closing main tag
-
-export function getServerSideProps({ query }: ServerProps) {
+export async function getServerSideProps({ query }: ServerProps) {
   return {
     props: {
       queries: query,
