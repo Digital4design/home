@@ -1,4 +1,4 @@
-import RegisterInterestForm from "components/RegisterInterest/RegisterInterestForm"
+import RegisterInterestForm from "components/Forms/RegisterInterestForm"
 
 export default function RegisterInterest() {
   return (
