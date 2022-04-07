@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { ReactNode } from "react"
 
 interface Props {
   href: string
@@ -16,7 +15,7 @@ interface Props {
 export default function FooterLink({ href, value }: Props) {
   return (
     <Link href={href}>
-      <a className="text-sm font-light leading-10 hover:text-brand-green">
+      <a className="text-sm font-light leading-10 text-brand-grey-dark hover:text-brand-green">
         {value}
       </a>
     </Link>

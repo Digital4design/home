@@ -41,7 +41,7 @@ export default function Nav() {
       </NavLink>
       <NavLink slug="/step-by-step-purchasing">Step by step purchasing</NavLink>
       <NavLink slug="/guides-and-faqs">FAQs</NavLink>
-      <NavLink slug="/our-customer-stories">Our Customer Stories</NavLink>
+      <NavLink slug="/contact-us">Contact Us</NavLink>
     </nav>
   )
 }

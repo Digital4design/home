@@ -8,8 +8,9 @@ import SearchHeader from "components/Search/SearchHeader"
 import { ReactElement, useState } from "react"
 import ListView from "components/Search/ListView"
 import MapView from "components/Search/MapView"
-import PropertiesLayout from "components/Layout/PageLayouts/PropertiesLayout"
+import PropertiesLayout from "components/Layout/PageLayouts/NoFooterLayout"
 import Footer from "components/Layout/Footer"
+import NoFooterLayout from "components/Layout/PageLayouts/NoFooterLayout"
 
 interface Props {
   queries: SearchFilters
@@ -69,6 +70,10 @@ export default function Properties({ queries }: Props) {
   )
 }
 
+Properties.getLayout = function getLayout(page: ReactElement) {
+  return <NoFooterLayout>{page}</NoFooterLayout>
+}
+
 // different layout for this page, have no footer. Then, in the map view on sidebar left display the mobile footer
 // if isMapView is not on then display footer as usual under the closing main tag
 
@@ -78,8 +83,4 @@ export function getServerSideProps({ query }: ServerProps) {
       queries: query,
     },
   }
-}
-
-Properties.getLayout = function getLayout(page: ReactElement) {
-  return <PropertiesLayout>{page}</PropertiesLayout>
 }

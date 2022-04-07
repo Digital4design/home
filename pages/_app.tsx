@@ -3,7 +3,6 @@ import { AppProps } from "next/app"
 import "swiper/css"
 import "styles/globals.css"
 import Head from "next/head"
-import { ChildrenProps } from "types"
 import { ReactElement, ReactNode } from "react"
 import { NextPage } from "next"
 
