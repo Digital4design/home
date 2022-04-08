@@ -24,29 +24,35 @@ export default function Nav() {
           !(isSearchPage || isStepsPage) && "shadow-lg"
         }`}
       />
-      <NavLink slug="/properties">Property Search</NavLink>
-      <NavLink
-        slug="/what-is-home-reach"
-        hasDropdown
-        dropdownItems={whatIsHomeReachLinks}
-      >
-        What is Home Reach?
+      <NavLink slug="/properties">Properties</NavLink>
+      <NavLink slug="/how-it-works">How it works</NavLink>
+      <NavLink slug="/guides-and-faqs" hasDropdown dropdownItems={guidesLinks}>
+        Guides & FAQs
       </NavLink>
-      <NavLink
-        slug="/useful-information"
-        hasDropdown
-        dropdownItems={usefulInformationLinks}
-      >
-        Useful Information
-      </NavLink>
-      <NavLink slug="/step-by-step-purchasing">Step by step purchasing</NavLink>
-      <NavLink slug="/guides-and-faqs">FAQs</NavLink>
-      <NavLink slug="/contact-us">Contact Us</NavLink>
+      <NavLink slug="/about-us">About us</NavLink>
+      <NavLink slug="/blog">Blog</NavLink>
+      <NavLink slug="/contact-us">Contact</NavLink>
     </nav>
   )
 }
 
 export const guidesLinks = [
+  {
+    slug: "what-is-shared-ownership",
+    name: "What is shared ownership?",
+  },
+  {
+    slug: "shared-ownership-legibility",
+    name: "Shared ownership legibility",
+  },
+  {
+    slug: "benefits",
+    name: "Benefits",
+  },
+  {
+    slug: "what-are-the-costs-involved",
+    name: "What are the costs involved?",
+  },
   {
     slug: "what-is-shared-ownership",
     name: "What is shared ownership?",

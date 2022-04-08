@@ -1,9 +1,8 @@
 import Step from "components/Steps/Step"
-import StepImage from "components/Steps/Step"
-import React, { ReactEventHandler, SyntheticEvent, useState } from "react"
+import React, { SyntheticEvent, useState } from "react"
 import ScrollIntoView from "react-scroll-into-view"
 
-export default function HowDoesItWork() {
+export default function HowItWorks() {
   const [activeIndex, setActiveIndex] = useState<number>(0)
   const [content, setContent] = useState<string>("Step 1")
   const steps = [
@@ -25,7 +24,7 @@ export default function HowDoesItWork() {
 
   return (
     <>
-      <header className="sticky top-[73px] h-16 border-t bg-white shadow-lg">
+      <header className="sticky top-[73px] z-999 h-16 border-t bg-white shadow-lg">
         <div className="container-fluid flex h-full justify-center lg:container">
           {steps.map((step, index) => {
             const borderClasses = index === 0 ? "border-x" : "border-r"
