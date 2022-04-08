@@ -38,7 +38,10 @@
 html,
 body {
   height: 100%;
-  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x:hidden;
 }
 
 a {
