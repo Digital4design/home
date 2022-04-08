@@ -140,3 +140,7 @@ button {
 .input-has-float:not(:placeholder-shown) ~ .floating-label {
   @apply -translate-x-1 translate-y-4 scale-90 text-brand-green pointer-events-auto;
 }
+
+.basic-transition {
+  @apply transition-all duration-150 ease-in-out;
+}

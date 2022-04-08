@@ -37,11 +37,15 @@ export default function ContactUs() {
                 </a>
               </p>
             </header>
-            <figure className="absolute inset-0 -z-[1] bg-brand-blue">
-              <img
+            <figure className="absolute inset-0 -z-[1] mt-32 bg-brand-blue">
+              <Image
                 src="/assets/contact-us.png"
                 alt=""
-                className="h-auto w-full translate-y-12"
+                className="h-auto w-full"
+                layout="fill"
+                width="300"
+                height="2000"
+                objectFit="contain"
               />
             </figure>
           </div>
