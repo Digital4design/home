@@ -5,7 +5,7 @@ import PropertyPreview from "components/PropertyPreview"
 import SearchPropertyPreview from "components/Search/SearchPropertyPreview"
 import Image from "next/image"
 import React from "react"
-import mockData from "../../mockProperties.json"
+import mockData from "../../../mockProperties.json"
 import AreYouInterested from "components/Sidebar/AreYouInterested"
 import HowItWorks from "components/Sidebar/HowItWorks"
 

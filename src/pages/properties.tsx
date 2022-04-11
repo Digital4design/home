@@ -2,7 +2,7 @@ import SearchAndFilters from "components/Search/SearchAndFilters"
 import { SearchFilters } from "types/search"
 import Head from "next/head"
 import { capitaliseWord, replaceHyphensWithSpaces } from "utils"
-import mockData from "../mockProperties.json"
+import mockData from "../../mockProperties.json"
 import NoResults from "components/NoResults"
 import SearchHeader from "components/Search/SearchHeader"
 import { ReactElement, useState } from "react"
@@ -77,9 +77,10 @@ Properties.getLayout = function getLayout(page: ReactElement) {
 }
 
 export async function getServerSideProps({ query }: ServerProps) {
+  const queries = query
   return {
     props: {
-      queries: query,
+      queries,
     },
   }
 }

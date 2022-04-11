@@ -11,7 +11,7 @@ import Explore from "components/Explore"
 import SearchAndFilters from "components/Search/SearchAndFilters"
 
 // mock data
-import mockData from "../mockProperties.json"
+import mockData from "../../mockProperties.json"
 import OurPartners from "components/OurPartners"
 import Testimonials from "components/Testimonials"
 import VideoModalSection from "components/VideoModalSection"

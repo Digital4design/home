@@ -49,7 +49,7 @@ export default function SearchAndFilterContextProvider({ children }: Props) {
     setFilters({ ...filters, [key]: filter })
   }
 
-  const searchProperties = (query?: string) => {
+  const searchProperties = () => {
     const queries = `?location=${filters.location}&radius=${filters.radius}&price=${filters.price}&type=${filters.type}&rooms=${filters.rooms}`
     const url = `/properties${queries}`
 
