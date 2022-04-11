@@ -53,10 +53,6 @@ export const guidesLinks = [
     slug: "what-are-the-costs-involved",
     name: "What are the costs involved?",
   },
-  {
-    slug: "what-is-shared-ownership",
-    name: "What is shared ownership?",
-  },
 ]
 
 export const whatIsHomeReachLinks = [

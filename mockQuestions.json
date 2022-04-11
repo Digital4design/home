@@ -1,0 +1,125 @@
+[
+    {
+        "slug": "what-is-shared-ownership",
+        "name": "What is shared ownership?",
+        "heading": "What is shared ownership?",
+        "introduction": "",
+        "image": "",
+        "answers": [
+            {
+                "title": "Example title",
+                "content": [
+                    {
+                        "icon": "",
+                        "text": ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?"]
+                    }
+                ]
+            }
+        ]
+      },
+      {
+        "slug": "shared-ownership-legibility",
+        "name": "Shared ownership legibility",
+        "heading": "Eligibility criteria",
+        "introduction": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates.",
+        "image": "",
+        "answers": [
+            {
+                "title": "Income",
+                "content": [
+                    {
+                        "icon": "",
+                        "text": ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?"]
+                    }
+                ]
+            },
+            {
+                "title": "Inclusivity",
+                "content": [
+                    {
+                        "icon": "",
+                        "text": ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?"]
+                    }
+                ]
+            },
+            {
+                "title": "Financial assessment",
+                "content": [
+                    {
+                        "icon": "",
+                        "text": [
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?",
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?",
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?",
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?",
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?",
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Registered and approved",
+                "content": [
+                    {
+                        "icon": "",
+                        "text": [
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?",
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?",
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?"
+                            ]
+                    }
+                ]
+            },
+            {
+                "title": "Sole property",
+                "content": [
+                    {
+                        "icon": "",
+                        "text": [
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?",
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?",
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?"
+                            ]
+                    }
+                ]
+            }
+        ]
+      },
+      {
+        "slug": "benefits",
+        "name": "Benefits",
+        "heading": "Benefits",
+        "introduction": "",
+        "image": "",
+        "answers": [
+            {
+                "title": "Example title",
+                "content": [
+                    {
+                        "icon": "",
+                        "text": ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis? Provident, autem sequi sapiente autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis."]
+                    }
+                ]
+            }
+        ]
+      },
+      {
+        "slug": "what-are-the-costs-involved",
+        "name": "What are the costs involved?",
+        "heading": "What are the costs involved?",
+        "introduction": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure.",
+        "image": "",
+        "answers": [
+            {
+                "title": "Example title",
+                "content": [
+                    {
+                        "icon": "",
+                        "text": ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ducimus aspernatur deleniti dignissimos voluptates facilis doloremque similique iure. Provident, autem sequi sapiente aperiam quae odit incidunt minima voluptate reiciendis?"]
+                    }
+                ]
+            }
+        ]
+      }
+]

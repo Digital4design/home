@@ -28,6 +28,7 @@ export default function Dropdown({
   // render the dropdown links inside a dropdown container div
   return (
     <div className="pointer-events-none absolute top-full left-0 h-auto w-auto translate-y-6 whitespace-nowrap rounded-b bg-white py-4 px-5 opacity-0 shadow-lg transition-all duration-100 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+      <div className="absolute top-px left-0 right-0 h-px bg-gray-200"></div>
       {dropdownLinks}
     </div>
   )
