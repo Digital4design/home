@@ -29,11 +29,10 @@ export default function Development() {
         <div className="container-sm flex items-center justify-between">
           <div className="">
             <h1 className="mb-1 font-secondary text-2xl font-normal">
-              Whittingham Park Development
+              Taylor Whimpey Developments
             </h1>
-            <p className="flex items-center text-sm text-brand-green">
-              <MapLocationMarker classes="w-3 h-3 mr-2" /> Golborne, Wigan, WA3
-              3EG
+            <p className="flex items-center text-sm text-brand-grey">
+              3 developments available
             </p>
           </div>
           <figure className="relative ml-auto h-[40px] w-[100px]">
@@ -64,7 +63,7 @@ export default function Development() {
             ))}
           </div>
           <Sidebar>
-            <AreYouInterested showDetails />
+            <AreYouInterested />
             <HowItWorks />
           </Sidebar>
         </div>

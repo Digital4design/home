@@ -3,7 +3,11 @@ import Link from "next/link"
 import React from "react"
 import RegisterInterestButton from "../../RegisterInterest/RegisterInterestButton"
 
-export default function AreYouInterested() {
+interface Props {
+  showDetails?: boolean
+}
+
+export default function AreYouInterested({ showDetails }: Props) {
   return (
     <div className="mb-6 w-full rounded bg-white px-6 py-5 shadow-lg">
       <header className="flex justify-between">
@@ -16,12 +20,19 @@ export default function AreYouInterested() {
         </div>
       </header>
       <RegisterInterestButton full />
-      <a href="tel:00000000000" className="button-outline mt-4 block w-full">
-        Call us for more information
-      </a>
-      <Link href="/developers/test">
-        <a className="button-white mt-4">See more from this developer</a>
-      </Link>
+      {showDetails && (
+        <>
+          <a
+            href="tel:00000000000"
+            className="button-outline mt-4 block w-full"
+          >
+            Call us for more information
+          </a>
+          <Link href="/developers/test">
+            <a className="button-white mt-4">See more from this developer</a>
+          </Link>
+        </>
+      )}
     </div>
   )
 }
