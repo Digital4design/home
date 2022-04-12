@@ -5,6 +5,7 @@ import { ReplyIcon } from "@heroicons/react/solid"
 import { HeartIcon } from "@heroicons/react/outline"
 import { Property } from "types/property"
 import RegisterInterestButton from "components/RegisterInterest/RegisterInterestButton"
+import { useRouter } from "next/router"
 
 // this is all likely to change once we have the actual data from Dato
 
@@ -19,8 +20,12 @@ interface Props {
 }
 
 export default function SearchPropertyPreview({ property }: Props) {
+  const router = useRouter()
   return (
-    <article className="mb-6 flex h-[268px] overflow-hidden rounded-[15px] border border-gray-50 shadow-lg">
+    <article
+      className="mb-6 flex h-[268px] cursor-pointer overflow-hidden rounded-[15px] border border-gray-50 shadow-lg"
+      onClick={() => router.push("/development/whittingham-park")}
+    >
       <PropertyPreviewImage
         image={property.image}
         alt={property.alt}

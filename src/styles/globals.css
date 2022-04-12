@@ -156,3 +156,7 @@ button {
 .sidebar-stuck a {
   @apply text-white hover:text-brand-blue-light;
 }
+
+.tab-active {
+  @apply border-b-2 border-brand-green text-brand-green;
+}
