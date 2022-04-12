@@ -20,17 +20,17 @@ interface Props {
 }
 
 export default function SearchPropertyPreview({ property }: Props) {
+  // on click we would get the property type and its slug to push to the type/slug page i.e. development/whittingham-park
+  // I've used router with a placeholder link for now for all search property previews
   const router = useRouter()
   return (
-    <article
-      className="mb-6 flex h-[268px] cursor-pointer overflow-hidden rounded-[15px] border border-gray-50 shadow-lg"
-      onClick={() => router.push("/development/whittingham-park")}
-    >
+    <article className="mb-6 flex h-[268px] overflow-hidden rounded-[15px] border border-gray-50 shadow-lg">
       <PropertyPreviewImage
         image={property.image}
         alt={property.alt}
         placeholder={property.placeholder}
         isSearchResult={true}
+        onClick={() => router.push("/development/whittingham-park")}
       />
       <div className="flex w-8/12 flex-col justify-between bg-white p-6">
         <SearchPropertyPreviewHeader
