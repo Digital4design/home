@@ -1,4 +1,5 @@
 import React from "react"
+import ScrollIntoView from "react-scroll-into-view"
 
 interface Props {
   index: number

@@ -147,3 +147,12 @@ button {
 .basic-transition {
   @apply transition-all duration-150 ease-in-out;
 }
+
+.sidebar-stuck {
+  @apply bg-brand-blue;
+}
+
+
+.sidebar-stuck a {
+  @apply text-white hover:text-brand-blue-light;
+}
