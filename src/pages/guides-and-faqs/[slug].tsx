@@ -2,6 +2,7 @@ import questionsData from "../../../mockQuestions.json"
 import Link from "next/link"
 import Paragraph from "components/Core/Paragraph"
 import { HomeIcon } from "@heroicons/react/outline"
+import { Ref, useEffect, useRef, useState } from "react"
 
 interface AnswerContent {
   icon: string
@@ -23,7 +24,27 @@ interface Question {
 }
 
 export default function FAQ({ data }: Record<"data", Question>) {
-  console.log(data)
+  const sidebar: Ref<any> = useRef(null)
+
+  useEffect(() => {
+    if (!sidebar) return
+
+    const checkIsStuck = () => {
+      const sidebarPos = sidebar.current.getBoundingClientRect().top
+
+      if (sidebarPos > 110) {
+        sidebar.current.classList.remove("sidebar-stuck")
+        return false
+      }
+
+      sidebar.current.classList.add("sidebar-stuck")
+    }
+
+    document.addEventListener("scroll", checkIsStuck)
+
+    return () => document.removeEventListener("scroll", checkIsStuck)
+  }, [sidebar])
+
   return (
     <>
       <section className="py-16">
@@ -36,14 +57,17 @@ export default function FAQ({ data }: Record<"data", Question>) {
       <section>
         <div className="container-sm">
           <div className="relative w-full">
-            <aside className="sticky top-[100px] float-left w-1/3 pb-8">
+            <aside
+              className="sticky top-[100px] float-left w-1/3 rounded-sm px-6 py-4 transition-all duration-150 ease-in-out"
+              ref={sidebar}
+            >
               {questionsData.map((question) => (
                 <Link
                   href={`/guides-and-faqs/${question.slug}`}
                   key={question.slug}
                 >
                   <a
-                    className={`block rounded py-4 px-6 text-lg ${
+                    className={`my-3 block rounded-[5px] py-3 px-6 text-lg ${
                       data.name === question.name
                         ? " bg-brand-green text-white"
                         : "text-brand-green hover:text-brand-green-dark"
