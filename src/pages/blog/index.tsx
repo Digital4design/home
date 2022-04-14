@@ -26,7 +26,6 @@ export default function Blog({
   featuredArticle,
   recommendedArticles,
 }: Props) {
-  console.log(articles)
   return (
     <main className="pb-8">
       {/* Make page header component */}
