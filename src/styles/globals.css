@@ -163,6 +163,22 @@ button {
   @apply border-b-2 border-brand-green text-brand-green;
 }
 
+.content p {
+  @apply leading-[1.7] mb-4
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5 {
+  @apply mb-4;
+}
+
+.content img {
+  @apply rounded-2xl my-8;
+}
+
 .excerpt p {
   @apply inline;
 }
