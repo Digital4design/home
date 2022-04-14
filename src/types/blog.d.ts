@@ -5,6 +5,7 @@ export interface ArticleImage {
   url: string
   width: string
   height: string
+  responsiveImage: { src: string }
 }
 
 // blog home recommended article, can be extended
