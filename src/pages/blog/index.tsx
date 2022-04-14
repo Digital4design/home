@@ -93,6 +93,8 @@ export default function Blog({
                     <Image
                       src={article.mainImage.url}
                       alt={article.mainImage.alt}
+                      placeholder="blur"
+                      blurDataURL={article.mainImage.responsiveImage.src}
                       layout="fill"
                       objectFit="cover"
                     />
