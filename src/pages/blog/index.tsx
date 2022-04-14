@@ -138,8 +138,9 @@ export const ARTICLES_QUERY = `query BlogHomeArticles {
         id
         size
         url
-        width
-        height
+        responsiveImage(imgixParams: {fit: crop, h: "600", w: "600", fm: jpg}) {
+          src
+        }
       }
       createdAt
       articleTitle
@@ -156,8 +157,9 @@ export const ARTICLES_QUERY = `query BlogHomeArticles {
         id
         size
         url
-        width
-        height
+        responsiveImage(imgixParams: {fit: crop, h: "600", w: "600", fm: jpg}) {
+          src
+        }
       }
       createdAt
       articleTitle
@@ -177,8 +179,9 @@ export const ARTICLES_QUERY = `query BlogHomeArticles {
       id
       size
       url
-      width
-      height
+      responsiveImage(imgixParams: {fit: crop, h: "600", w: "600", fm: jpg}) {
+        src
+      }
     }
   }
 }`

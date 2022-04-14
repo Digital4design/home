@@ -9,9 +9,15 @@ interface Props {
   image: ArticleImage
   slug: string
   category: string
+  placeholder?: string
 }
 
-export default function FeaturedArticleImage({ image, slug, category }: Props) {
+export default function FeaturedArticleImage({
+  image,
+  slug,
+  category,
+  placeholder,
+}: Props) {
   const router = useRouter()
   return (
     <figure className="relative h-[400px] w-full cursor-pointer overflow-hidden rounded">
@@ -21,7 +27,7 @@ export default function FeaturedArticleImage({ image, slug, category }: Props) {
         layout="fill"
         objectFit="cover"
         placeholder="blur"
-        blurDataURL={image.url}
+        blurDataURL={placeholder}
         onClick={() => router.push(`/blog/${slug}`)}
       />
       <CategoryTag category={category} />

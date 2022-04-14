@@ -15,6 +15,7 @@ export default function FeaturedArticle({ article }: Props) {
         image={article.mainImage}
         slug={article.slug}
         category={article.category}
+        placeholder={article.mainImage.responsiveImage.src}
       />
       <h2 className="py-6 text-2xl font-semibold">
         <BlogLink
