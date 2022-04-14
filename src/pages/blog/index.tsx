@@ -121,6 +121,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { articles, count, featuredArticle, recommendedArticles },
+    revalidate: 10,
   }
 }
 
