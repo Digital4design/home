@@ -1,5 +1,3 @@
-import { ChevronLeftIcon } from "@heroicons/react/solid"
-import { MapLocationMarker } from "components/Icons"
 import Sidebar from "components/Sidebar"
 import PropertyPreview from "components/PropertyPreview"
 import SearchPropertyPreview from "components/Search/SearchPropertyPreview"
@@ -8,22 +6,16 @@ import React from "react"
 import mockData from "../../../mockProperties.json"
 import AreYouInterested from "components/Sidebar/AreYouInterested"
 import HowItWorks from "components/Sidebar/HowItWorks"
-import { useRouter } from "next/router"
+import BackButton from "components/Core/BackButton"
 
 // Specific List of properties in a development category
 export default function Development() {
-  const router = useRouter()
   const { properties } = mockData
 
   return (
     <main>
       <aside className="pt-5">
-        <div
-          className="container-sm flex cursor-pointer items-center text-[14px] font-medium text-brand-blue"
-          onClick={() => router.back()}
-        >
-          <ChevronLeftIcon className="mr-1 h-4 w-4" /> Go back
-        </div>
+        <BackButton />
       </aside>
       <section className="py-4">
         <div className="container-sm flex items-center justify-between">
