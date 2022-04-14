@@ -9,13 +9,13 @@ import Paragraph from "components/global/Paragraph"
 import ParagraphHeading from "components/global/Paragraph/ParagraphHeading"
 import Explore from "components/Explore"
 import SearchAndFilters from "components/Search/SearchAndFilters"
-
-// mock data
-import mockData from "../../mockProperties.json"
 import OurPartners from "components/OurPartners"
 import Testimonials from "components/Testimonials"
 import VideoModalSection from "components/VideoModalSection"
 import HomeSection from "components/HomeSection"
+
+// mock data
+import mockData from "../../mockProperties.json"
 
 export default function Home() {
   const { properties } = mockData

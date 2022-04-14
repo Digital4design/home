@@ -1,4 +1,4 @@
-import AddToFavourites from "components/AddToFavourites"
+import AddToFavourites from "components/Favourites/AddToFavourites"
 import FavouritesButton from "components/Layout/FavouritesButton"
 import { useRouter } from "next/router"
 import { PropertyPreviewPropsNew } from "types/property"
