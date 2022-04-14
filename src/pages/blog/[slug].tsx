@@ -1,6 +1,7 @@
 import ArticleDetails from "components/Blog/ArticleDetails"
 import BlogLink from "components/Blog/BlogLink"
 import { request } from "lib/datocms"
+import Head from "next/head"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import React from "react"
@@ -14,6 +15,9 @@ export default function BlogPost({ article }: Props) {
   const router = useRouter()
   return (
     <main className="pb-8">
+      <Head>
+        <title>{article.articleTitle} | Blog - Home Reach</title>
+      </Head>
       <section className="py-16">
         <div className="container-xs">
           <h1 className="px-6 text-center">{article.articleTitle}</h1>
