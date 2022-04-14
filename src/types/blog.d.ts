@@ -35,4 +35,10 @@ export interface CategoryArticlePreview extends BlogArticleBasic {
 
 // blog article (all data)
 
-export interface BlogFullArticle extends BlogCategoryArticle {}
+interface RelatedArticle extends BlogArticleBasic {
+  mainImage: ArticleImage
+}
+export interface BlogFullArticle extends BlogArticlePreview {
+  content: string
+  relatedArticles: RelatedArticle[]
+}

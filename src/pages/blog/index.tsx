@@ -6,7 +6,9 @@ import FeaturedArticle from "components/Blog/FeaturedArticle"
 import RecommendedArticle from "components/Blog/RecommendedArticle"
 import { request } from "lib/datocms"
 import { GetStaticProps } from "next"
+import Head from "next/head"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import {
   BlogArticleFeatured,
   BlogArticlePreview,
@@ -26,8 +28,12 @@ export default function Blog({
   featuredArticle,
   recommendedArticles,
 }: Props) {
+  const router = useRouter()
   return (
     <main className="pb-8">
+      <Head>
+        <title>Blog | Home Reach</title>
+      </Head>
       {/* Make page header component */}
       <section className="py-14">
         <div className="container-sm">
@@ -89,7 +95,7 @@ export default function Blog({
                   />
                 </div>
                 <div className="w-3/12">
-                  <figure className="relative inline-block h-40 w-40 overflow-hidden rounded-2xl">
+                  <figure className="relative inline-block h-40 w-40 cursor-pointer overflow-hidden rounded-2xl">
                     <Image
                       src={article.mainImage.url}
                       alt={article.mainImage.alt}
@@ -97,6 +103,7 @@ export default function Blog({
                       blurDataURL={article.mainImage.responsiveImage.src}
                       layout="fill"
                       objectFit="cover"
+                      onClick={() => router.push(`/blog/${article.slug}`)}
                     />
                   </figure>
                 </div>
@@ -175,6 +182,7 @@ export const ARTICLES_QUERY = `query BlogHomeArticles {
     articleTitle
     createdAt
     excerpt
+    content
     mainImage {
       alt
       id
