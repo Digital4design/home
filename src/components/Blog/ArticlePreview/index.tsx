@@ -14,35 +14,45 @@ export default function ArticlePreview({ article }: Props) {
   const router = useRouter()
 
   return (
-    <article className="flex justify-between py-4">
-      <div className="w-9/12 pr-2">
-        <h4 className="text-lg">
-          <BlogLink
-            slug={article.slug}
-            text={article.articleTitle}
-            classes="text-brand-grey-dark"
-          />
-        </h4>
-        <div className="py-4">
-          <ArticleExcerpt excerpt={article.excerpt} slug={article.slug} />
+    <article className="py-4">
+      <div className="flex flex-wrap justify-between">
+        <div className="order-2 w-9/12 pl-2 sm:pl-0 md:order-1 md:pr-2">
+          <h4 className="text-md md:text-lg">
+            <BlogLink
+              slug={article.slug}
+              text={article.articleTitle}
+              classes="text-brand-grey-dark"
+            />
+          </h4>
+          <div className="hidden py-4 md:block">
+            <ArticleExcerpt excerpt={article.excerpt} slug={article.slug} />
+          </div>
+          <div className="hidden md:block">
+            <ArticleDetails
+              category={article.category}
+              createdAt={article.createdAt}
+            />
+          </div>
         </div>
+        <div className="order-1 w-3/12 md:order-2">
+          <figure className="relative inline-block h-20 w-20 cursor-pointer overflow-hidden rounded-2xl sm:h-24 sm:w-24 md:h-40 md:w-40">
+            <Image
+              src={article.mainImage.url}
+              alt={article.mainImage.alt}
+              placeholder="blur"
+              blurDataURL={article.mainImage.responsiveImage.src}
+              layout="fill"
+              objectFit="cover"
+              onClick={() => router.push(`/blog/${article.slug}`)}
+            />
+          </figure>
+        </div>
+      </div>
+      <div className="md:hidden">
         <ArticleDetails
           category={article.category}
           createdAt={article.createdAt}
         />
-      </div>
-      <div className="w-3/12">
-        <figure className="relative inline-block h-40 w-40 cursor-pointer overflow-hidden rounded-2xl">
-          <Image
-            src={article.mainImage.url}
-            alt={article.mainImage.alt}
-            placeholder="blur"
-            blurDataURL={article.mainImage.responsiveImage.src}
-            layout="fill"
-            objectFit="cover"
-            onClick={() => router.push(`/blog/${article.slug}`)}
-          />
-        </figure>
       </div>
     </article>
   )

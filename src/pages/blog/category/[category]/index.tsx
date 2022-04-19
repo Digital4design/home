@@ -25,7 +25,10 @@ export default function ArticleCategory({ category, articles }: Props) {
       <section className="">
         <div className="container-sm flex flex-wrap">
           {articles.map((article) => (
-            <article className="w-1/3 p-2" key={article.id}>
+            <article
+              className="w-full sm:w-1/2 md:p-2 lg:w-1/3"
+              key={article.id}
+            >
               <div className="">
                 <figure className="relative h-[200px] w-full overflow-hidden rounded">
                   <Image
