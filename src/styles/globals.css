@@ -182,3 +182,7 @@ button {
 .excerpt p {
   @apply inline;
 }
+
+p img ~ em {
+  @apply block -mt-4 text-sm mb-10 not-italic text-brand-grey;
+}

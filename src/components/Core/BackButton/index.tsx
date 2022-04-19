@@ -7,7 +7,7 @@ export default function BackButton() {
 
   return (
     <div
-      className="container-sm flex cursor-pointer items-center text-[14px] font-medium text-brand-blue"
+      className="container-sm flex cursor-pointer items-center text-[15px] font-medium text-brand-blue hover:text-brand-blue-dark"
       onClick={() => router.back()}
     >
       <ChevronLeftIcon className="mr-1 h-4 w-4" /> Go back
