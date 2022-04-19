@@ -82,7 +82,7 @@ export async function getStaticProps({ params }: any) {
 
     const articles = data.allArticles
     return {
-      props: { category: category, articles: articles ?? [] },
+      props: { category: category, articles },
     }
   } catch (error) {
     return {
@@ -92,8 +92,6 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
-  // Add your logic to fetch all products by category
-
   const CATEGORIES = `query ArticleCategories {
     allArticles {
       category
