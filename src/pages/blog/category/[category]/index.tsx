@@ -58,7 +58,7 @@ export default function ArticleCategory({ category, articles }: Props) {
 // get all blog post static paths and use ISR for any individual posts that may cange or be added
 
 export async function getStaticProps({ params }: any) {
-  const category = params?.category
+  const category = params.category
 
   const CATEGORY_ARTICLES = `query ArticleCategories($pattern: String = "${category}") {
     allArticles(filter: {category: {matches: {pattern: $pattern}}}) {
@@ -74,14 +74,20 @@ export async function getStaticProps({ params }: any) {
     }
   }`
 
-  const data = await request({
-    query: CATEGORY_ARTICLES,
-    endpoint: process.env.NEXT_DATO_ENVIRONMENT,
-  } as any)
+  try {
+    const data = await request({
+      query: CATEGORY_ARTICLES,
+      endpoint: process.env.NEXT_DATO_ENVIRONMENT,
+    } as any)
 
-  const articles = data?.allArticles
-  return {
-    props: { category: category, articles: articles ?? [] },
+    const articles = data.allArticles
+    return {
+      props: { category: category, articles: articles ?? [] },
+    }
+  } catch (error) {
+    return {
+      props: { category: null, articles: [] },
+    }
   }
 }
 
