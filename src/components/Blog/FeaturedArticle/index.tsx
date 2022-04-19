@@ -10,7 +10,7 @@ interface Props {
 
 export default function FeaturedArticle({ article }: Props) {
   return (
-    <article className="border-b">
+    <article className="">
       <FeaturedArticleImage
         image={article.mainImage}
         slug={article.slug}

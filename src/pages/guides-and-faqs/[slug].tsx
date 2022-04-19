@@ -2,7 +2,7 @@ import questionsData from "../../../mockQuestions.json"
 import Link from "next/link"
 import Paragraph from "components/Core/Paragraph"
 import { HomeIcon } from "@heroicons/react/outline"
-import { Ref, useEffect, useRef, useState } from "react"
+import { Ref, useEffect, useRef } from "react"
 
 interface AnswerContent {
   icon: string
@@ -27,9 +27,9 @@ export default function FAQ({ data }: Record<"data", Question>) {
   const sidebar: Ref<any> = useRef(null)
 
   useEffect(() => {
-    if (!sidebar) return
-
     const checkIsStuck = () => {
+      if (!sidebar.current) return
+
       const sidebarPos = sidebar.current.getBoundingClientRect().top
 
       if (sidebarPos > 110) {
