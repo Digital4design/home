@@ -79,9 +79,9 @@ export async function getStaticProps({ params }: any) {
     endpoint: process.env.NEXT_DATO_ENVIRONMENT,
   } as any)
 
-  const articles = data.allArticles
+  const articles = data?.allArticles
   return {
-    props: { category: category, articles: articles },
+    props: { category: category, articles: articles ?? [] },
   }
 }
 
