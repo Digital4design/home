@@ -13,7 +13,7 @@ interface Props {
 export default function ArtuckeCategory({ articles }: Props) {
   const router = useRouter()
 
-  const path = router.pathname.replace("/blog/", "")
+  const path = router.pathname.replace("/blog/category/", "")
 
   return (
     <main>

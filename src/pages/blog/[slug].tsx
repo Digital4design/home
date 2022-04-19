@@ -1,5 +1,8 @@
+import MainImageContainer from "components/Blog/Article/MainImageContainer"
 import ArticleDetails from "components/Blog/ArticleDetails"
 import BlogLink from "components/Blog/BlogLink"
+import Container from "components/Core/Container"
+import PageHeading from "components/Core/PageHeading"
 import { request } from "lib/datocms"
 import Head from "next/head"
 import Image from "next/image"
@@ -18,21 +21,19 @@ export default function BlogPost({ article }: Props) {
       <Head>
         <title>{article.articleTitle} | Blog - Home Reach</title>
       </Head>
-      <section className="py-16">
-        <div className="container-xs">
-          <h1 className="px-6 text-center">{article.articleTitle}</h1>
-        </div>
-      </section>
+      <PageHeading containerSm centerText>
+        {article.articleTitle}
+      </PageHeading>
       <section>
-        <div className="container-xs">
-          <figure className="relative aspect-square w-full overflow-hidden rounded md:aspect-auto md:h-[500px]">
+        <Container size="xs">
+          <MainImageContainer>
             <Image
               src={article.mainImage.url}
               alt={article.mainImage.alt}
               layout="fill"
               objectFit="cover"
             />
-          </figure>
+          </MainImageContainer>
           <div className="border-b py-6">
             <ArticleDetails
               profileImage
@@ -41,7 +42,7 @@ export default function BlogPost({ article }: Props) {
               category={article.category}
             />
           </div>
-        </div>
+        </Container>
       </section>
       <section className="py-6">
         <div className="container-xs">

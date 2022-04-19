@@ -1,9 +1,16 @@
 import { InformationCircleIcon } from "@heroicons/react/outline"
 import ArticleDetails from "components/Blog/ArticleDetails"
+import ArticlePreview from "components/Blog/ArticlePreview"
 import ArticleExcerpt from "components/Blog/ArticlePreview/ArticleExcerpt"
+import ArticlesFilters from "components/Blog/ArticlesFilters"
 import BlogLink from "components/Blog/BlogLink"
+import BlogSidebarFooter from "components/Blog/BlogSidebar/BlogSidebarFooter"
 import FeaturedArticle from "components/Blog/FeaturedArticle"
 import RecommendedArticle from "components/Blog/RecommendedArticle"
+import RecommendedArticles from "components/Blog/RecommendedArticle/RecommendedArticles"
+import RecommendedArticleContainer from "components/Blog/RecommendedArticle/RecommendedArticles"
+import Container from "components/Core/Container"
+import PageHeading from "components/Core/PageHeading"
 import { request } from "lib/datocms"
 import { GetStaticProps } from "next"
 import Head from "next/head"
@@ -34,83 +41,30 @@ export default function Blog({
       <Head>
         <title>Blog | Home Reach</title>
       </Head>
-      {/* Make page header component */}
-      <section className="py-14">
-        <div className="container-sm">
-          <h1 className="text-center">
-            The official Home Reach blog ({count} posts)
-          </h1>
-        </div>
-      </section>
-      <section className="py-6">
-        <div className="container-sm flex flex-wrap">
+      <PageHeading centerText containerSm size="md">
+        The official Home Reach blog ({count} posts)
+      </PageHeading>
+      <section className="pt-6">
+        <Container isFlex size="sm">
           <div className="w-full md:w-3/5 md:px-6">
             <FeaturedArticle article={featuredArticle} />
           </div>
           <aside className="w-full md:w-2/5">
-            <div className="rounded-xl border p-6">
-              <h3 className="mb-2 text-sm">Recommended reads</h3>
-              {recommendedArticles.map((article, index) => {
-                const border = index < recommendedArticles.length - 1
-                return (
-                  <RecommendedArticle
-                    article={article}
-                    border={border}
-                    key={article.id}
-                  />
-                )
-              })}
-            </div>
-            <footer className="flex items-center justify-end py-6 text-sm text-gray-400">
-              Find us on:
-              <InformationCircleIcon className="mx-2 inline h-5 w-5" />
-              <InformationCircleIcon className="inline h-5 w-5" />
-            </footer>
+            <RecommendedArticles articles={recommendedArticles} />
+            <BlogSidebarFooter />
           </aside>
-        </div>
+        </Container>
       </section>
       {/* paginated articles, limit by 5 */}
       <section>
-        <div className="container-sm flex">
+        <Container isFlex size="sm">
           <div className="w-full md:w-3/5 md:px-6">
+            <ArticlesFilters />
             {articles.map((article) => (
-              <article className="flex justify-between py-4" key={article.id}>
-                <div className="w-9/12 pr-2">
-                  <h4 className="text-lg">
-                    <BlogLink
-                      slug={article.slug}
-                      text={article.articleTitle}
-                      classes="text-brand-grey-dark"
-                    />
-                  </h4>
-                  <div className="py-4">
-                    <ArticleExcerpt
-                      excerpt={article.excerpt}
-                      slug={article.slug}
-                    />
-                  </div>
-                  <ArticleDetails
-                    category={article.category}
-                    createdAt={article.createdAt}
-                  />
-                </div>
-                <div className="w-3/12">
-                  <figure className="relative inline-block h-40 w-40 cursor-pointer overflow-hidden rounded-2xl">
-                    <Image
-                      src={article.mainImage.url}
-                      alt={article.mainImage.alt}
-                      placeholder="blur"
-                      blurDataURL={article.mainImage.responsiveImage.src}
-                      layout="fill"
-                      objectFit="cover"
-                      onClick={() => router.push(`/blog/${article.slug}`)}
-                    />
-                  </figure>
-                </div>
-              </article>
+              <ArticlePreview article={article} key={article.id} />
             ))}
           </div>
-        </div>
+        </Container>
       </section>
     </main>
   )
