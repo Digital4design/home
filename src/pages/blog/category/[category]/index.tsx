@@ -26,7 +26,7 @@ export default function ArticleCategory({ category, articles }: Props) {
         <div className="container-sm flex flex-wrap">
           {articles.map((article) => (
             <article
-              className="w-full sm:w-1/2 md:p-2 lg:w-1/3"
+              className="w-full sm:w-1/2 md:p-3 lg:w-1/3"
               key={article.id}
             >
               <div className="">
@@ -47,7 +47,7 @@ export default function ArticleCategory({ category, articles }: Props) {
                 <BlogLink
                   slug={article.slug}
                   text={article.articleTitle}
-                  classes="text-brand-grey-dark text-xl"
+                  classes="text-brand-grey-dark text-lg"
                 />
               </div>
             </article>

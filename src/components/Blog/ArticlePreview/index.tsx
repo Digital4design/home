@@ -14,10 +14,10 @@ export default function ArticlePreview({ article }: Props) {
   const router = useRouter()
 
   return (
-    <article className="py-4">
+    <article className="border-b py-4 md:border-b-0">
       <div className="flex flex-wrap justify-between">
-        <div className="order-2 w-9/12 pl-2 sm:pl-0 md:order-1 md:pr-2">
-          <h4 className="text-md md:text-lg">
+        <div className="order-2 w-9/12 pl-4 sm:pl-0 md:order-1 md:pr-2">
+          <h4 className="text-[18px] md:text-lg">
             <BlogLink
               slug={article.slug}
               text={article.articleTitle}
@@ -35,7 +35,7 @@ export default function ArticlePreview({ article }: Props) {
           </div>
         </div>
         <div className="order-1 w-3/12 md:order-2">
-          <figure className="relative inline-block h-20 w-20 cursor-pointer overflow-hidden rounded-2xl sm:h-24 sm:w-24 md:h-40 md:w-40">
+          <figure className="relative inline-block h-20 w-20 cursor-pointer overflow-hidden rounded-sm sm:h-24 sm:w-24 md:h-40 md:w-40 md:rounded-2xl">
             <Image
               src={article.mainImage.url}
               alt={article.mainImage.alt}

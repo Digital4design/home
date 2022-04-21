@@ -4,3 +4,8 @@ export const capitaliseWord = (str: string) =>
 export const replaceSpacesWithHyphens = (str: string) => str.replace(" ", "-")
 
 export const replaceHyphensWithSpaces = (str: string) => str.replace("-", " ")
+
+export const createArrayBetweenTwoNumbers = (start: number, end: number) =>
+  Array(end - start + 1)
+    .fill(null)
+    .map((_, idx) => start + idx)
