@@ -57,7 +57,11 @@ export default function ArticlesFilters({ hideCategories }: Props) {
   }
 
   return (
-    <div className="flex justify-end border-t py-6 text-brand-grey">
+    <div
+      className={`text-brand-grey ${
+        !hideCategories && "flex justify-end border-t py-6"
+      }`}
+    >
       {!hideCategories && (
         <div className="relative mr-8 inline">
           Category:{" "}
