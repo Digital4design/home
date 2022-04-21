@@ -76,8 +76,22 @@ export default function Blog({
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const page: number = query.page ? Number(query.page) : 1
+interface Queries {
+  page?: number
+  category?: string
+  sortBy?: string
+}
+
+interface Query {
+  query: Queries
+}
+
+export const getServerSideProps: GetServerSideProps = async ({
+  query,
+}: Query) => {
+  const page = query.page ? Number(query.page) : 1
+  const category = query.category ?? ""
+  const sort = query.sortBy ?? "DESC"
 
   // the skip amount from dato graphql filters - see: https://homereach.admin.datocms.com/cda-explorer
   // if page is 1, start from 0
@@ -86,7 +100,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const skipAmount = page === 1 ? 0 : (page - 1) * 5
 
   // use the getArticles function to dynamically change the query
-  const QUERY = getArticles(skipAmount)
+  const QUERY = getArticles(skipAmount, category, sort)
   const data = await request({
     query: QUERY,
     endpoint: "dev",
@@ -112,9 +126,13 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 // Dato graphQL query
 // function to dynamically change the query. By default we skip 0 items and get the first 5
 // it will always be in 5s so only the skip needs to be made. We will start from 0, 5, 10 etc per page
-export const getArticles = (skip: number = 0) => {
+export const getArticles = (
+  skip: number = 0,
+  category?: string,
+  sortOrder: string = "DESC"
+) => {
   return `query BlogHomeArticles {
-    _allArticlesMeta(filter: {_status: {eq: published}}) {
+    _allArticlesMeta(filter: {_status: {eq: published}, category: { matches: {pattern: "${category}"} } }) {
       count
     }
     featuredArticle {
@@ -154,7 +172,7 @@ export const getArticles = (skip: number = 0) => {
         slug
       }
     }
-    allArticles(filter: {_status: {eq: published}}, orderBy: _createdAt_ASC, skip: "${skip}", first: "5") {
+    allArticles(filter: {_status: {eq: published}, category: {matches: {pattern: "${category}"} } }, orderBy: _createdAt_${sortOrder}, skip: "${skip}", first: "5") {
       id
       slug
       category
