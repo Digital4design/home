@@ -17,7 +17,7 @@ export default function PaginationNumber({ isActivePage, value }: Props) {
         router.push(
           {
             pathname: router.pathname,
-            query: { page: value },
+            query: { ...router.query, page: value },
           },
           undefined,
           { scroll: false }
