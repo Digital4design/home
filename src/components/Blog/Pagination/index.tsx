@@ -39,7 +39,7 @@ export default function Pagination({ page, totalArticles }: Props) {
     router.push(
       {
         pathname: router.pathname,
-        query: { page: page + 1 },
+        query: { ...router.query, page: page + 1 },
       },
       undefined,
       { scroll: false }
@@ -54,7 +54,7 @@ export default function Pagination({ page, totalArticles }: Props) {
     router.push(
       {
         pathname: router.pathname,
-        query: { page: page - 1 },
+        query: { ...router.query, page: page - 1 },
       },
       undefined,
       { scroll: false }
