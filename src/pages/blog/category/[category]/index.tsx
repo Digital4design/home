@@ -44,7 +44,7 @@ export default function ArticleCategory({ category, articles }: Props) {
   // if the sortBy is ASC we can sort by the date client side, otherwise we will just use the articles as they are
   const sortedArticles =
     sortBy === "ASC"
-      ? articles.sort(
+      ? [...articles].sort(
           (a, b) =>
             Number(new Date(a.createdAt)) - Number(new Date(b.createdAt))
         )
