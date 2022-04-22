@@ -1,6 +1,17 @@
 import { GraphQLClient } from "graphql-request"
+import { GraphQLResponse } from "graphql-request/dist/types"
 
-export function request({ query, variables, endpoint }) {
+interface Props {
+  query: string
+  variables?: string
+  endpoint: string | undefined
+}
+
+export function request({
+  query,
+  variables,
+  endpoint,
+}: Props): Promise<GraphQLResponse<{}>> {
   const ep = endpoint
     ? `https://graphql.datocms.com/environments/${endpoint}`
     : "https://graphql.datocms.com"
