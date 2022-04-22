@@ -6,10 +6,18 @@ import FilterDropdown from "./FilterDropdown"
 
 interface Props {
   hideCategories?: boolean
+  categories?: Record<"category", string>[]
 }
 
-export default function ArticlesFilters({ hideCategories }: Props) {
+export default function ArticlesFilters({ hideCategories, categories }: Props) {
   const router = useRouter()
+
+  const allCategories: string[] = []
+
+  categories?.forEach(({ category }) => {
+    if (allCategories.includes(category)) return false
+    allCategories.push(category)
+  })
 
   const setCategory = (e: MouseEvent) => {
     const el = e.target as HTMLButtonElement
@@ -71,9 +79,13 @@ export default function ArticlesFilters({ hideCategories }: Props) {
             </b>
             <FilterDropdown>
               <FilterButton onClick={setCategory} value="All" />
-              <FilterButton onClick={setCategory} value="Announcements" />
-              <FilterButton onClick={setCategory} value="News" />
-              <FilterButton onClick={setCategory} value="Testing" />
+              {allCategories.map((categoryName) => (
+                <FilterButton
+                  key={categoryName}
+                  onClick={setCategory}
+                  value={categoryName}
+                />
+              ))}
             </FilterDropdown>
           </div>
         </div>

@@ -21,6 +21,7 @@ interface Props {
   featuredArticle: BlogArticleFeatured
   recommendedArticles: BlogArticleRecommended[]
   page: number
+  categories: Record<"category", string>[]
 }
 
 /**
@@ -30,6 +31,7 @@ interface Props {
  * @param props.featuredArticle the featured article from DatoCMS
  * @param props.recommendedArticles the 3 recommended articles from DatoCMS (in Dato it is set to allow no more than 3 articles)
  * @param props.page the page number from the URL query params. If no params, it will assume page is equal to 1
+ * @param props.categorites an array of objects i.e { category: "News" }
  * @returns the blog home page
  * @description gets props from getServerSideProps. Explore DatoCMS graphQL API at https://homereach.admin.datocms.com/cda-explorer
  */
@@ -40,6 +42,7 @@ export default function Blog({
   featuredArticle,
   recommendedArticles,
   page,
+  categories,
 }: Props) {
   return (
     <main className="pb-8">
@@ -64,7 +67,7 @@ export default function Blog({
       <section>
         <Container isFlex size="sm">
           <div className="w-full md:w-3/5 md:px-6">
-            <ArticlesFilters />
+            <ArticlesFilters categories={categories} />
             {articles.map((article) => (
               <ArticlePreview article={article} key={article.id} />
             ))}
@@ -101,10 +104,25 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   // use the getArticles function to dynamically change the query
   const QUERY = getArticles(skipAmount, category, sort)
-  const data = await request({
+  const CATEGORIES_QUERY = `query Categories {
+    allArticles(filter: { _status: {eq: published } }) {
+      category
+    }
+  }`
+  const articlesRequest = request({
     query: QUERY,
     endpoint: "dev",
-  } as any)
+  })
+
+  const categoriesRequest = request({
+    query: CATEGORIES_QUERY,
+    endpoint: "dev",
+  })
+
+  const [data, categories] = await Promise.all([
+    articlesRequest,
+    categoriesRequest,
+  ])
 
   const articles: BlogArticlePreview[] = data.allArticles
   const count: number = data._allArticlesMeta.count
@@ -119,6 +137,7 @@ export const getServerSideProps: GetServerSideProps = async ({
       featuredArticle,
       recommendedArticles,
       page,
+      categories: [...categories.allArticles],
     },
   }
 }
