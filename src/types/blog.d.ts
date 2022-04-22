@@ -8,6 +8,14 @@ export interface ArticleImage {
   responsiveImage: { src: string }
 }
 
+interface AuthorAvatar {
+  url: string
+}
+export interface Author {
+  name: string
+  avatar: AuthorAvatar
+}
+
 // blog home recommended article, can be extended
 interface BlogArticleBasic {
   id: string
@@ -15,6 +23,7 @@ interface BlogArticleBasic {
   articleTitle: string
   category: string
   slug: string
+  author: Author
 }
 
 export type BlogArticleRecommended = BlogArticleBasic

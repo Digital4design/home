@@ -152,6 +152,12 @@ export const getArticles = (
         category
         excerpt
         slug
+        author {
+          name
+          avatar {
+            url
+          }
+        }
       }
     }
     recommendedRead {
