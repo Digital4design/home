@@ -36,8 +36,8 @@ export default function BlogPost({ article }: Props) {
           </MainImageContainer>
           <div className="border-b py-6">
             <ArticleDetails
-              profileImage
-              author="Home Reach"
+              profileImage={article.author.avatar.url}
+              author={article.author.name}
               createdAt={article.createdAt}
               category={article.category}
             />
@@ -137,6 +137,12 @@ export const getStaticProps = async ({ params }: any) => {
         url
         responsiveImage(imgixParams: {fit: crop, h: "600", w: "600", fm: jpg}) {
           src
+        }
+      }
+      author {
+        name
+        avatar {
+          url
         }
       }
       relatedArticles {

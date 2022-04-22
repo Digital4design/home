@@ -29,8 +29,8 @@ export default function FeaturedArticle({ article }: Props) {
         <ArticleDetails
           category={article.category}
           createdAt={article.createdAt}
-          profileImage
-          author="Home Reach"
+          profileImage={article.author.avatar.url}
+          author={article.author.name}
         />
       </footer>
     </article>

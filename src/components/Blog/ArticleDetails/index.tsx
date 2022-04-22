@@ -1,12 +1,13 @@
 import React from "react"
 import BlogLink from "components/Blog/BlogLink"
 import MiddleDot from "./MiddleDot"
+import Image from "next/image"
 
 interface Props {
   author?: string
   category: string
   createdAt: string
-  profileImage?: boolean
+  profileImage?: string
 }
 
 export default function ArticleDetails({
@@ -18,10 +19,17 @@ export default function ArticleDetails({
   return (
     <div className="flex items-center text-sm leading-[1]">
       {profileImage && (
-        <div className="mr-6 inline-block h-10 w-10 rounded-full border border-gray-50 bg-white shadow-lg"></div>
+        <div className="relative mr-6 inline-block h-10 w-10 overflow-hidden rounded-full border border-gray-50 bg-white shadow-lg">
+          <Image
+            src={profileImage}
+            alt={`${author} avatar`}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
       )}
       <p className="text-gray-400">
-        <span>{author && `${author} in `}</span>
+        {author && <span>{`${author} in `}</span>}
         <BlogLink
           slug={`category/${category}`}
           text={category}
