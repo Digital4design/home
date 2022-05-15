@@ -1,4 +1,4 @@
-import FAQAccordion from "components/PropertyDetails/Accordion"
+import FAQAccordion from "components/PropertyInformation/Accordion"
 
 function Accordion() {
   const accordionData = [

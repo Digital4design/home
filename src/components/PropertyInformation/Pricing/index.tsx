@@ -1,5 +1,5 @@
-import Accordion from "components/PropertyDetails/Accordion"
-import PriceItem from "components/PropertyDetails/Pricing/PriceItem"
+import Accordion from "components/PropertyInformation/Accordion"
+import PriceItem from "components/PropertyInformation/Pricing/PriceItem"
 import { CalculationValues } from "types/property"
 import calculateShares from "utils/sharesCalculator"
 
