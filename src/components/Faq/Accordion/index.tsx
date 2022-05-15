@@ -1,6 +1,4 @@
-// import FAQAccordion from "components/PropertyDetails/Accordion"
-
-import AccordionItems from "components/PropertyDetails/Accordion"
+import FAQAccordion from "components/PropertyDetails/Accordion"
 
 function Accordion() {
   const accordionData = [
@@ -28,7 +26,7 @@ function Accordion() {
 
   return (
     <section className="container lg:px-80">
-      <AccordionItems data={accordionData} />
+      <FAQAccordion data={accordionData} />
     </section>
   )
 }
