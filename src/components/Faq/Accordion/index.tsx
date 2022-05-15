@@ -1,4 +1,4 @@
-import FAQAccordion from "components/propertyDetails/accordion";
+import FAQAccordion from "components/PropertyDetails/Accordion"
 
 function Accordion() {
   const accordionData = [
@@ -22,13 +22,13 @@ function Accordion() {
       heading: "Rent",
       body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quae voluptate tempora voluptatem accusantium eos voluptatibus magni obcaecati officiis sed.",
     },
-  ];
+  ]
 
   return (
     <section className="container lg:px-80">
       <FAQAccordion data={accordionData} />
     </section>
-  );
+  )
 }
 
-export default Accordion;
+export default Accordion

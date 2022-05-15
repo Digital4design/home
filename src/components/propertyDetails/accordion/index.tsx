@@ -5,17 +5,17 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
   AccordionItemState,
-} from "react-accessible-accordion";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline";
+} from "react-accessible-accordion"
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline"
 
 interface DataTypes {
-  heading: string;
-  body: string;
+  heading: string
+  body: string
 }
 interface PropTypes {
-  data?: DataTypes[];
-  children?: any;
-  heading?: string;
+  data?: DataTypes[]
+  children?: any
+  heading?: string
 }
 
 /**
@@ -29,24 +29,28 @@ interface PropTypes {
 function AccordionItems({ data, children, heading }: PropTypes) {
   if (data) {
     return (
-      <Accordion allowZeroExpanded>
+      <Accordion allowZeroExpanded allowMultipleExpanded>
         {data.map((item: any, index: any) => (
           <AccordionItem key={index}>
             <AccordionItemHeading>
-              <AccordionItemButton className="flex justify-between border-b py-6">
-                <p className=" font-bold text-brand-grey-dark">
-                  {item.heading}
-                </p>
-                <AccordionItemState>
-                  {({ expanded }) =>
-                    expanded ? (
-                      <ChevronUpIcon className="h-6 text-brand-blue-dark" />
-                    ) : (
-                      <ChevronDownIcon className="h-6 text-brand-blue-dark" />
-                    )
-                  }
-                </AccordionItemState>
-              </AccordionItemButton>
+              <AccordionItemState>
+                {({ expanded }) => (
+                  <AccordionItemButton
+                    className={`flex items-center justify-between ${
+                      expanded ? "pt-8 pb-2" : "border-b py-8"
+                    }`}
+                  >
+                    <p className="text-lg font-bold text-brand-grey-dark">
+                      {item.heading}
+                    </p>
+                    <ChevronDownIcon
+                      className={`h-6 text-brand-blue-dark transition duration-75 ${
+                        expanded && "rotate-180"
+                      }`}
+                    />
+                  </AccordionItemButton>
+                )}
+              </AccordionItemState>
             </AccordionItemHeading>
             <AccordionItemPanel>
               <p className="py-4">{item.body}</p>
@@ -54,7 +58,7 @@ function AccordionItems({ data, children, heading }: PropTypes) {
           </AccordionItem>
         ))}
       </Accordion>
-    );
+    )
   }
   return (
     <Accordion allowZeroExpanded>
@@ -76,7 +80,7 @@ function AccordionItems({ data, children, heading }: PropTypes) {
         <AccordionItemPanel>{children}</AccordionItemPanel>
       </AccordionItem>
     </Accordion>
-  );
+  )
 }
 
-export default AccordionItems;
+export default AccordionItems

@@ -45,6 +45,10 @@ body {
   overflow-x:hidden;
 }
 
+#__next {
+  height: 100%;
+}
+
 
 a {
   color: inherit;
@@ -185,4 +189,17 @@ button {
 
 p img ~ em {
   @apply block -mt-4 text-sm mb-10 not-italic text-brand-grey;
+}
+
+.swiper-thumbs .swiper-slide {
+  @apply opacity-60 cursor-pointer hover:opacity-90 transition-opacity duration-200;
+}
+
+.swiper-thumbs .swiper-slide-thumb-active {
+  @apply opacity-100;
+}
+
+.shadow-soft {
+  -webkit-box-shadow: 0px 4px 18px -4px rgba(57, 57, 57, 0.22); 
+  box-shadow: 0px 4px 18px -4px rgba(57, 57, 57, 0.22); 
 }
