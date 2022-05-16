@@ -41,7 +41,7 @@ function Gallery({ images }: Props) {
           {images.map((img, index) => {
             return (
               <SwiperSlide key={index}>
-                <figure className="relative h-[500px]">
+                <figure className="relative aspect-[3/2]">
                   <Image
                     src={img.url}
                     alt={img.alt}

@@ -1,22 +1,33 @@
-function Large() {
+import { Campaign } from "types/property"
+
+interface Props {
+  featuredCampaign: Campaign
+}
+
+function LargeAnnouncement({ featuredCampaign }: Props) {
+  const fromDate = new Date(featuredCampaign.availableFrom).toLocaleDateString()
+  const fromTime = new Date(featuredCampaign.availableFrom).toLocaleTimeString()
+  const toDate = new Date(featuredCampaign.availableTo).toLocaleDateString()
+  const toTime = new Date(featuredCampaign.availableTo).toLocaleTimeString()
+
   return (
     <aside className=" border-radius flex flex-col items-center rounded bg-brand-green-light py-10 px-5 text-center text-brand-blue md:mx-0">
-      <h4 className="mb-5">
-        Don&apos;t miss out on our special offer, up to 5% cash back!
-      </h4>
-      <p className="mb-1 font-light text-brand-blue">
-        Reserve property before 31October 2020 and receive up to 5% off your
-        share value as Cash Back to the value of £5,250.*
-      </p>
+      <h4 className="mb-5">{featuredCampaign.strapline}</h4>
+      {featuredCampaign.details && (
+        <div
+          className="campaign-details"
+          dangerouslySetInnerHTML={{ __html: featuredCampaign.details }}
+        />
+      )}
 
       <p className="text-brand-blue">
         Offer available:{" "}
         <span className="font-bold">
-          14 August 2020 12:00am to 31 October 2020 12:00am{" "}
+          {fromDate} {fromTime} - {toDate} {toTime}
         </span>
       </p>
     </aside>
-  );
+  )
 }
 
-export default Large;
+export default LargeAnnouncement
