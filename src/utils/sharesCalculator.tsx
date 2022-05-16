@@ -134,7 +134,7 @@ export const PMT = (
   // (startAmount * mRate / (1 - (1 + mRate) ** -term)).toFixed(2)
   // console.log("PMT", result)
 
-  return Number(result)
+  return Math.round(Number(result))
 }
 
 export const convertPercentageValueToDecimal = (percentageValue: number) => {

@@ -1,17 +1,21 @@
-import SectionHeading from "components/global/sectionHeading";
-import React from "react";
+import SectionHeading from "components/global/sectionHeading"
+import React from "react"
+import { DevelopmentPropertyPreview } from "types/development"
 
 interface PropTypes {
-  heading: String;
+  heading: String
+  properties: DevelopmentPropertyPreview[]
 }
 
-function RelatedProperties({ heading }: PropTypes) {
+function RelatedProperties({ heading, properties }: PropTypes) {
   return (
     <section>
       <SectionHeading heading={heading} />
-      ...Related properties....
+      {/* <pre className="w-full overflow-hidden break-words bg-gray-50 p-4">
+        {JSON.stringify(properties, null, 2)}
+      </pre> */}
     </section>
-  );
+  )
 }
 
-export default RelatedProperties;
+export default RelatedProperties
