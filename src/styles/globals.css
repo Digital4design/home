@@ -45,9 +45,10 @@ body {
   overflow-x:hidden;
 }
 
-#__next {
+/* #_next height 100% stops scroll reset when navigating with router */
+/* #__next {
   height: 100%;
-}
+} */
 
 
 a {
@@ -202,4 +203,8 @@ p img ~ em {
 .shadow-soft {
   -webkit-box-shadow: 0px 4px 18px -4px rgba(57, 57, 57, 0.22); 
   box-shadow: 0px 4px 18px -4px rgba(57, 57, 57, 0.22); 
+}
+
+.campaign-details p {
+  @apply mb-1 font-light text-brand-blue;
 }

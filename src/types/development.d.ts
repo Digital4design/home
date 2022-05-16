@@ -11,4 +11,9 @@ export interface DevelopmentPropertyPreview {
   initialShare: number
   propertyType: string
   listingStatus: string
+  bedrooms: number
+  gallery: GalleryProperties
+  initialShare: number
+  propertyType: string
+  listingStatus: string
 }

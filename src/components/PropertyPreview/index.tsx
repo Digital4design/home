@@ -25,7 +25,7 @@ export default function PropertyPreview({
           sidebarItem &&
           "transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
         }`}
-        onClick={() => router.push(`/property/${property.slug}`)}
+        onClick={() => router.push(`/property/whittingham-park-the-aslin`)}
       >
         <PropertyPreviewImage
           image={property.image}

@@ -1,6 +1,4 @@
 import About from "components/PropertyInformation/About"
-import Announcement from "components/PropertyInformation/announcement/Large"
-import AnnouncementSmall from "components/PropertyInformation/announcement/Small"
 import Gallery from "components/PropertyInformation/Gallery"
 import Header from "components/PropertyInformation/Header"
 import HowItWorks from "components/Sidebar/HowItWorks"
@@ -14,6 +12,8 @@ import { DatoProperty, Property } from "types/property"
 import ContentAccordionWrapper from "components/PropertyInformation/Accordion/ContentAccordionWrapper"
 import ContentAccordionItem from "components/PropertyInformation/Accordion/ContentAccordionItem"
 import { DevelopmentPropertyPreview } from "types/development"
+import LargeAnnouncement from "components/PropertyInformation/announcement/Large"
+import SmallAnnouncements from "components/PropertyInformation/announcement/Small"
 
 interface Props {
   property: DatoProperty
@@ -21,7 +21,13 @@ interface Props {
 }
 
 function PropertyDetails({ property, relatedProperties }: Props) {
-  console.log(relatedProperties)
+  // filter the related properties so that this current property being viewed is not displayed as a relation
+  const filteredRelatedProperties = relatedProperties.filter(
+    (item) => item.name !== property.name
+  )
+
+  const sidebarCampaignsHasLength = property.sidebarCampaigns.length > 0
+
   const values = {
     purchase_price: property.omv, // user has control of this value in CMS (it's the OMV)
     initial_share_percentage: property.initialShare, // user has control of this value in CMS. Need to convert it to decimal
@@ -48,85 +54,77 @@ function PropertyDetails({ property, relatedProperties }: Props) {
     openPlanLayout,
   }
 
-  const data = [
-    {
-      heading: "Eligibility Criteria",
-      body: property.eligibilityCriteria,
-    },
-    {
-      heading: "Explore the local area",
-      body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est delectus distinctio itaque ex saepe consectetur ea aspernatur vequos, id molestiae quisquam temporibus consequatur modi unde nulla nostrum aliquam recusandae eveniet nam facere alias incidunt sit!Mollitia porro sunt quasi.",
-    },
-    {
-      heading: "About the developer",
-      body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est delectus distinctio itaque ex saepe consectetur ea aspernatur vequos, id molestiae quisquam temporibus consequatur modi unde nulla nostrum aliquam recusandae eveniet nam facere alias incidunt sit!Mollitia porro sunt quasi.",
-    },
-  ]
-
   return (
     <div className="container-sm py-5">
-      <Announcement />
+      {property.featuredCampaign && (
+        <LargeAnnouncement featuredCampaign={property.featuredCampaign} />
+      )}
       <Header name={property.name} location={property.location} />
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[auto_400px]">
-        <main className="flex flex-col gap-5">
-          <Gallery images={property.gallery} />
-          <Pricing
-            shareBreakpoints={property.shareSliderBreakpoints}
-            values={values}
-            classes="lg:hidden"
-          />
-          <About
-            houseStyle={property.houseStyle}
-            description={property.description}
-          />
-          <KeyFeatures
-            features={features}
-            otherFeatures={property.otherFeatures}
-          />
-          {/* <Accordion data={mainAccordionData} /> */}
-          <ContentAccordionWrapper>
-            <ContentAccordionItem
-              heading="Eligibility Criteria"
-              body={property.eligibilityCriteria}
+      <main>
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-[auto_400px]">
+          <div className="flex flex-col gap-5">
+            <Gallery images={property.gallery} />
+            <Pricing
+              shareBreakpoints={property.shareSliderBreakpoints}
+              values={values}
+              classes="lg:hidden"
             />
-            <ContentAccordionItem
-              heading="Explore the local area"
-              body={property.eligibilityCriteria}
-              location={property.location}
+            <About
+              houseStyle={property.houseStyle}
+              description={property.description}
             />
-            <ContentAccordionItem
-              heading="About the developer"
-              developer={property.builder}
+            <KeyFeatures
+              features={features}
+              otherFeatures={property.otherFeatures}
             />
-          </ContentAccordionWrapper>
-          <RelatedProperties
-            heading="Other homes available at this development"
-            properties={relatedProperties}
-          />
+            {/* <Accordion data={mainAccordionData} /> */}
+            <ContentAccordionWrapper>
+              <ContentAccordionItem
+                heading="Eligibility Criteria"
+                body={property.eligibilityCriteria}
+              />
+              <ContentAccordionItem
+                heading="Explore the local area"
+                body={property.eligibilityCriteria}
+                location={property.location}
+              />
+              <ContentAccordionItem
+                heading="About the developer"
+                developer={property.builder}
+              />
+            </ContentAccordionWrapper>
+            <RelatedProperties
+              heading="Other homes available at this development"
+              properties={filteredRelatedProperties}
+            />
+          </div>
           {/* <RelatedProperties heading="Homes you may also like in the area" /> */}
-        </main>
-        <aside className="flex flex-col gap-5">
-          <Pricing
-            shareBreakpoints={property.shareSliderBreakpoints}
-            values={values}
-            classes="hidden lg:flex"
-          />
-          <AreYouInterested />
-          <HowItWorks />
-          <AnnouncementSmall />
-        </aside>
-      </div>
+          <aside className="flex flex-col gap-5">
+            <Pricing
+              shareBreakpoints={property.shareSliderBreakpoints}
+              values={values}
+              classes="hidden lg:flex"
+            />
+            <AreYouInterested />
+            <HowItWorks />
+            {sidebarCampaignsHasLength && (
+              <SmallAnnouncements campaigns={property.sidebarCampaigns} />
+            )}
+          </aside>
+        </div>
+      </main>
     </div>
   )
 }
 
 export default PropertyDetails
 
-interface Slug {
-  slug: string
+interface Param {
+  slug: string | undefined
 }
+
 interface Params {
-  params: Slug | null
+  params: Param
 }
 
 export async function getStaticPaths() {
@@ -135,14 +133,6 @@ export async function getStaticPaths() {
       slug
     }
   }`
-
-  interface Slug {
-    slug: string | undefined
-  }
-
-  interface Params {
-    params: Slug
-  }
 
   const response = await request({ query: PROPERTY_QUERY, endpoint: "dev" })
   const paths: Params[] = []
@@ -218,6 +208,18 @@ export async function getStaticProps({ params }: Params) {
       shareSliderBreakpoints
       slug
       wheelchairAccessible
+      sidebarCampaigns {
+        details
+        strapline
+        availableFrom
+        availableTo
+      }
+      featuredCampaign {
+        details
+        strapline
+        availableFrom
+        availableTo
+      }
     }
   }
   `

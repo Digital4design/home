@@ -33,7 +33,9 @@ export interface PropertyPreviewPropsNew {
 
 type Floorplan = ImageProperties
 
-interface GalleryProperties {
+export interface GalleryProperties {
+  height?: number
+  width?: number
   alt: string
   url: string
 }
@@ -66,15 +68,24 @@ export interface DevelopmentName {
   name: string
 }
 
+export interface Campaign {
+  details?: string
+  strapline: string
+  availableFrom: string
+  availableTo: string
+}
+
 export interface DatoProperty {
   amenities: string[]
   amenitiesRadius: number
   bathrooms: number
   bedrooms: number
   builder: Builder
+  sidebarCampaigns: Campaign[]
   description: string
   development: DevelopmentName
   eligibilityCriteria: string
+  featuredCampaign: Campaign
   floorPlan: Floorplan
   gallery: GalleryProperties[]
   houseStyle: string
@@ -102,7 +113,6 @@ export interface DatoProperty {
   wheelchairAccessible: boolean
   _publishedAt: string
 }
-
 export interface CalculationValues {
   purchase_price: number // user has control of this value in CMS
   initial_share_percentage: number // user has control of this value in CMS. Need to convert it to decimal

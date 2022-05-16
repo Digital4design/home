@@ -10,7 +10,7 @@ export const createArrayBetweenTwoNumbers = (start: number, end: number) =>
     .fill(null)
     .map((_, idx) => start + idx)
 
-export const getDaysUntilDate = (date: string) => {
+export const getDaysUntilEndDate = (date: string) => {
   const date1 = new Date(date)
   const now = new Date()
   const difference = date1.getTime() - now.getTime()

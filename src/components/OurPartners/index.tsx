@@ -37,14 +37,16 @@ export default function OurPartners() {
         <div className="swiper-wrapper h-[80px] w-full">
           {placeholders.map((partner) => (
             <div className="swiper-slide" key={partner.id}>
-              <Image
-                src={partner.url}
-                alt={partner.title}
-                width="200"
-                height="80"
-                placeholder="blur"
-                blurDataURL={partner.url}
-              />
+              <figure className="relative aspect-[16/9] w-[200px]">
+                <Image
+                  src={partner.url}
+                  alt={partner.title}
+                  layout="fill"
+                  objectFit="cover"
+                  placeholder="blur"
+                  blurDataURL={partner.url}
+                />
+              </figure>
             </div>
           ))}
         </div>
