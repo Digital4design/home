@@ -6,6 +6,13 @@ export interface ChildrenProps {
   children: ReactNode
 }
 
-interface IconProps {
+export interface IconProps {
   classes: string
+}
+
+export interface ImageProperties {
+  alt: string
+  height: number
+  url: string
+  width: number
 }

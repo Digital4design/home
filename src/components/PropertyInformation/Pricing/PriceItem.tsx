@@ -1,11 +1,11 @@
-import Tooltip from "../tooltip";
+import Tooltip from "./Tooltip"
 
 interface PropTypes {
-  border?: boolean;
-  featured?: boolean;
-  title: string;
-  value: any;
-  tooltip?: string;
+  border?: boolean
+  featured?: boolean
+  title: string
+  value: any
+  tooltip?: string
 }
 
 function PriceItem({ border, featured, title, value, tooltip }: PropTypes) {
@@ -33,7 +33,7 @@ function PriceItem({ border, featured, title, value, tooltip }: PropTypes) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default PriceItem;
+export default PriceItem

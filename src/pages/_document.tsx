@@ -9,6 +9,11 @@ export default function Document() {
           rel="stylesheet"
           href="https://use.typekit.net/hkx7kcp.css"
         ></link>
+
+        {/* <script
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&callback=initMap&libraries=&v=weekly`}
+          async
+        ></script> */}
       </Head>
       <body>
         <Main />

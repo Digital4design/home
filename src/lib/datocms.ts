@@ -9,8 +9,8 @@ interface Props {
 
 export function request({
   query,
-  variables,
   endpoint,
+  variables,
 }: Props): Promise<GraphQLResponse<{}>> {
   const ep = endpoint
     ? `https://graphql.datocms.com/environments/${endpoint}`
