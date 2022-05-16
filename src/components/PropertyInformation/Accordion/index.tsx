@@ -7,10 +7,12 @@ import {
   AccordionItemState,
 } from "react-accessible-accordion"
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline"
+import { Location } from "types/property"
 
 interface DataTypes {
   heading: string
   body: string
+  location?: Location
 }
 interface PropTypes {
   data?: DataTypes[]
@@ -27,6 +29,8 @@ interface PropTypes {
  * @returns A single or multiple accordion components.
  */
 function AccordionItems({ data, children, heading }: PropTypes) {
+  // create array of items from property data (eligibility criteria, explore the local area, about the developer)
+
   if (data) {
     return (
       <Accordion allowZeroExpanded allowMultipleExpanded>

@@ -15,6 +15,7 @@ interface Props {
 }
 
 function Gallery({ images }: Props) {
+  console.log(images)
   const [swiper, setSwiper] = useState<any>(null)
 
   return (

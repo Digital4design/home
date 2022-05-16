@@ -12,7 +12,8 @@ export interface IconProps {
 
 export interface ImageProperties {
   alt: string
-  height: number
   url: string
-  width: number
+  height?: number
+  width?: number
+  responsiveImage?: Record<"src", string>
 }

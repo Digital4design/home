@@ -1,4 +1,5 @@
 import SectionHeading from "components/global/sectionHeading"
+import { Builder } from "types/property"
 
 interface Props {
   houseStyle: string

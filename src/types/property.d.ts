@@ -51,18 +51,34 @@ export interface Features {
   openPlanLayout: boolean
 }
 
+interface BuilderLogo {
+  alt: string
+  url: string
+}
+export interface Builder {
+  name: string
+  logo: BuilderLogo
+  slug: string
+  description: string
+}
+
+export interface DevelopmentName {
+  name: string
+}
+
 export interface DatoProperty {
   amenities: string[]
   amenitiesRadius: number
   bathrooms: number
   bedrooms: number
+  builder: Builder
   description: string
-  developments: string[] | null
+  development: DevelopmentName
+  eligibilityCriteria: string
   floorPlan: Floorplan
   gallery: GalleryProperties[]
   houseStyle: string
   initialShare: number
-  shareDeposit: number
   mortgageRate: number
   mortgageTerm: number
   leaseManagementFee: number
@@ -79,6 +95,8 @@ export interface DatoProperty {
   parkingSpaces: number
   propertyType: string
   rentalPrice: number
+  shareDeposit: number
+  shareSliderBreakpoints: number[]
   shareValue: number
   slug: string
   wheelchairAccessible: boolean

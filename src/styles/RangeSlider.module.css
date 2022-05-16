@@ -1,0 +1,97 @@
+.rangeSlider {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+  }
+  
+.rangeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+.rangeSlider:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+  
+.rangeSlider::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+  }
+
+
+  /* Special styling for WebKit/Blink */
+.rangeSlider::-webkit-slider-thumb {
+    @apply w-6 h-6 bg-brand-green appearance-none rounded-full cursor-pointer -mt-2 hover:bg-brand-green-dark transition-colors duration-100;
+    background: rgb(26,226,179);
+background: radial-gradient(circle, rgba(26,226,179,1) 0%, rgb(23, 201, 160) 100%);
+    /* -webkit-appearance: none; */
+    /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  }
+  
+  /* All the same stuff for Firefox */
+  .rangeSlider::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  
+  /* All the same stuff for IE */
+  .rangeSlider::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+
+
+.rangeSlider::-webkit-slider-runnable-track {
+    @apply cursor-pointer h-2 w-full rounded-sm;
+    background: rgba(222, 222, 222, 0.90);
+  }
+  
+.rangeSlider:focus::-webkit-slider-runnable-track {
+    background: rgba(222, 222, 222, 0.90);
+  }
+  
+.rangeSlider::-moz-range-track {
+    @apply cursor-pointer h-2 w-full rounded-sm;
+    background: rgba(222, 222, 222, 0.90);
+  }
+/*   
+.rangeSlider::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+.rangeSlider::-ms-fill-lower {
+    background: rgb(26,226,179);
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+.rangeSlider:focus::-ms-fill-lower {
+    background: rgb(26,226,179);
+  }
+.rangeSlider::-ms-fill-upper {
+    background: rgb(26,226,179);
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+.rangeSlider:focus::-ms-fill-upper {
+    background: rgb(26,226,179);
+  } */
